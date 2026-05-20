@@ -1,0 +1,20 @@
+# species_map.tsv — Mapping from MAF species codes to clean phylogenetic names.
+#
+# Verified against inspect_maf.py output on the Fontaine 2015 reference-
+# assemblies MAF (Dryad doi:10.5061/dryad.f4114).
+#
+# This produces a 7-taxon alignment per locus:
+#   6 in-group AGC species + 1 outgroup (An. christyi)
+# AgamP3 (PEST) is the alignment anchor and is NOT included as a phylogenetic
+# taxon — including it would create a near-duplicate of AgamS1/AgamM1 and
+# break the analysis.
+# AepiE1 (epiroticus) is excluded as a second outgroup; Fontaine showed the
+# choice of outgroup didn't matter, and one is cleaner pedagogically.
+
+AgamM1	An_coluzzii
+AgamS1	An_gambiae
+AaraD1	An_arabiensis
+AquaS1	An_quadriannulatus
+AmelC1	An_melas
+AmerM1	An_merus
+AchrA1	An_christyi

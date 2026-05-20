@@ -1,0 +1,17 @@
+locus_id	chrom	start	end	region	expected_topology	role
+X_dist_01	chrX	3005950	3010434	X_distal_Xag	A+Q	species_tree
+X_dist_02	chrX	2429218	2434865	X_distal_Xag	A+Q	species_tree
+X_dist_03	chrX	5772713	5775969	X_distal_Xag	A+Q	species_tree
+X_dist_04	chrX	9845592	9849716	X_distal_Xag	A+Q	species_tree
+X_dist_05	chrX	13658654	13662129	X_distal_Xag	A+Q	species_tree
+X_peri_01	chrX	18895157	18899570	X_pericentromeric	A+CG	X_introgression
+auto_2R_01	chr2R	7008564	7013875	2R_autosome	A+CG	autosomal_introgression
+auto_2R_02	chr2R	28019907	28024648	2R_autosome	A+CG	autosomal_introgression
+auto_2R_03	chr2R	48063405	48068599	2R_autosome	A+CG	autosomal_introgression
+auto_3R_01	chr3R	14064436	14068933	3R_autosome	A+CG	autosomal_introgression
+auto_3R_02	chr3R	45025655	45032345	3R_autosome	A+CG	autosomal_introgression
+inv_2La_01	chr2L	27004426	27009904	2La_inversion	2La_specific	trans_specific_polymorphism
+inv_2La_02	chr2L	34038210	34042223	2La_inversion	2La_specific	trans_specific_polymorphism
+inv_3La_01	chr3L	17012338	17017457	3La_inversion	R+Q	merus_quadriannulatus_introgression
+inv_3La_02	chr3L	24023804	24028035	3La_inversion	R+Q	merus_quadriannulatus_introgression
+

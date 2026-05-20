@@ -1,0 +1,34 @@
+#nexus
+begin sets;
+  charset X_dist_01.fasta = data/alignments/X_dist_01.fasta: ;
+  charset X_dist_02.fasta = data/alignments/X_dist_02.fasta: ;
+  charset X_dist_03.fasta = data/alignments/X_dist_03.fasta: ;
+  charset X_dist_04.fasta = data/alignments/X_dist_04.fasta: ;
+  charset X_dist_05.fasta = data/alignments/X_dist_05.fasta: ;
+  charset X_peri_01.fasta = data/alignments/X_peri_01.fasta: ;
+  charset auto_2R_01.fasta = data/alignments/auto_2R_01.fasta: ;
+  charset auto_2R_02.fasta = data/alignments/auto_2R_02.fasta: ;
+  charset auto_2R_03.fasta = data/alignments/auto_2R_03.fasta: ;
+  charset auto_3R_01.fasta = data/alignments/auto_3R_01.fasta: ;
+  charset auto_3R_02.fasta = data/alignments/auto_3R_02.fasta: ;
+  charset inv_2La_01.fasta = data/alignments/inv_2La_01.fasta: ;
+  charset inv_2La_02.fasta = data/alignments/inv_2La_02.fasta: ;
+  charset inv_3La_01.fasta = data/alignments/inv_3La_01.fasta: ;
+  charset inv_3La_02.fasta = data/alignments/inv_3La_02.fasta: ;
+  charpartition mymodels =
+    TPM3u+G4: X_dist_01.fasta,
+    HKY+G4: X_dist_02.fasta,
+    HKY+F+G4: X_dist_03.fasta,
+    HKY+G4: X_dist_04.fasta,
+    HKY+G4: X_dist_05.fasta,
+    HKY+F: X_peri_01.fasta,
+    HKY+F+G4: auto_2R_01.fasta,
+    HKY+F+G4: auto_2R_02.fasta,
+    HKY+F+G4: auto_2R_03.fasta,
+    HKY+F+R3: auto_3R_01.fasta,
+    HKY+F+G4: auto_3R_02.fasta,
+    HKY+F+R3: inv_2La_01.fasta,
+    HKY+F+G4: inv_2La_02.fasta,
+    TPM3u+F+R3: inv_3La_01.fasta,
+    HKY+F+G4: inv_3La_02.fasta;
+end;

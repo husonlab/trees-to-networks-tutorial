@@ -1,0 +1,34 @@
+#nexus
+begin sets;
+  charset X_dist_01.fasta = data/alignments/X_dist_01.fasta: DNA;
+  charset X_dist_02.fasta = data/alignments/X_dist_02.fasta: DNA;
+  charset X_dist_03.fasta = data/alignments/X_dist_03.fasta: DNA;
+  charset X_dist_04.fasta = data/alignments/X_dist_04.fasta: DNA;
+  charset X_dist_05.fasta = data/alignments/X_dist_05.fasta: DNA;
+  charset X_peri_01.fasta = data/alignments/X_peri_01.fasta: DNA;
+  charset auto_2R_01.fasta = data/alignments/auto_2R_01.fasta: DNA;
+  charset auto_2R_02.fasta = data/alignments/auto_2R_02.fasta: DNA;
+  charset auto_2R_03.fasta = data/alignments/auto_2R_03.fasta: DNA;
+  charset auto_3R_01.fasta = data/alignments/auto_3R_01.fasta: DNA;
+  charset auto_3R_02.fasta = data/alignments/auto_3R_02.fasta: DNA;
+  charset inv_2La_01.fasta = data/alignments/inv_2La_01.fasta: DNA;
+  charset inv_2La_02.fasta = data/alignments/inv_2La_02.fasta: DNA;
+  charset inv_3La_01.fasta = data/alignments/inv_3La_01.fasta: DNA;
+  charset inv_3La_02.fasta = data/alignments/inv_3La_02.fasta: DNA;
+  charpartition mymodels =
+    TPM3u{0.694736,2.5047}+F{0.237458,0.251257,0.251435,0.25985}+G4{0.823218}: X_dist_01.fasta{0.42273},
+    HKY{2.77658}+F{0.252326,0.244256,0.244821,0.258597}+G4{1.07686}: X_dist_02.fasta{0.479984},
+    HKY{3.04895}+F{0.229141,0.250321,0.269687,0.250851}+G4{0.548431}: X_dist_03.fasta{0.379259},
+    HKY{3.21609}+F{0.245098,0.25689,0.260936,0.237076}+G4{0.362905}: X_dist_04.fasta{0.427403},
+    HKY{2.86553}+F{0.250513,0.25441,0.266688,0.228389}+G4{0.832618}: X_dist_05.fasta{0.527166},
+    HKY{2.62504}+F{0.272784,0.220548,0.238657,0.268011}: X_peri_01.fasta{0.406955},
+    HKY{2.58897}+F{0.269667,0.235683,0.237018,0.257631}+G4{0.605447}: auto_2R_01.fasta{0.480833},
+    HKY{2.42674}+F{0.301817,0.212357,0.22542,0.260406}+G4{0.947566}: auto_2R_02.fasta{0.478433},
+    HKY{2.88116}+F{0.279126,0.215606,0.22793,0.277337}+G4{0.702791}: auto_2R_03.fasta{0.408777},
+    HKY{2.87493}+F{0.242091,0.239076,0.235712,0.283121}+R3{0.509909,0.398946,0.454932,0.568129,0.0351597,15.3049}: auto_3R_01.fasta{0.630684},
+    HKY{2.51938}+F{0.274247,0.232445,0.225517,0.267791}+G4{0.772462}: auto_3R_02.fasta{0.400869},
+    HKY{2.64911}+F{0.288793,0.228702,0.207149,0.275356}+R3{0.494586,0.64451,0.460199,0.662424,0.0452148,8.32444}: inv_2La_01.fasta{0.488563},
+    HKY{2.52612}+F{0.275545,0.2399,0.230544,0.254011}+G4{0.521255}: inv_2La_02.fasta{0.472339},
+    TPM3u{0.593212,2.7585}+F{0.239636,0.282676,0.289472,0.188215}+R3{0.492931,0.133065,0.449142,0.795777,0.0579271,9.96065}: inv_3La_01.fasta{0.548949},
+    HKY{2.90528}+F{0.248097,0.222998,0.267541,0.261363}+G4{0.650787}: inv_3La_02.fasta{0.384603};
+end;

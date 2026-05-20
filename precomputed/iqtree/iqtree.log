@@ -1,0 +1,421 @@
+IQ-TREE version 3.1.2 for MacOS ARM 64-bit built May  7 2026
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    bozeman.cs.uni-tuebingen.de (SSE4.2, 128 GB RAM)
+Command: bin/iqtree3 -redo -S data/alignments -B 1000 --prefix tutorial_loci -T AUTO -st DNA
+Seed:    52439 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Wed May 20 15:25:12 2026
+Kernel:  SSE2 - auto-detect threads (16 CPU cores detected)
+
+Reading 15 alignment files in directory data/alignments
+Reading alignment file data/alignments/X_dist_01.fasta ... Fasta format detected
+Reading fasta file: done in 0.000364065 secs using 91.19% CPU
+Constructing alignment: done in 0.00197983 secs using 46.27% CPU
+WARNING: 855 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 6208 columns, 459 distinct patterns
+144 parsimony-informative, 996 singleton sites, 5068 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 5.79357e-05 secs using 60.41% CPU
+   1  An_arabiensis        28.33%    passed     66.82%
+   2  An_coluzzii          30.61%    passed     97.87%
+   3  An_gambiae           29.40%    passed     97.99%
+   4  An_melas             73.26%    failed      2.41%
+   5  An_merus             29.90%    passed     53.44%
+   6  An_quadriannulatus   28.03%    passed     69.30%
+   7  An_christyi          28.82%    passed      5.04%
+WARNING: 1 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                35.48%  1 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file data/alignments/X_dist_02.fasta ... Fasta format detected
+Reading fasta file: done in 0.000442028 secs using 91.62% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00247502 secs using 46.91% CPU
+WARNING: 825 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 7530 columns, 541 distinct patterns
+234 parsimony-informative, 1397 singleton sites, 5899 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 4.50611e-05 secs using 71.01% CPU
+   1  An_arabiensis        25.99%    passed     96.40%
+   2  An_melas             26.15%    passed     84.07%
+   3  An_quadriannulatus   26.36%    passed     97.53%
+   4  An_coluzzii          25.27%    passed     85.28%
+   5  An_gambiae           25.21%    passed     86.92%
+   6  An_christyi          27.74%    failed      0.00%
+   7  An_merus             26.60%    passed     26.46%
+****  TOTAL                26.19%  1 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file data/alignments/X_dist_03.fasta ... Fasta format detected
+Reading fasta file: done in 0.000283003 secs using 86.92% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00141692 secs using 47.92% CPU
+WARNING: 613 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 4543 columns, 267 distinct patterns
+94 parsimony-informative, 639 singleton sites, 3810 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 4.50611e-05 secs using 55.48% CPU
+   1  An_quadriannulatus   29.39%    passed     85.72%
+   2  An_coluzzii          28.35%    passed     97.31%
+   3  An_gambiae           28.35%    passed     97.50%
+   4  An_arabiensis        29.43%    passed     98.18%
+   5  An_christyi          29.34%    failed      1.77%
+   6  An_melas             28.51%    passed     99.92%
+   7  An_merus             28.84%    passed     81.74%
+****  TOTAL                28.89%  1 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file data/alignments/X_dist_04.fasta ... Fasta format detected
+Reading fasta file: done in 0.000257969 secs using 91.48% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00144291 secs using 47.33% CPU
+WARNING: 394 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 4872 columns, 295 distinct patterns
+108 parsimony-informative, 840 singleton sites, 3924 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 5.31673e-05 secs using 60.19% CPU
+   1  An_arabiensis        14.72%    passed     89.75%
+   2  An_quadriannulatus   14.80%    passed     85.31%
+   3  An_coluzzii          15.46%    passed     97.75%
+   4  An_gambiae           15.35%    passed     96.48%
+   5  An_melas             15.25%    passed     93.21%
+   6  An_merus             12.56%    passed     84.54%
+   7  An_christyi          18.29%    failed      0.89%
+****  TOTAL                15.20%  1 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file data/alignments/X_dist_05.fasta ... Fasta format detected
+Reading fasta file: done in 0.00029707 secs using 93.24% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00161791 secs using 47.22% CPU
+WARNING: 858 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 5280 columns, 385 distinct patterns
+157 parsimony-informative, 834 singleton sites, 4289 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 4.69685e-05 secs using 66% CPU
+   1  An_arabiensis        35.09%    passed     73.97%
+   2  An_melas             36.12%    passed     98.54%
+   3  An_coluzzii          34.36%    passed     48.31%
+   4  An_gambiae           34.32%    passed     55.70%
+   5  An_christyi          35.21%    failed      0.00%
+   6  An_quadriannulatus   35.51%    passed     90.17%
+   7  An_merus             37.52%    passed     87.04%
+****  TOTAL                35.45%  1 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file data/alignments/X_peri_01.fasta ... Fasta format detected
+Reading fasta file: done in 0.000349045 secs using 92.82% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00187993 secs using 47.66% CPU
+WARNING: 1046 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 6473 columns, 335 distinct patterns
+102 parsimony-informative, 1127 singleton sites, 5244 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 5.10216e-05 secs using 56.84% CPU
+   1  An_quadriannulatus   31.87%    passed     93.92%
+   2  An_melas             31.92%    passed     95.89%
+   3  An_coluzzii          31.86%    passed     94.76%
+   4  An_gambiae           31.90%    passed     98.83%
+   5  An_christyi          31.99%    passed     31.80%
+   6  An_arabiensis        34.76%    passed     99.01%
+   7  An_merus             33.15%    passed     91.68%
+****  TOTAL                32.49%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file data/alignments/auto_2R_01.fasta ... Fasta format detected
+Reading fasta file: done in 0.000368834 secs using 93.27% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00195885 secs using 47.68% CPU
+WARNING: 526 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 6604 columns, 483 distinct patterns
+176 parsimony-informative, 1257 singleton sites, 5171 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 4.29153e-05 secs using 65.24% CPU
+   1  An_gambiae           19.64%    passed     86.62%
+   2  An_christyi          21.84%    failed      0.07%
+   3  An_merus             19.99%    passed     45.50%
+   4  An_quadriannulatus   21.09%    passed     83.62%
+   5  An_melas             20.99%    passed     99.97%
+   6  An_coluzzii          19.78%    passed     95.54%
+   7  An_arabiensis        20.61%    passed     86.98%
+****  TOTAL                20.56%  1 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file data/alignments/auto_2R_02.fasta ... Fasta format detected
+Reading fasta file: done in 0.000388145 secs using 93.26% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00203896 secs using 47.67% CPU
+WARNING: 916 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 7182 columns, 423 distinct patterns
+149 parsimony-informative, 1212 singleton sites, 5821 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 3.19481e-05 secs using 75.12% CPU
+   1  An_gambiae           34.27%    passed     99.70%
+   2  An_quadriannulatus   34.95%    passed     94.08%
+   3  An_arabiensis        34.10%    passed     99.81%
+   4  An_melas             33.76%    passed     88.34%
+   5  An_christyi          31.66%    passed     99.62%
+   6  An_coluzzii          34.04%    passed     98.62%
+   7  An_merus             33.64%    passed     85.69%
+****  TOTAL                33.77%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file data/alignments/auto_2R_03.fasta ... Fasta format detected
+Reading fasta file: done in 0.000335932 secs using 93.17% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00182605 secs using 47.1% CPU
+WARNING: 697 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 6576 columns, 409 distinct patterns
+117 parsimony-informative, 1174 singleton sites, 5285 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 4.81606e-05 secs using 62.29% CPU
+   1  An_quadriannulatus   20.76%    passed     90.33%
+   2  An_gambiae           21.03%    passed     97.01%
+   3  An_melas             30.52%    passed     10.81%
+   4  An_arabiensis        20.39%    passed     97.26%
+   5  An_christyi          22.40%    passed      5.93%
+   6  An_merus             28.33%    passed     85.09%
+   7  An_coluzzii          21.03%    passed     98.85%
+****  TOTAL                23.49%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file data/alignments/auto_3R_01.fasta ... Fasta format detected
+Reading fasta file: done in 0.000247002 secs using 89.88% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00134611 secs using 48.58% CPU
+WARNING: 148 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 4774 columns, 266 distinct patterns
+153 parsimony-informative, 1067 singleton sites, 3554 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 5.31673e-05 secs using 48.9% CPU
+   1  An_coluzzii           5.80%    passed     94.84%
+   2  An_melas              5.91%    passed     98.75%
+   3  An_merus              5.87%    passed     80.41%
+   4  An_gambiae            5.80%    passed     77.55%
+   5  An_quadriannulatus    6.26%    passed     83.29%
+   6  An_arabiensis         5.89%    passed     91.33%
+   7  An_christyi           4.38%    failed      0.02%
+****  TOTAL                 5.70%  1 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file data/alignments/auto_3R_02.fasta ... Fasta format detected
+Reading fasta file: done in 0.000504971 secs using 92.68% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00277114 secs using 46.44% CPU
+WARNING: 1353 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 9409 columns, 465 distinct patterns
+158 parsimony-informative, 1511 singleton sites, 7740 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 3.40939e-05 secs using 73.33% CPU
+   1  An_coluzzii          28.91%    passed     66.13%
+   2  An_christyi          30.18%    failed      0.00%
+   3  An_gambiae           28.90%    passed     76.35%
+   4  An_quadriannulatus   29.08%    passed     89.23%
+   5  An_arabiensis        29.12%    passed     86.33%
+   6  An_merus             29.28%    passed     86.37%
+   7  An_melas             29.03%    passed     66.46%
+****  TOTAL                29.21%  1 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file data/alignments/inv_2La_01.fasta ... Fasta format detected
+Reading fasta file: done in 0.000345945 secs using 93.37% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00183916 secs using 46.11% CPU
+WARNING: 351 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 6453 columns, 466 distinct patterns
+212 parsimony-informative, 1341 singleton sites, 4900 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 4.60148e-05 secs using 60.85% CPU
+   1  An_arabiensis        14.75%    passed     98.11%
+   2  An_merus             15.96%    passed     98.04%
+   3  An_christyi          13.79%    passed      8.36%
+   4  An_gambiae           15.12%    passed     97.61%
+   5  An_melas             15.42%    passed     99.98%
+   6  An_quadriannulatus   15.76%    passed     62.98%
+   7  An_coluzzii          15.28%    passed     94.43%
+****  TOTAL                15.16%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file data/alignments/inv_2La_02.fasta ... Fasta format detected
+Reading fasta file: done in 0.00030303 secs using 92.73% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00160718 secs using 47.66% CPU
+WARNING: 814 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 5856 columns, 440 distinct patterns
+97 parsimony-informative, 868 singleton sites, 4891 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 4.60148e-05 secs using 71.72% CPU
+   1  An_arabiensis        31.51%    passed     99.30%
+   2  An_gambiae           31.61%    passed     99.32%
+   3  An_melas             60.55%    passed     54.82%
+   4  An_merus             32.04%    passed     93.18%
+   5  An_quadriannulatus   34.34%    passed     39.41%
+   6  An_coluzzii          31.76%    passed     96.50%
+   7  An_christyi          36.65%    failed      0.06%
+WARNING: 1 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                36.92%  1 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file data/alignments/inv_3La_01.fasta ... Fasta format detected
+Reading fasta file: done in 0.000279903 secs using 92.53% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00156903 secs using 46.84% CPU
+WARNING: 306 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 6035 columns, 377 distinct patterns
+178 parsimony-informative, 985 singleton sites, 4872 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 5.48363e-05 secs using 63.83% CPU
+   1  An_coluzzii          16.64%    passed     63.05%
+   2  An_gambiae           18.23%    passed     74.95%
+   3  An_melas             15.39%    passed     63.67%
+   4  An_christyi          17.63%    failed      0.00%
+   5  An_merus             15.77%    passed     66.92%
+   6  An_quadriannulatus   15.69%    passed     44.78%
+   7  An_arabiensis        15.46%    passed     81.41%
+****  TOTAL                16.40%  1 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file data/alignments/inv_3La_02.fasta ... Fasta format detected
+Reading fasta file: done in 0.000271797 secs using 92.35% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00140595 secs using 46.09% CPU
+WARNING: 571 sites contain only gaps or ambiguous characters.
+Alignment has 7 sequences with 5454 columns, 388 distinct patterns
+105 parsimony-informative, 894 singleton sites, 4455 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 3.69549e-05 secs using 56.83% CPU
+   1  An_arabiensis        21.91%    passed     59.10%
+   2  An_coluzzii          23.16%    passed     91.30%
+   3  An_quadriannulatus   33.74%    passed     64.40%
+   4  An_merus             23.71%    passed     81.34%
+   5  An_gambiae           23.40%    passed     93.91%
+   6  An_christyi          25.23%    failed      0.14%
+   7  An_melas             23.63%    passed     92.44%
+****  TOTAL                24.97%  1 sequences failed composition chi2 test (p-value<5%; df=3)
+Subset	Type	Seqs	Sites	Infor	Invar	Model	Name
+1	DNA	7	6208	144	5068		X_dist_01.fasta
+2	DNA	7	7530	234	5899		X_dist_02.fasta
+3	DNA	7	4543	94	3810		X_dist_03.fasta
+4	DNA	7	4872	108	3924		X_dist_04.fasta
+5	DNA	7	5280	157	4289		X_dist_05.fasta
+6	DNA	7	6473	102	5244		X_peri_01.fasta
+7	DNA	7	6604	176	5171		auto_2R_01.fasta
+8	DNA	7	7182	149	5821		auto_2R_02.fasta
+9	DNA	7	6576	117	5285		auto_2R_03.fasta
+10	DNA	7	4774	153	3554		auto_3R_01.fasta
+11	DNA	7	9409	158	7740		auto_3R_02.fasta
+12	DNA	7	6453	212	4900		inv_2La_01.fasta
+13	DNA	7	5856	97	4891		inv_2La_02.fasta
+14	DNA	7	6035	178	4872		inv_3La_01.fasta
+15	DNA	7	5454	105	4455		inv_3La_02.fasta
+Linked 7 total sequences
+
+Creating fast initial parsimony tree by random order stepwise addition...
+0.051 seconds, parsimony score: 20844 (based on 18326 sites)
+BEST NUMBER OF THREADS: 15
+
+Perform fast likelihood tree search using GTR+I+G model...
+Estimate model parameters (epsilon = 5.000)
+Perform nearest neighbor interchange...
+Estimate model parameters (epsilon = 1.000)
+Estimate model parameters (epsilon = 1.000)
+Estimate model parameters (epsilon = 1.000)
+Estimate model parameters (epsilon = 1.000)
+Estimate model parameters (epsilon = 1.000)
+Estimate model parameters (epsilon = 1.000)
+Estimate model parameters (epsilon = 1.000)
+Estimate model parameters (epsilon = 1.000)
+Estimate model parameters (epsilon = 1.000)
+Estimate model parameters (epsilon = 1.000)
+Estimate model parameters (epsilon = 1.000)
+Estimate model parameters (epsilon = 1.000)
+Estimate model parameters (epsilon = 1.000)
+Estimate model parameters (epsilon = 1.000)
+Estimate model parameters (epsilon = 1.000)
+Log-likelihood: -205347.170
+Time for fast ML tree search: 0.031 seconds
+
+NOTE: ModelFinder requires 36 MB RAM!
+Selecting individual models for 15 charsets using BIC...
+ No. Model        Score       TreeLen     Charset
+In ModelFinder: parallelization over partitions
++R3 reinitialized from +R2 with factor 0.500
++R3 reinitialized from +R2 with factor 0.250
++R4 reinitialized from +R3 with factor 0.500
++R4 reinitialized from +R3 with factor 0.250
+   1 HKY+F+G4     18275.853   0.378       X_dist_03.fasta
+   2 HKY+F+G4     23654.077   0.385       inv_3La_02.fasta
+   3 TPM3u+G4     25893.037   0.422       X_dist_01.fasta
+   4 HKY+F+G4     31127.961   0.479       auto_2R_02.fasta
+   5 HKY+G4       21873.944   0.419       X_dist_04.fasta
+   6 HKY+F+G4     31557.462   0.481       auto_2R_01.fasta
+   7 HKY+F+G4     28717.357   0.409       auto_2R_03.fasta
+   8 HKY+F        26234.871   0.407       X_peri_01.fasta
+   9 HKY+F+G4     38446.125   0.401       auto_3R_02.fasta
+  10 HKY+G4       21807.565   0.524       X_dist_05.fasta	0h:0m:0s (0h:0m:0s left)
+  11 HKY+F+G4     23609.401   0.473       inv_2La_02.fasta	0h:0m:0s (0h:0m:0s left)
+  12 HKY+G4       34854.516   0.480       X_dist_02.fasta	0h:0m:0s (0h:0m:0s left)
+  13 HKY+F+R3     25198.746   0.631       auto_3R_01.fasta	0h:0m:0s (0h:0m:0s left)
++I+R4 reinitialized from +I+R3 with factor 0.500
+  14 TPM3u+F+R3   28449.878   0.544       inv_3La_01.fasta	0h:0m:0s (0h:0m:0s left)
+  15 HKY+F+R3     32972.197   0.489       inv_2La_01.fasta	0h:0m:0s (0h:0m:0s left)
+Full partition model BIC score: 413321.881 (LnL: -205299.220  df:238)
+Partition information was printed to tutorial_loci.best_scheme.nex
+Partition information in Raxml format was printed to tutorial_loci.best_scheme
+
+All model information printed to tutorial_loci.model.gz
+CPU time for ModelFinder: 3.311 seconds (0h:0m:3s)
+Wall-clock time for ModelFinder: 0.551 seconds (0h:0m:0s)
+Generating 1000 samples for ultrafast bootstrap (seed: 52439)...
+
+NOTE: 28 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Partition X_peri_01.fasta / Model: HKY+F / df: 15 / LogL: -13051.620
+Partition auto_3R_01.fasta / Model: HKY+F+R3 / df: 19 / LogL: -12518.897
+Partition X_dist_04.fasta / Model: HKY+F+G4 / df: 16 / LogL: -10884.877
+Partition inv_3La_02.fasta / Model: HKY+F+G4 / df: 16 / LogL: -11758.206
+Partition X_dist_03.fasta / Model: HKY+F+G4 / df: 16 / LogL: -9070.554
+Partition X_dist_02.fasta / Model: HKY+F+G4 / df: 16 / LogL: -17365.629
+Partition X_dist_01.fasta / Model: TPM3u+F+G4 / df: 17 / LogL: -12881.990
+Partition inv_2La_02.fasta / Model: HKY+F+G4 / df: 16 / LogL: -11735.299
+Partition auto_3R_02.fasta / Model: HKY+F+G4 / df: 16 / LogL: -19149.867
+Partition auto_2R_01.fasta / Model: HKY+F+G4 / df: 16 / LogL: -15708.367
+Partition auto_2R_03.fasta / Model: HKY+F+G4 / df: 16 / LogL: -14288.349
+Partition X_dist_05.fasta / Model: HKY+F+G4 / df: 16 / LogL: -10846.391
+Partition auto_2R_02.fasta / Model: HKY+F+G4 / df: 16 / LogL: -15492.946
+Partition inv_2La_01.fasta / Model: HKY+F+R3 / df: 19 / LogL: -16402.762
+Partition inv_3La_01.fasta / Model: TPM3u+F+R3 / df: 20 / LogL: -14137.687
+Optimal log-likelihood: -205293.442
+Wrote distance file to... 
+--------------------------------------------------------------------
+|                SEPARATE TREE SEARCH FOR PARTITIONS               |
+--------------------------------------------------------------------
+Partition X_peri_01.fasta / Iterations: 102 / LogL: -13051.6 / Time: 0h:0m:1s
+Partition auto_3R_01.fasta / Iterations: 102 / LogL: -12514.3 / Time: 0h:0m:1s
+Partition X_dist_03.fasta / Iterations: 102 / LogL: -9070.55 / Time: 0h:0m:1s
+Partition X_dist_05.fasta / Iterations: 102 / LogL: -10846.4 / Time: 0h:0m:1s
+Partition inv_3La_01.fasta / Iterations: 102 / LogL: -14137.7 / Time: 0h:0m:1s
+Partition inv_3La_02.fasta / Iterations: 102 / LogL: -11758.2 / Time: 0h:0m:1s
+Partition inv_2La_01.fasta / Iterations: 102 / LogL: -16402.8 / Time: 0h:0m:1s
+Partition auto_3R_02.fasta / Iterations: 102 / LogL: -19149.9 / Time: 0h:0m:1s
+Partition X_dist_04.fasta / Iterations: 102 / LogL: -10884.8 / Time: 0h:0m:1s
+Partition auto_2R_02.fasta / Iterations: 102 / LogL: -15492.9 / Time: 0h:0m:1s
+Partition auto_2R_01.fasta / Iterations: 102 / LogL: -15708.4 / Time: 0h:0m:1s
+Partition inv_2La_02.fasta / Iterations: 102 / LogL: -11735.3 / Time: 0h:0m:1s
+Partition auto_2R_03.fasta / Iterations: 102 / LogL: -14288.3 / Time: 0h:0m:1s
+Partition X_dist_01.fasta / Iterations: 102 / LogL: -12882 / Time: 0h:0m:1s
+Partition X_dist_02.fasta / Iterations: 102 / LogL: -17365.6 / Time: 0h:0m:1s
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+Partition X_peri_01.fasta / Model: HKY+F / df: 15 / LogL: -13051.620
+Partition X_dist_03.fasta / Model: HKY+F+G4 / df: 16 / LogL: -9070.553
+Partition auto_2R_02.fasta / Model: HKY+F+G4 / df: 16 / LogL: -15492.946
+Partition inv_3La_02.fasta / Model: HKY+F+G4 / df: 16 / LogL: -11758.206
+Partition inv_2La_01.fasta / Model: HKY+F+R3 / df: 19 / LogL: -16402.761
+Partition X_dist_05.fasta / Model: HKY+F+G4 / df: 16 / LogL: -10846.391
+Partition auto_2R_03.fasta / Model: HKY+F+G4 / df: 16 / LogL: -14288.348
+Partition auto_3R_02.fasta / Model: HKY+F+G4 / df: 16 / LogL: -19149.866
+Partition auto_2R_01.fasta / Model: HKY+F+G4 / df: 16 / LogL: -15708.367
+Partition X_dist_02.fasta / Model: HKY+F+G4 / df: 16 / LogL: -17365.629
+Partition inv_2La_02.fasta / Model: HKY+F+G4 / df: 16 / LogL: -11735.299
+Partition X_dist_04.fasta / Model: HKY+F+G4 / df: 16 / LogL: -10884.740
+Partition X_dist_01.fasta / Model: TPM3u+F+G4 / df: 17 / LogL: -12881.983
+Partition auto_3R_01.fasta / Model: HKY+F+R3 / df: 19 / LogL: -12514.123
+Partition inv_3La_01.fasta / Model: TPM3u+F+R3 / df: 20 / LogL: -14137.629
+Optimal log-likelihood: -205288.461
+Partition information was printed to tutorial_loci.best_model.nex
+BEST SCORE FOUND : -205288.461
+Creating bootstrap support values...
+Total tree length: 6.938
+
+Total number of iterations: 0
+CPU time used for tree search: 7.786 sec (0h:0m:7s)
+Wall-clock time used for tree search: 0.919 sec (0h:0m:0s)
+Total CPU time used: 11.469 sec (0h:0m:11s)
+Total wall-clock time used: 1.776 sec (0h:0m:1s)
+
+Analysis results written to: 
+  IQ-TREE report:                tutorial_loci.iqtree
+  Maximum-likelihood tree:       tutorial_loci.treefile
+
+Ultrafast bootstrap approximation results written to:
+  Screen log file:               tutorial_loci.log
+
+Date and Time: Wed May 20 15:25:13 2026

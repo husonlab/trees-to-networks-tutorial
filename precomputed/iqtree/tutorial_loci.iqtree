@@ -1,0 +1,158 @@
+IQ-TREE 3.1.2 built May  7 2026
+
+Partition file name: data/alignments
+Type of analysis: ModelFinder + tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 52439
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Hector Banos, Andrew J. Roger,
+Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman, Matthew W. Hahn,
+Gavin Huttley, Robert Lanfear, Bui Quang Minh (2025)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Submitted.
+
+Since you used ModelFinder please also cite: 
+
+Subha Kalyaanamoorthy, Bui Quang Minh, Thomas KF Wong, Arndt von Haeseler,
+and Lars S Jermiin (2017) ModelFinder: Fast model selection for
+accurate phylogenetic estimates. Nature Methods, 14:587–589.
+https://doi.org/10.1038/nmeth.4285
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2018) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol. Biol. Evol., 35:518–522.
+https://doi.org/10.1093/molbev/msx281
+
+Since you used partition models please also cite:
+
+Olga Chernomor, Arndt von Haeseler, and Bui Quang Minh (2016)
+Terrace aware data structure for phylogenomic inference from
+supermatrices. Syst. Biol., 65:997-1008.
+https://doi.org/10.1093/sysbio/syw037
+
+SEQUENCE ALIGNMENT
+------------------
+
+NOTE: Alignment sequence type is auto-detected. If in doubt, specify it via -st option.
+Input data: 7 taxa with 15 partitions and 93249 total sites (0% missing data)
+
+  ID	Type	Seq	Site	Unique	Infor	Invar	Const	Name
+   1	DNA	7	6208	459	144	5068	5068	X_dist_01.fasta
+   2	DNA	7	7530	541	234	5899	5899	X_dist_02.fasta
+   3	DNA	7	4543	267	94	3810	3810	X_dist_03.fasta
+   4	DNA	7	4872	295	108	3924	3924	X_dist_04.fasta
+   5	DNA	7	5280	385	157	4289	4289	X_dist_05.fasta
+   6	DNA	7	6473	335	102	5244	5244	X_peri_01.fasta
+   7	DNA	7	6604	483	176	5171	5171	auto_2R_01.fasta
+   8	DNA	7	7182	423	149	5821	5821	auto_2R_02.fasta
+   9	DNA	7	6576	409	117	5285	5285	auto_2R_03.fasta
+  10	DNA	7	4774	266	153	3554	3554	auto_3R_01.fasta
+  11	DNA	7	9409	465	158	7740	7740	auto_3R_02.fasta
+  12	DNA	7	6453	466	212	4900	4900	inv_2La_01.fasta
+  13	DNA	7	5856	440	97	4891	4891	inv_2La_02.fasta
+  14	DNA	7	6035	377	178	4872	4872	inv_3La_01.fasta
+  15	DNA	7	5454	388	105	4455	4455	inv_3La_02.fasta
+
+Column meanings:
+  Unique: Number of unique site patterns
+  Infor:  Number of parsimony-informative sites
+  Invar:  Number of invariant sites
+  Const:  Number of constant sites (can be subset of invariant sites)
+
+ModelFinder
+-----------
+
+Best-fit model according to BIC: TPM3u+G4:X_dist_01.fasta,HKY+G4:X_dist_02.fasta,HKY+F+G4:X_dist_03.fasta,HKY+G4:X_dist_04.fasta,HKY+G4:X_dist_05.fasta,HKY+F:X_peri_01.fasta,HKY+F+G4:auto_2R_01.fasta,HKY+F+G4:auto_2R_02.fasta,HKY+F+G4:auto_2R_03.fasta,HKY+F+R3:auto_3R_01.fasta,HKY+F+G4:auto_3R_02.fasta,HKY+F+R3:inv_2La_01.fasta,HKY+F+G4:inv_2La_02.fasta,TPM3u+F+R3:inv_3La_01.fasta,HKY+F+G4:inv_3La_02.fasta
+
+List of best-fit models per partition:
+
+  ID  Model                  LogL         AIC      w-AIC        AICc     w-AICc         BIC      w-BIC
+   1  TPM3u+G4         -12885.383   25798.767 + 3.01e-314   25798.835 + 3.24e-314   25893.037 +        0
+   2  HKY+G4           -17369.235   34764.469 + 3.01e-314   34764.518 + 3.24e-314   34854.516 +        0
+   3  HKY+F+G4          -9070.556   18173.111 + 3.01e-314   18173.231 + 3.24e-314   18275.853 +        0
+   4  HKY+G4           -10881.779   21789.558 + 3.01e-314   21789.633 + 3.24e-314   21873.944 +        0
+   5  HKY+G4           -10848.067   21722.133 + 3.01e-314   21722.203 + 3.24e-314   21807.565 +        0
+   6  HKY+F            -13051.620   26133.240 + 3.01e-314   26133.314 + 3.24e-314   26234.871 +        0
+   7  HKY+F+G4         -15708.367   31448.735 + 3.01e-314   31448.817 + 3.24e-314   31557.462 +        0
+   8  HKY+F+G4         -15492.946   31017.892 + 3.01e-314   31017.968 + 3.24e-314   31127.961 +        0
+   9  HKY+F+G4         -14288.349   28608.699 + 3.01e-314   28608.781 + 3.24e-314   28717.357 +        0
+  10  HKY+F+R3         -12518.899   25075.798 + 3.01e-314   25075.958 + 3.24e-314   25198.746 +        0
+  11  HKY+F+G4         -19149.867   38331.734 + 3.01e-314   38331.792 + 3.24e-314   38446.125 +        0
+  12  HKY+F+R3         -16402.762   32843.523 + 3.01e-314   32843.641 + 3.24e-314   32972.197 +        0
+  13  HKY+F+G4         -11735.299   23502.598 + 3.01e-314   23502.691 + 3.24e-314   23609.401 +        0
+  14  TPM3u+F+R3       -14137.886   28315.771 + 3.01e-314   28315.911 + 3.24e-314   28449.878 +        0
+  15  HKY+F+G4         -11758.206   23548.411 + 3.01e-314   23548.511 + 3.24e-314   23654.077 +        0
+
+AIC, w-AIC   : Akaike information criterion scores and weights.
+AICc, w-AICc : Corrected AIC scores and weights.
+BIC, w-BIC   : Bayesian information criterion scores and weights.
+
+Plus signs denote the 95% confidence sets.
+Minus signs denote significant exclusion.
+
+SUBSTITUTION PROCESS
+--------------------
+
+Topology-unlinked partition model with separate substitution models and separate rates across sites
+
+  ID  Model         TreeLen  Parameters
+   1  TPM3u+F+G4     0.4227  TPM3u{0.694736,2.5047}+F{0.237458,0.251257,0.251435,0.25985}+G4{0.823218}
+   2  HKY+F+G4       0.4800  HKY{2.77658}+F{0.252326,0.244256,0.244821,0.258597}+G4{1.07686}
+   3  HKY+F+G4       0.3793  HKY{3.04895}+F{0.229141,0.250321,0.269687,0.250851}+G4{0.548431}
+   4  HKY+F+G4       0.4274  HKY{3.21609}+F{0.245098,0.25689,0.260936,0.237076}+G4{0.362905}
+   5  HKY+F+G4       0.5272  HKY{2.86553}+F{0.250513,0.25441,0.266688,0.228389}+G4{0.832618}
+   6  HKY+F          0.4070  HKY{2.62504}+F{0.272784,0.220548,0.238657,0.268011}
+   7  HKY+F+G4       0.4808  HKY{2.58897}+F{0.269667,0.235683,0.237018,0.257631}+G4{0.605447}
+   8  HKY+F+G4       0.4784  HKY{2.42674}+F{0.301817,0.212357,0.22542,0.260406}+G4{0.947566}
+   9  HKY+F+G4       0.4088  HKY{2.88116}+F{0.279126,0.215606,0.22793,0.277337}+G4{0.702791}
+  10  HKY+F+R3       0.6307  HKY{2.87493}+F{0.242091,0.239076,0.235712,0.283121}+R3{0.509909,0.398946,0.454932,0.568129,0.0351597,15.3049}
+  11  HKY+F+G4       0.4009  HKY{2.51938}+F{0.274247,0.232445,0.225517,0.267791}+G4{0.772462}
+  12  HKY+F+R3       0.4886  HKY{2.64911}+F{0.288793,0.228702,0.207149,0.275356}+R3{0.494586,0.64451,0.460199,0.662424,0.0452148,8.32444}
+  13  HKY+F+G4       0.4723  HKY{2.52612}+F{0.275545,0.2399,0.230544,0.254011}+G4{0.521255}
+  14  TPM3u+F+R3     0.5489  TPM3u{0.593212,2.7585}+F{0.239636,0.282676,0.289472,0.188215}+R3{0.492931,0.133065,0.449142,0.795777,0.0579271,9.96065}
+  15  HKY+F+G4       0.3846  HKY{2.90528}+F{0.248097,0.222998,0.267541,0.261363}+G4{0.650787}
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -205288.4612 (s.e. 605.0946)
+Unconstrained log-likelihood (without tree): -332719.3005
+Number of free parameters (#branches + #model parameters): 250
+Akaike information criterion (AIC) score: 411076.9223
+Corrected Akaike information criterion (AICc) score: 411078.2718
+Bayesian information criterion (BIC) score: 413437.6795
+
+Total tree length (sum of branch lengths): 6.9375
+Sum of internal branch lengths: 0.2811 (4.0524% of tree length)
+
+Tree topologies are unlinked across partitions, thus no drawing will be displayed here
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t tutorial_loci.treefile
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s <alignment.phy> --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s <alignment.phy> --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Wed May 20 15:25:13 2026
+Total CPU time used: 11.47 seconds (0h:0m:11s)
+Total wall-clock time used: 1.79 seconds (0h:0m:1s)
+

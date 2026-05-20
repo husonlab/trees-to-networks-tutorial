@@ -1,0 +1,15 @@
+(An_melas,An_quadriannulatus,(An_arabiensis,(An_merus,((An_gambiae,An_coluzzii),An_christyi))));
+((An_gambiae,An_coluzzii),An_christyi,(An_merus,(An_melas,(An_quadriannulatus,An_arabiensis))));
+(An_melas,(An_quadriannulatus,An_arabiensis),(An_merus,(An_christyi,(An_gambiae,An_coluzzii))));
+(An_merus,((An_christyi,An_melas),(An_arabiensis,An_quadriannulatus)),(An_coluzzii,An_gambiae));
+(An_melas,(An_merus,(An_christyi,(An_gambiae,An_coluzzii))),(An_arabiensis,An_quadriannulatus));
+(An_quadriannulatus,(An_melas,(An_christyi,An_merus)),(An_arabiensis,(An_gambiae,An_coluzzii)));
+(An_gambiae,An_coluzzii,((An_arabiensis,(An_merus,An_quadriannulatus)),(An_christyi,An_melas)));
+((An_merus,An_christyi),An_melas,(An_quadriannulatus,(An_arabiensis,(An_coluzzii,An_gambiae))));
+(An_arabiensis,(An_coluzzii,An_gambiae),((An_christyi,An_quadriannulatus),(An_melas,An_merus)));
+(An_arabiensis,((An_quadriannulatus,(An_merus,(An_christyi,An_melas))),An_coluzzii),An_gambiae);
+(An_quadriannulatus,(An_arabiensis,(An_coluzzii,An_gambiae)),(An_melas,(An_christyi,An_merus)));
+(An_arabiensis,An_coluzzii,(An_gambiae,((An_quadriannulatus,An_melas),(An_christyi,An_merus))));
+(An_christyi,(((An_coluzzii,An_gambiae),An_quadriannulatus),(An_melas,An_arabiensis)),An_merus);
+(An_christyi,(An_melas,((An_gambiae,An_coluzzii),An_arabiensis)),(An_merus,An_quadriannulatus));
+(An_christyi,An_melas,((An_coluzzii,(An_arabiensis,An_gambiae)),(An_quadriannulatus,An_merus)));
