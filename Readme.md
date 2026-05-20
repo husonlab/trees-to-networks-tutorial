@@ -8,7 +8,7 @@
 > registered attendee, please follow [`SETUP.md`](SETUP.md) starting one
 > week before the tutorial.
 
-#From Trees to Networks
+# From Trees to Networks
 
 Tutorial materials for *From Trees to Networks*, originally developed for the
 [ISMB 2026](https://www.iscb.org/ismb2026/) tutorial program [(tutorial IP3)](https://www.iscb.org/ismb2026/whats-happening/tutorials#ip3). The tutorial
