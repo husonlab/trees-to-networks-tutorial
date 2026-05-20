@@ -1,4 +1,14 @@
-# From Trees to Networks
+> [!WARNING]
+> **This repository is under active development for ISMB 2026.**
+>
+> Tutorial: **From Trees to Networks**, scheduled for July-12, 9am-1pm at ISMB 2026.
+>
+> Materials will be finalized by **June 16, 2026**. Until then, files may
+> change without notice and some sections may be incomplete. If you're a
+> registered attendee, please follow [`SETUP.md`](SETUP.md) starting one
+> week before the tutorial.
+
+#From Trees to Networks
 
 Tutorial materials for *From Trees to Networks*, originally developed for the
 [ISMB 2026](https://www.iscb.org/ismb2026/) tutorial program [(tutorial IP3)](https://www.iscb.org/ismb2026/whats-happening/tutorials#ip3). The tutorial
@@ -45,7 +55,8 @@ phylogenetic networks is required.
 
 ```
 trees-to-networks-tutorial/
-├── README.md, SETUP.md, SCHEDULE.md
+├── README.md
+├── doc/                    # documents
 ├── slides/                 # tutorial slide decks (PDF)
 ├── data/                   # 15 per-locus alignments + metadata
 ├── data-prep/              # scripts used to build data/ from raw MAF
@@ -89,7 +100,7 @@ by the phylogenetics community:
 
 - [IQ-TREE](http://www.iqtree.org/) — Minh, Wong, Ly-Trong et al.
 - [BEAST X](https://beast.community) — Baele, Drummond, Suchard, Rambaut, Lemey et al.
-- [ASTER (wASTRAL)](https://github.com/chaoszhang/ASTER) — Zhang, Nielsen, Mirarab
+- [ASTRAL](https://github.com/smirarab/ASTRAL) —  Rabiee, Sayyari, and Mirarab
 - [Tracer](https://github.com/beast-dev/tracer) — Rambaut et al.
 - [SplitsTree](https://software-ab.cs.uni-tuebingen.de/) — Huson lab
 - [PhyloSketch](https://software-ab.cs.uni-tuebingen.de/) — Huson lab
