@@ -121,14 +121,13 @@ Download from
 https://software-ab.cs.uni-tuebingen.de/download/phylosketch2/welcome.html.
 Native installers for macOS, Windows, and Linux are available.
 
-### 8. PhyloFusion
+### 8. PhyloCompare
 
 For inferring networks from gene tree sets and drawing gene trees inside
 networks.
 
-For interactive phylogenetic network sketching.
 Download from
-https://software-ab.cs.uni-tuebingen.de/download/phylofusion/welcome.html.
+https://software-ab.cs.uni-tuebingen.de/PhyloCompare/phylofusion/welcome.html.
 Native installers for macOS, Windows, and Linux are available.
 ---
 
