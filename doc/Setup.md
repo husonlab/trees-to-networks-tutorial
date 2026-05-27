@@ -110,7 +110,9 @@ no installation required — just unzip and run.
 ### 6. SplitsTree
 
 For phylogenetic network visualization. Download from
-https://software-ab.cs.uni-tuebingen.de/download/splitstree6/welcome.html.
+
+> https://github.com/husonlab/splitstree6
+
 Native installers for macOS, Windows, and Linux are available.
 
 
@@ -118,7 +120,9 @@ Native installers for macOS, Windows, and Linux are available.
 
 For interactive phylogenetic network sketching.
 Download from
-https://software-ab.cs.uni-tuebingen.de/download/phylosketch2/welcome.html.
+
+> https://github.com/husonlab/phylosketch2
+
 Native installers for macOS, Windows, and Linux are available.
 
 ### 8. PhyloCompare
@@ -127,7 +131,8 @@ For inferring networks from gene tree sets and drawing gene trees inside
 networks.
 
 Download from
-https://software-ab.cs.uni-tuebingen.de/PhyloCompare/phylofusion/welcome.html.
+> https://github.com/husonlab/phylocompare
+
 Native installers for macOS, Windows, and Linux are available.
 ---
 

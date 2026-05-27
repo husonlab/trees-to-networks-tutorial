@@ -82,9 +82,12 @@ David Bryant, Vincent Moulton, Neighbor-Net: An Agglomerative Method for the Con
 
 Huson DH (2025) Sketch, capture and layout phylogenies. PLOS Computational Biology 21(12): e1013805. https://doi.org/10.1371/journal.pcbi.1013805
 
-### PhyloFusion
+### PhyloFusion and PhyloSketch
 
 Louxin Zhang, Banu Cetinkaya, Daniel H Huson, PhyloFusion—Fast and Easy Fusion of Rooted Phylogenetic Trees into Rooted Phylogenetic Networks, Systematic Biology, Volume 75, Issue 1, January 2026, Pages 88–99, https://doi.org/10.1093/sysbio/syaf049
+
+Daniel H Huson, Banu Cetinkaya and Louxin Zhang, 
+Visualizing agreement and conflict among phylogenetic trees with PhyloCompare, manuscript in preparation.
 
 ### Networks: general references
 

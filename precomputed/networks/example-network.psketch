@@ -1,0 +1,433 @@
+graph [
+	comment "Created by PhyloSketch App on 2026-05-24 12:38:12"
+	directed 1
+	id 1
+	node [
+		id 2
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "50"
+		y "133.3"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 3
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "76.3"
+		y "145.3"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 4
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "102.6"
+		y "133.3"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 5
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "128.9"
+		y "109.3"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 6
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "207.8"
+		y "97.3"
+		label "arabiensis"
+		label_dx "10"
+		label_dy "-7.8"
+	]
+	node [
+		id 7
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "207.8"
+		y "121.3"
+		label "quadriannulatus"
+		label_dx "10"
+		label_dy "-7.8"
+	]
+	node [
+		id 8
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "181.5"
+		y "157.3"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 9
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "207.8"
+		y "145.3"
+		label "gambiae"
+		label_dx "10"
+		label_dy "-7.8"
+	]
+	node [
+		id 10
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "207.8"
+		y "169.3"
+		label "coluzzii"
+		label_dx "10"
+		label_dy "-7.8"
+	]
+	node [
+		id 11
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "207.8"
+		y "193.3"
+		label "melas"
+		label_dx "10"
+		label_dy "-7.8"
+	]
+	node [
+		id 12
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "207.8"
+		y "73.3"
+		label "merus"
+		label_dx "10"
+		label_dy "-7.8"
+	]
+	node [
+		id 13
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "155.2"
+		y "157.3"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 14
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "181.5"
+		y "73.3"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 15
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "181.5"
+		y "121.3"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 28
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "110"
+		y "537.3"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 29
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "95"
+		y "537.3"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 30
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "84"
+		y "554.6"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 31
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "110"
+		y "589.3"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 32
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "140"
+		y "597.3"
+		label "arabiensis"
+		label_dx "-40.1"
+		label_dy "37.4"
+	]
+	node [
+		id 33
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "80"
+		y "597.3"
+		label "quadriannulatus"
+		label_dx "-82.4"
+		label_dy "37.4"
+	]
+	node [
+		id 34
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "71"
+		y "511.3"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 35
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "50"
+		y "537.3"
+		label "gambiae"
+		label_dx "-94.1"
+		label_dy "-12"
+	]
+	node [
+		id 36
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "80"
+		y "477.3"
+		label "coluzzii"
+		label_dx "-48.1"
+		label_dy "-37.4"
+	]
+	node [
+		id 37
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "140"
+		y "477.3"
+		label "melas"
+		label_dx "-15.6"
+		label_dy "-37.4"
+	]
+	node [
+		id 38
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "170"
+		y "537.3"
+		label "merus"
+		label_dx "25.5"
+		label_dy "-7"
+	]
+	node [
+		id 16
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "0"
+		y "0"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 1
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "0"
+		y "0"
+		label_dx "0"
+		label_dy "0"
+	]
+	node [
+		id 39
+		shape "Circle"
+		size "6,6"
+		stroke "null"
+		x "153.9"
+		y "97.3"
+		label_dx "0"
+		label_dy "0"
+	]
+	edge [
+		source 4
+		target 5
+		path "M 102.59928385416666 133.310546875 L 102.59928385416666 109.310546875 L 128.89892578125 109.310546875"
+	]
+	edge [
+		source 8
+		target 9
+		path "M 181.49820963541666 157.310546875 L 181.49820963541666 145.310546875 L 207.7978515625 145.310546875"
+	]
+	edge [
+		source 8
+		target 10
+		path "M 181.49820963541666 157.310546875 L 181.49820963541666 169.310546875 L 207.7978515625 169.310546875"
+	]
+	edge [
+		source 3
+		target 4
+		path "M 76.29964192708333 145.310546875 L 76.29964192708333 133.310546875 L 102.59928385416666 133.310546875"
+	]
+	edge [
+		source 2
+		target 3
+		path "M 50.0 133.310546875 L 50.0 145.310546875 L 76.29964192708333 145.310546875"
+	]
+	edge [
+		source 4
+		target 13
+		path "M 102.59928385416666 133.310546875 L 102.59928385416666 157.310546875 L 155.19856770833331 157.310546875"
+	]
+	edge [
+		source 13
+		target 8
+		path "M 155.19856770833331 157.310546875 L 155.19856770833331 157.310546875 L 181.49820963541666 157.310546875"
+	]
+	edge [
+		source 2
+		target 14
+		path "M 50.0 133.310546875 L 50.0 73.310546875 L 181.49820963541666 73.310546875"
+	]
+	edge [
+		source 14
+		target 12
+		path "M 181.49820963541666 73.310546875 L 181.49820963541666 73.310546875 L 207.7978515625 73.310546875"
+	]
+	edge [
+		source 15
+		target 7
+		path "M 181.49820963541666 121.310546875 L 181.49820963541666 121.310546875 L 207.7978515625 121.310546875"
+	]
+	edge [
+		source 14
+		target 15
+		path "M 181.49820963541666 73.310546875 L 181.49820963541666 121.310546875"
+		stroke "0xff8c00ff"
+		arrow "1"
+	]
+	edge [
+		source 3
+		target 11
+		path "M 76.29964192708333 145.310546875 L 76.29964192708333 193.310546875 L 207.7978515625 193.310546875"
+	]
+	edge [
+		source 5
+		target 15
+		path "M 128.89892578125 109.310546875 L 128.89892578125 121.310546875 L 181.49820963541666 121.310546875"
+	]
+	edge [
+		source 31
+		target 32
+		path "M 110.0 589.2592537192538 A 51.96152422706632 51.96152422706632 0.0 0 0 133.2379000772445 583.7735296466765 L 140.0 597.2977294921875"
+	]
+	edge [
+		source 31
+		target 33
+		path "M 110.0 589.2592537192538 A 51.96152422706632 51.96152422706632 0.0 0 1 86.76209992275551 583.7735296466765 L 80.00000000000001 597.2977294921875"
+	]
+	edge [
+		source 30
+		target 31
+		path "M 84.01923788646684 554.6182375678762 A 31.22498999199197 31.22498999199197 0.0 0 0 110.0 568.5227194841794 L 110.0 589.2592537192538"
+	]
+	edge [
+		source 34
+		target 35
+		path "M 71.02885682970026 511.31696737865434 A 46.837484987987985 46.837484987987985 0.0 0 0 63.162515012012015 537.2977294921875 L 50.0 537.2977294921875"
+	]
+	edge [
+		source 34
+		target 36
+		path "M 71.02885682970026 511.31696737865434 A 46.837484987987985 46.837484987987985 0.0 0 1 89.05363993434658 495.4050093608807 L 79.99999999999997 477.2977294921875"
+	]
+	edge [
+		source 30
+		target 34
+		path "M 84.01923788646684 554.6182375678762 A 31.22498999199197 31.22498999199197 0.0 0 1 84.01923788646685 519.9772214164988 L 71.02885682970026 511.31696737865434"
+	]
+	edge [
+		source 29
+		target 30
+		path "M 95.0 537.2977294921875 A 15.0 15.0 0.0 0 0 97.51924558493234 545.6182324355659 L 84.01923788646684 554.6182375678762"
+	]
+	edge [
+		source 29
+		target 37
+		path "M 95.0 537.2977294921875 A 15.0 15.0 0.0 0 1 116.70820393249937 523.8813216271888 L 140.0 477.2977294921875"
+	]
+	edge [
+		source 28
+		target 29
+		path "M 110.0 537.2977294921875 A 0.0 0.0 0.0 0 1 110.0 537.2977294921875 L 95.0 537.2977294921875"
+	]
+	edge [
+		source 28
+		target 38
+		path "M 110.0 537.2977294921875 A 0.0 0.0 0.0 0 1 110.0 537.2977294921875 L 170.0 537.2977294921875"
+	]
+	edge [
+		source 5
+		target 39
+		path "M 128.89892578125 109.310546875 L 128.89892578125 97.310546875 L 153.89892578125 97.310546875"
+		stroke "0x000000ff"
+		acceptor "1"
+	]
+	edge [
+		source 39
+		target 6
+		path "M 153.89892578125 97.310546875 L 158.89892578125 97.310546875 L 163.89892578125 97.310546875 L 168.89892578125 97.310546875 L 173.89892578125 97.310546875 L 178.89892578125 97.310546875 L 183.89892578125 97.310546875 L 188.89892578125 97.310546875 L 193.89892578125 97.310546875 L 198.89892578125 97.310546875 L 203.89892578125 97.310546875 L 207.7978515625 97.310546875"
+	]
+	edge [
+		source 13
+		target 39
+		path "M 155.2 157.3 L 153.89892578125 97.310546875"
+		stroke "0xff8c00ff"
+		arrow "1"
+	]
+]

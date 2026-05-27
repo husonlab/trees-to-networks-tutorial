@@ -19,7 +19,7 @@ same workflow to their own MAF files.
 3. **`extract_loci.py`** - extract per-locus FASTA alignments from a
    MAF file given a list of coordinates (`loci.tsv`)
 4. **`make_nexus_treeset.py`** - convert IQ-TREE -S mode output into a
-   NEXUS file with named trees (for SplitsTree, PhyloFusion)
+   NEXUS file with named trees (for SplitsTree, PhyloSketch)
 
 ## Source data
 

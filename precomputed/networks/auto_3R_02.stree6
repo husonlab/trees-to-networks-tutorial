@@ -1,0 +1,1941 @@
+#nexus [SplitsTree6]
+
+BEGIN SPLITSTREE6;
+DIMENSIONS nDataNodes=9 nAlgorithms=6;
+PROGRAM version='SplitsTree App (version 6.7.8, built 20 May 2026)';
+WORKFLOW creationDate='1779616750782'; [Sun May 24 11:59:10 CEST 2026]
+END; [SPLITSTREE6]
+
+[
+Methods:
+Analysis was performed using SplitsTree App 6.0.0 (Huson and Bryant 2024).
+The original input consisted of 7 taxa and 7 DNAwithAmbiguityCodes sequences of length 9,409.
+After removal of one taxon, the input consisted of 6 taxa and 6 DNAwithAmbiguityCodes sequences of length 9,409.
+The P Distance method (Hamming 1950) was used (default options) so as to obtain a 6 x 6 distance matrix.
+The Neighbor Net method (Bryant & Moulton 2004, Bryant & Huson 2023) was used (default options) so as to obtain 12 splits, circular.
+The Show Splits method was used (default options) so as to obtain a Split Network visualization.
+
+References:
+Bryant & Huson 2023: D. Bryant and DH Huson, NeighborNet- improved algorithms and implementation. Front. Bioinform. 3, 2023.
+Bryant & Moulton 2004: D. Bryant and V. Moulton. Neighbor-net: An agglomerative method for the construction of phylogenetic networks. Molecular Biology and Evolution, 21(2):255– 265, 2004.
+Hamming 1950: Hamming, Richard W. Error detecting and error correcting codes. Bell System Technical Journal. 29 (2): 147–160. MR 0035935, 1950.
+Huson and Bryant 2024: D.H. Huson and D. Bryant. The SplitsTree App: interactive analysis and visualization using phylogenetic trees and networks. Nature Methods, 2024.
+]
+
+BEGIN TAXA;
+TITLE 'Input Taxa';
+LINK ALGORITHM = 'Input Data Loader';
+DIMENSIONS ntax=7;
+TAXLABELS
+	[1] 'An_coluzzii'
+	[2] 'An_christyi'
+	[3] 'An_gambiae'
+	[4] 'An_quadriannulatus'
+	[5] 'An_arabiensis'
+	[6] 'An_merus'
+	[7] 'An_melas'
+;
+[DISPLAYLABELS;]
+[TAXINFO;]
+END; [TAXA]
+
+BEGIN ALGORITHM;
+TITLE 'Taxa Filter';
+LINK ALGORITHM = 'Input Data Loader';
+NAME 'Taxa Filter';
+OPTIONS
+	DisabledTaxa = 'An_christyi';
+END; [ALGORITHM]
+
+BEGIN TAXA;
+TITLE 'Working Taxa';
+LINK ALGORITHM = 'Taxa Filter';
+DIMENSIONS ntax=6;
+TAXLABELS
+	[1] 'An_coluzzii'
+	[2] 'An_gambiae'
+	[3] 'An_quadriannulatus'
+	[4] 'An_arabiensis'
+	[5] 'An_merus'
+	[6] 'An_melas'
+;
+[DISPLAYLABELS;]
+[TAXINFO;]
+END; [TAXA]
+
+BEGIN CHARACTERS;
+TITLE 'Input Characters';
+LINK ALGORITHM = 'Input Data Loader';
+DIMENSIONS ntax=7 nchar=9409;
+FORMAT
+	datatype='DNAwithAmbiguityCodes' missing=? gap=- symbols="acgnt" labels=left transpose=no interleave=yes;
+MATRIX
+An_coluzzii        ggtgttaatcttacgaaattgatgctgccggtcg-gccagcctctt-aagg-tgccc-ttttttcggt--gtctctcttc
+An_christyi        ggtgttaatcttacgaaattgatgctgccggctgccccaatctcat-aaggttgccc-ttttttc---------------
+An_gambiae         ggtgttaatcttacgaaattgatgctgccggtcg-gctagcctctt-aagg-tgccc-ttttttcggt--gtctctcttc
+An_quadriannulatus ggtgttaatcttacgaaattgatgctgccggtcg-gccagcctcta-aagg-tgccc-ttttttcgga--gtctctcttc
+An_arabiensis      ggtgttaatcttacgaaattgatgctgccggtcg-gccagcctctt-aagg-tgccc-ttttttcggt--gtctctcttt
+An_merus           ggtgttaatcttacgaaattgatgctgccggtcg-gccagcctctt-aagg-tgccctttttttcggt--gtctctcttc
+An_melas           ggtgttaatcttacgaaattgatgctgccggtcg-gccagcctctt-aagt-tgccctttttttcggt--gtctctcttc
+
+An_coluzzii        ttgccgcctcaacacccaggacaggaagtgacgctgattacgcctggagcagca-------gcatcccatacccgggcag
+An_christyi        -tgccgc-----cacactggacaggaagtgacgctgattacgcctggagcagca-----------tccat-------cgg
+An_gambiae         ttgccgcctcaacacccaggacaggaagtgacgctgattacgcctggagcagca-------gcatcccatacccgggcag
+An_quadriannulatus ttgccgcctcaacacccaggacaggaagtgacgctgattacgcctggagcagca-------gcatcccatacccgggcgg
+An_arabiensis      ttgccgcctcaacacccaggacaggaagtgacgctgattacgcctggagcagca-------gcatcccatacccgggcgg
+An_merus           ttgccgcctgaacacccaggacaggaagtgacgctgattacgcctggagctgca-------gcatcccatacccgggcgg
+An_melas           ttgccgcctcaacacccaggacaggaagtgacgctgattacgcctggagcagca-------gcatcccatacccgggcgg
+
+An_coluzzii        cagtgcagtgtcgtc-gtcctccttatcgtttccccttttt----cttcagcc---------g--agccagattcggaca
+An_christyi        t--tgcggtgtcgtc-gtccaccttatcgtttcccctttttcaaaccgcggcc---------gctcgatagtttcgg---
+An_gambiae         cagtgcagtgtcgtc-gtccaccttatcgtttccccttttt----cttcagcc---------g--agccagattcggaca
+An_quadriannulatus cagtgcagtgtcgtc-gtccaccttatcgtttccccttttt----cttcagcc---------g--agccagatttgg---
+An_arabiensis      cagtgcagtgtcgtc-gtccaccttatcgtttccccttttt----cttcagcc---------g--agccagattcgg---
+An_merus           cagtgcagtgtcgtc-gtccaccttatcgtttccccttttt----cttcagcc---------g--agccagattcgg---
+An_melas           cagtgcagtgtcgtc-gtccaccttatcgtttccccttttt----cttcaaac---------g--agccagattcgg---
+
+An_coluzzii        catacacacacacacacaca------------------------------------------------------------
+An_christyi        --------------------------------------------------------------------------------
+An_gambiae         catacacacacacacacaca------------------------------------------------------------
+An_quadriannulatus ---------------------------------------------acacatacacnnnnnnnnnnnnnnnnnnnnnnnnn
+An_arabiensis      --------------------------------------------------------------------------------
+An_merus           --------------------------------------------------------------------------------
+An_melas           --------------------------------------------------------------------------------
+
+An_coluzzii        --------------------------------------------a--------------------atggtt-ggagaaaa
+An_christyi        --------------------------------------------g-------gccccaaaacag-atgaat-ggagaaaa
+An_gambiae         --------------------------------------------a--------------------atggtt-ggagaaaa
+An_quadriannulatus nnnnnnnnnnnnnnnnnnnnnnnacacatacacacacacacacta--------------------atggtt-agagaaaa
+An_arabiensis      --------------------------------------------a--cacatacacacacacaa-atggtt-ggagaaaa
+An_merus           --------------------------------------------a--cacatacacacacacaa-atggtt-ggagaaaa
+An_melas           --------------------------------------------a--------cacacacacaa-atggct-ggagaaaa
+
+An_coluzzii        ttatcccacgggtggggtaacgcccgc--ga------------------------------gcatca-------------
+An_christyi        ttgtcccacga-----gtaacgcccgc--gaacgcaccgggaccgcttggttttcggatgggcaaaa-------------
+An_gambiae         ttatcccacgggtggggtaacgcccgc--ga------------------------------gcatca-------------
+An_quadriannulatus ttatcccacgggtggggtaacgcccgc--ga------------------------------gcatca-------------
+An_arabiensis      ttatcccacgggtggggtaacgcccgc--ga------------------------------gcatca-------------
+An_merus           ttatcccacgggtggggtaacgcccgc--ga------------------------------gcatca-------------
+An_melas           ttatcccacgggtggggtaacgcccgc--ga------------------------------gcatca-------------
+
+An_coluzzii        ------------ccccaaaatgtcaccgattcccttcagcacc---ggaatc-gcccgccagtccg--cccgccgattgg
+An_christyi        ------------gcccaaaatgtcaccgattccctccagcacc---ggaatc-gcccg-----------ccgacgatttg
+An_gambiae         ------------ccccaaaatgtcaccgattccctctagcacc---ggaatc-gcccgccagtccg--cccgccgattgg
+An_quadriannulatus ------------ccccaaaatgtcaccgattccctccagcacc---ggaatc-gcccgccagtccg--cccgccgattgg
+An_arabiensis      ------------ccccaaaatgtcaccgattccctccagcacc---ggaatc-gcccgccagtccg--cccgccgattgg
+An_merus           ------------ccccaaaatgtcaccgattccctccagcacc---ggaatc-gcccgccagtccg--cccggcgattgg
+An_melas           ------------ccccaaaatgtcaccgattccctccagcacc---ggaatcggcccgccagtccg--cccgccgattgg
+
+An_coluzzii        cggagacaccg--gccattaaaatatgttatatg----gtggagtttagcgcggtgtgtgcgcgcgcgattctgtcatca
+An_christyi        cgtg---accc--accattaaaatatgttatatg----gtagagtttatcg----------gtgtgcgattccgtcatca
+An_gambiae         cggagacaccg--gccattaaaatatgttatatg----gtggagtttagcgcggtgtgtgcgcgcgcgattctgtcatca
+An_quadriannulatus cggagacaccg--gccattaaaatatgttatatg----gtggagtttagcgcggtgtgtgcgcgcgcgattctgtcatca
+An_arabiensis      cggagacactg--gccattaaaatatgttatatg----gtggagtttagcgcggtgtgtgcgcgcgcgattctgtcatca
+An_merus           cggagacaccg--gccattaaaatatgttatatg----gtagagtttagcgcggtgtgtgcgcgcgcgattctgtcatca
+An_melas           cggagacaccg--gccattaaaatatgttatatg----gtggagtttagcgcggtgtgtgcgcgcgcgattctgtcatca
+
+An_coluzzii        aaaga--gtgtcggggtcga--------cgg-----gatgtgggaatggacgaaaatcacaaaagacgcaaacacacaca
+An_christyi        aaagagtgtgttagggaccatcgtccaccgg-----gatatgggaatggacaaaaat-----------------------
+An_gambiae         aaaga--gtgtcggggtcga--------cgg-----gatgtgggaatggacgaaaatcacaaaagacgcaaacacacaca
+An_quadriannulatus aaaga--gtgtcggggtcga--------cgg-----gatgtgggaatggacgaaaat-----------------------
+An_arabiensis      aaaga--gtgtcggggtcga--------cgg-----gatgtgggaatggacgaaaat-----------------------
+An_merus           aaaga--gtgtcggggtcga--------cgg-----gatgtgggaatggacgaaaat-----------------------
+An_melas           aaaga--gtgtcggggtcga--------cgg-----gatgtgggaatggacgaaaat-----------------------
+
+An_coluzzii        cacacac-------------------------------------------------------------------------
+An_christyi        ------------------------------------------------------------------ca-----caaaaga
+An_gambiae         cacacac-------------------------------------------------------------------------
+An_quadriannulatus --------------------------------------------------------------------------------
+An_arabiensis      --------------------------------------------------------------------------------
+An_merus           ------------------------------------------------------------------ca-----caaaaga
+An_melas           ------------------------------------------------------------------ca-----caaaaga
+
+An_coluzzii        --------------------------------------------------------------------------------
+An_christyi        cgtac---------------------------------------------------------------------------
+An_gambiae         --------------------------------------------------------------------------------
+An_quadriannulatus -------------------------------------------------------------------------------c
+An_arabiensis      -----------------------------------------------cacaaaagacgcaaacacacacacacacacac-
+An_merus           cgcaa----------------------------acacacacacacac---------------------------------
+An_melas           cgcaannacacacacacacacacacacacacac-----------------------------------------------
+
+An_coluzzii        -------------------------------ggtcgcacgatggattgcaatctccagcgcgcgaccgcaagaaaatggc
+An_christyi        -------------------------------gcttg--cgatggattgcaatcttt---------------gaaaatggc
+An_gambiae         -------------------------------ggtcgcacgatggattgcaatctccagcgcgcgaccgcaagaaaatggc
+An_quadriannulatus acaaaagacgcaaacacacacacacacacnnggtcgcacgatggattgcaatctccagcgcgcgaccgcaagaaaatggc
+An_arabiensis      -------------------------------ggtcgcacgatggattgcaatctccagcgcgcgaccgcaagaaaatggc
+An_merus           -------------------------------ggtcgtacgatggattgcaatctccagcgcgcgaccgcaagaaaatggc
+An_melas           -------------------------------ggtcgcacgatggattgcaatctccagcgcgcgaccgcaagaaaatggc
+
+An_coluzzii        c-tttttggggcggatgcgggagtgagatatg-ttgaaggtgttccccttgccccgcactgtcctatccacgcgcgatgg
+An_christyi        t-tttttggggcggatgcgggagtgagatatg-ttgaaggtgttccccacgcccttcctcgggt--tccgggctagagag
+An_gambiae         c-tttttggggcggatgcgggagtgagatatg-ttgaaggtgttccccttgccccgcactgtcctatccacgcgcgatgg
+An_quadriannulatus cttttttggggcggatgcgggagtgagatatg-ttgaaggtgttccccttgccccgcactgtgctatcctcgcgcgatgg
+An_arabiensis      cttttttggggcggatgcgggagtgagatatg-ttgaaggtgttccccttgccccacactgtcctatccacgcgcgatgg
+An_merus           cttttttggggcggatgcgggagtgagatatg-ctgaaggtgttccccttgccccacactgtcctatccacgcgcgatgg
+An_melas           cttttttggggcggatgcgggagtgagatatg-ttgaaggtgttccccttgccccacactgtcctatccacgcgcgatgg
+
+An_coluzzii        caatcatcatcgtcgtacctcaaaaa-a-tctatgctgaagcgcgcattgtctc-tttgattccatcagctttgtcggat
+An_christyi        -----atcatcatcatacctcaaaaa-aggctttgctacagcgcat-ttttctc-tttgattccatcaactttgtcggat
+An_gambiae         caatcatcatcgtcgtacctcaaaaa-a-tctatgctgaagcgcgcattgtctc-tttgattccatcagctttgtcggat
+An_quadriannulatus caatcatcatcgtcgtacctcaaaaa-a-tctatgctgaagcgcgcattgtctc-tttgattccatcagctttgtcggat
+An_arabiensis      caatcatcatcgtcgtacctcaaaaa-a-tctatgctgaagcgcgcattgtctc-tttgattccatcagctttgtcggat
+An_merus           caatcatcatcgtcgtacctcaaaaa-a-tctatgctgaagcgcgcattgtctc-tttgattccatcagctttgtcggat
+An_melas           caatcatcatcgtcgtacctcaaaaa-a-tctatgctgaagcgtgcattgtctc-tttgattccatcagctttgtcggat
+
+An_coluzzii        ggtgga-gactgaggaaaaaaaagacgagga-ccatacgagagaccaaaggcggattgataaattgttatcgtttccgga
+An_christyi        ---aca-gggtgagagaaataaaaaaaag---ccatacgag----ccaaggcggattgataaattgttatcgtttccgga
+An_gambiae         ggtgga-gactgaggaaaaaaaagacgagga-ccatacgagagaccaaaggcggattgataaattgttatcgtttccgga
+An_quadriannulatus ggtgga-gagtgaggaaaaaaa--acgaggagacatacgagagaccaaaggcggattgataaattgttatcgtttccgga
+An_arabiensis      ggtgga-gagtgagg-aaaaaaanacgagga-ccatacgagagaccaaaggcggattgataaattgttatcgtttccgga
+An_merus           ggcgga-gagtgaggaaaaaaaagacgagga-ccatacgagagaccaaaggcggattgataaattgttatcgtttccgga
+An_melas           ggcggaggagtgaggaaaaaaaagacgagga-ccatacgagagaccaaaggcggattgataaattgttatcgtttccgga
+
+An_coluzzii        ggatgtgagcatgt--cgc----gcctg---------ttgtcccaca------tgcccata-------------------
+An_christyi        ggatgtgaacatgtcgcgc----gcctg-gccatg-tctgtccctta------tgccccaa-------------------
+An_gambiae         ggatgtgagcatgt--cgc----gcctg---------ttgtcccaca------tgcccata-------------------
+An_quadriannulatus ggatgtgagcatgt--cgc----gcctg---------ttgtcccaca------tgccccta-------------------
+An_arabiensis      ggatgtgagcatgt--cgc----gcctg---------ttgtcccata------tgcccctagtctgtatgtgtgtgtgtg
+An_merus           ggatgtgagcatgt--cgc----gcctg---------ttgtcc-------------------------------------
+An_melas           ggatgtgagcatgt--cgc----gcctg---------ttgtcccaca------tgccccta-------------------
+
+An_coluzzii        --------gtc-tg--tatatgtgtgtgtgtg-t----------------------------------------g-----
+An_christyi        -----------------aactgtgtgaatggt-a----------------------------------------a-----
+An_gambiae         --------gtc-tg--tatatgtgtgtgtgtg-t----------------------------------------g-----
+An_quadriannulatus --------gtc-tgtatatgtgtgtgtgtgtg-t----------------------------------------g-----
+An_arabiensis      tgtgggtg------------------------------------------------------------------------
+An_merus           ----------------------------------cacatgcccctagtctgtatgtgtgtgtatgtgtgtgtgtg-----
+An_melas           -------------gtctgtatgtgtgtgtgtg-t----------------------------------------g-----
+
+An_coluzzii        ----------------------------------------------------------------------------gggt
+An_christyi        ----------------------------------------------------------------------------tggt
+An_gambiae         ----------------------------------------------------------------------------gggt
+An_quadriannulatus ----------------------------------------------------------------------------gggt
+An_arabiensis      ----------------------------------------------------------------------------gggt
+An_merus           ----------------------------------------------------------------------------gggt
+An_melas           ----------------------------------------------------------------------------gggt
+
+An_coluzzii        g-gaccattt--aagacattggggcaataaaaa--------agaaaatcataagg-ttgaaatagtcaaaccgtca----
+An_christyi        gtgcccagct--aagacatt-gggcaataaaaa--------agaaaatcatacga-ttgaaatagtcaaaccgtca----
+An_gambiae         g-gaccattt--aagacattggggcaataaaaa--------agaaaatcataagg-ttgaaatagtcaaaccgtca----
+An_quadriannulatus g-gaccattt--aagacattggggcaataaaaa--------agaaaatcataagg-ttgaaatagtcaaaccgtca----
+An_arabiensis      g-gaccattt--aagacattggggcaataaaaa--------agaaaatcataagg-ttgaaatagtcaaaccgtca----
+An_merus           g-gaccattt--aagacattggggcaataaaaa--------agaaaatcataagg-ttgaaatagtcaaaccgtca----
+An_melas           g-gaccattt--aagacattggggcaataaaaa--------agaaaatcataagg-ttgaaatagtcaaaccgtca----
+
+An_coluzzii        ccataatgagatcgatgggacggctcgccaacagcatgctgatgtgc--acatttcagtgttcaactttttggggaataa
+An_christyi        ccataatgagatcgatgggacgaatcgccgacagcatgttgatgtac--gtatttcaacgttcgac-------ggtggaa
+An_gambiae         ccataatgagatcgatgggacggctcgccaacagcatgttgatgtgc--acatttcagtgttcaactttttggggaataa
+An_quadriannulatus ccataatgagatcgatgggacggctcgccgacagcatgctgatgtgc--acatttcagtgttcaactttttggagaataa
+An_arabiensis      ccataatgagatcgatgggacggcttgccgacagcatgctgatgtgc--acatttcagtgttcaactttttggagaataa
+An_merus           ccataatgagatcgatgggacggctcgccgacagcatgctgatgtgc--acatttcagtgttcaactttttggagaataa
+An_melas           ccataatgagatcgatgggacggctcgccgacagcatgctgatgtgc--acatttcagtgttcaactttttggagaataa
+
+An_coluzzii        atattctgaatttgtaccgaaa---acgcatggt-c---tacatcga------aactgtgcttctaattgtatc------
+An_christyi        ttgttctgaa-ctataacaagc---gtgctaaat-ccattccatcga------tgtgatggttctaaccgtacctatttt
+An_gambiae         atattctgaatttgtaccgaaa---acgcatggt-c---tacatcga------aactgtgcttctaattgtatc------
+An_quadriannulatus atattccgaatttgtaccgaaa---acgcttgat-c---ttcatcga------aactgtgcttctaattgtatc------
+An_arabiensis      atattctaaatttgtacctaaa---acgcatggt-c---ttcatcga------aactgtgcttctaattgtatc------
+An_merus           gtattctgaatttgtaccgaaa---acgcttggt-c---ttcatcaa------aactgtgcttctaattgtatc------
+An_melas           ataatctgcatttgtaccgaaa---acgcttggt-c---ttcatcga------aactgtgcttctaattgtatc------
+
+An_coluzzii        ------------------------------a------------------------atttgaataattattcccattttac
+An_christyi        taccaattatcttttaacgtcattttgtata------------------------agttgaataaatttccccagttgaa
+An_gambiae         ------------------------------a------------------------atttgaataattattcccattttac
+An_quadriannulatus ------------------------------a------------------------atttgaataattattcccatttcac
+An_arabiensis      ------------------------------a------------------------atttgaataattattcccattttac
+An_merus           ------------------------------a------------------------atttgaataattattcacattttac
+An_melas           ------------------------------a------------------------atttgaataattattcccattttac
+
+An_coluzzii        tggaaatttgt--tagttgcatttcac--caccgcacaag-ttg------------------------------------
+An_christyi        tgt--attttt--tagaaacatttgta--catggtactagaagg------------------------------------
+An_gambiae         tggaaatttgt--tagttgcatttcac--caccgcacaag-ttg------------------------------------
+An_quadriannulatus tggaaatttgt--tagttgcatttcac--caccgcacaag-ttg------------------------------------
+An_arabiensis      tggaaatttgt--tacttgcatttcac--caccgcacaag-ttg------------------------------------
+An_merus           tggaaattttt--tagttgcatttcac--caccgcacaag-ttg------------------------------------
+An_melas           tggaaatttgt--tagttgcatttcac--caccgcgcaag-ttg------------------------------------
+
+An_coluzzii        --------------------------------------------------------------------------------
+An_christyi        --------------------------------------------------------------------------------
+An_gambiae         --------------------------------------------------------------------------------
+An_quadriannulatus --------------------------------------------------------------------------------
+An_arabiensis      --------------------------------------------------------------------------------
+An_merus           --------------------------------------------------------------------------------
+An_melas           --------------------------------------------------------------------------------
+
+An_coluzzii        --------accagggtttgtttattaatagttactgtcggctagatataacaaaaaaacagaaactg-cccgacactcaa
+An_christyi        --------accaagaattatatgttaattggttttggcgattagtttc----ataaaccagtaactg-cgcttcaccaaa
+An_gambiae         --------accagggtttgtttattaatagttactgtcggctagatataacaaaaaaacagaaactg-cccgacactcaa
+An_quadriannulatus --------accagggtttatttattaatagttactgtcggctagatataac-aaaaaacagaaactgccccgacactcaa
+An_arabiensis      --------accagggtttatttattaatagttactgccggctagatata---aaaaaacagaaactgccccgacactcaa
+An_merus           --------accagggtttatttatttatagctactgtcggctagatataac-aaaaaacagaaactgccccgacactcaa
+An_melas           --------accagggtttatttattaatagttactgtcggctagatataacaaaaaaacagaaactgccccgacactcaa
+
+An_coluzzii        atgtggaaccggaaatggactcgtcgctactttcaaaatcccacatgtggtcgcggtggtcaagattttttgt-tgtggc
+An_christyi        actc---accggaaatgggttcgtaaccattttcaaaaatccacatgtggtagcgttggtcaagattttttttctatagc
+An_gambiae         atgtggaaccggaaatggactcgtcgctactttcaaaatcccacatgtggtcgcggtggtcaagattttttgt-tgtggc
+An_quadriannulatus atgtggaaccggaaatggactcgtcgctactttcaaaatcccacatgtggtcgcggtggtcaagattttttgt-tgtggc
+An_arabiensis      atgtggaaccggaaatggactcgtcgctactttcaaaatcccacatgtggtcgcggtggtcaagattttttgt-tgtggc
+An_merus           atttggaaccggaaatggactcgtcgctactttcaaaatcccacatgtggtcgcggtggtcaagattttttgt-tgtggc
+An_melas           atgtggaaccggaaatggactcgtcgctactttcaaaatcccacatgtggtcgcggtggtcaagattttttgt-tgtggc
+
+An_coluzzii        tcaagg---agcgattaatatgtgtagtggtggtgatgacattttttttt--------------gccctcagcaggagtt
+An_christyi        tctcg--------------------agtggtggtgatgacatatttttacaaaattcattttttgcgctttgcaggagtt
+An_gambiae         tcaagg---agcgattaatatgtgtagtggtggtgatgacattttttttt--------------gccctcagcaggagtt
+An_quadriannulatus tcaagg---agcgattaatatgtgtagtggtggtgatgacattttttttt--------------gcgctcagcaggagtt
+An_arabiensis      tcaagg---agcgattaatatgtgtagtggtggtgatgacattttttttt-----------tttgcgctcagcaggagtt
+An_merus           tcaagg---aacgattaatatgtgtagtggtggtgatgacattttttttt--------------gcgctcagcaggagtt
+An_melas           tcaagt---agcgattaatatgtgtagtggtggtgatgacattttttttt--------------gcgctcagcaggagtt
+
+An_coluzzii        ccgaaagtgtaccccgtgcctcaattcccaccagatgttgcgca-gtggatagaaatggag--gaaaacaaactcacaaa
+An_christyi        ccgaaagggctaaccttccctcaattcgcaccagatgttgtgct-atgtcttcaaatagggcaaaaaacgaaattaaaca
+An_gambiae         ccgaaagtgtaccccgtgcctcaattcccaccagatgttgcgca-gtggctagaaatggag--gaaaacaaactcaaaaa
+An_quadriannulatus ccgaaagtgtaccccgtgcctcaattcccaccagatgttgcgca-gtggctagaaatggag--gaaaacaaactcacaaa
+An_arabiensis      ccgaaagtgtaccccgtgcctcaatttccaccagatgttgcgca-gtggatagaaatggag--gaaaacaaactcacaaa
+An_merus           ccgaaagtgtaccccgtgcctcaattcccaccagatgttgcact-gtggctaggaatggag--gaaaacaaactcgcaaa
+An_melas           ccaaaagtgtacaccgtgcctcaattcccaccagatgttacgca-gtggctagaaatggag--gaaaacaaactccaaaa
+
+An_coluzzii        ga--------ttattaaaatgagcgtgtatgagctctacgatgc--ttctaaaacctttaaacttacacgtggtggcatt
+An_christyi        gactatttttttattaaatatagcatgaatgagat-------------------ccgttagttt----------------
+An_gambiae         ga--------ttattaaaatgagtgtgtatgagctctacgatgc--ttctaaaacctttaaacttacacgtgatggcatt
+An_quadriannulatus ga--------ttattaaaatgagtgtgtatgagctctagtatgc--ttctaaaacctttaaacttacacgtggtggcatt
+An_arabiensis      ta--------ttattaaaatgagcgtgtatgagctctacgatgc--ttctaaaacctttaaacttacacgtggtggcatt
+An_merus           ga--------ttattaaaatgagcgtgtatgagctctacgatgc--ttctaaaacctttaaacttacacgtggtggcatt
+An_melas           ga--------ttattaaaatgagcgtgtatgagctctacgatgc--ttctaaaacctttaaacttacacgtggtggcatt
+
+An_coluzzii        gacatggcgtttctacaataaagcttatttatcacaatataacacaaaatcatgtgg-taagatcgatgatgcatcataa
+An_christyi        -------cgttt------------ttatttttctcaac----taca-----atttcg-taaaagcgcgacttctaaatga
+An_gambiae         gacatggcgtttctacaataaagcttatttatcacaatataacacaaaatcatgtgg-taagatcgatgatgcatcataa
+An_quadriannulatus gacatggcatttctacaatanngcttatttatcacaatataacacaaaatcatgtgg-gaagatcgatgatgcat-----
+An_arabiensis      gacatggcgtttctacaataaagcttatttatcacaatataacacaaaatcatgtgg-taagatc---gatgaatcataa
+An_merus           gacgtggcgtttctgcaataaagcttctttatcaaaatataacacaaaatcatgtgg-taagatcgatgatgcatcataa
+An_melas           tacatggcgtttctgcaatgaagcttatttatcacaatattacacaaaatcatgtgg-taagatcgatgatgcatcataa
+
+An_coluzzii        cacgagtgttacagcacgttaaaaagcagcacaccacacctcacgatggaaatgcttcgctgataatgttcgc-------
+An_christyi        cgt-----ctccagcatttttataagaatccttcc-----------tttaattgtttttatgatatcgttcgcaacagtc
+An_gambiae         cacgagtgttacagcacgttaaaaagcagcacaccacacctcacgatggaaatgcttcgctgataatgttcgc-------
+An_quadriannulatus ---gagtgttacagcacgttaaaaagcagcacaccacacctcacgatggaaatgcttcgctgataatgttcgc-------
+An_arabiensis      catgagtgttacagcacgttaaaaagcagcacaccacacctcacgatggaaatgcttcgctgataatgttcgc-------
+An_merus           catgagtgttacagcacgttaaaaagcagcacaccacacctcatgatcgaaatgcttcgctgataatgttcgc-------
+An_melas           catgagtgttacagcacgttaaaaagcagcacaccacacctcacgatagaaatgcttcgctgataatgttcgc-------
+
+An_coluzzii        ------------tcg-----------aactttac-caacgac-atgagcgcattatgaatagaacatg-ccgaatatgtt
+An_christyi        gctagtctgctatcgaacaaaataaaaactatacttaaagacaatcagcgcagtatgaatagaacatg-ccgaatatgtt
+An_gambiae         ------------tcg-----------aactttac-caacgac-atgagcgcattatgaatagaacatg-ccgaatatgtt
+An_quadriannulatus ------------tcg-----------aactttac-caacgac-atgagcgcattatgaatagaacatg-ccgaatatgtt
+An_arabiensis      ------------tcg-----------aactttac-caacgac-atgagcgcattatgaatagaacatg-ccgaatatgtt
+An_merus           ------------tcg-----------aactttac-caacaac-atgagcgtattatgaatagaacatg-ctgaatatgtt
+An_melas           ------------ttg-----------aattttac-caacgac-atgagcgcattatgaatagaacatg-ccgaatatgtt
+
+An_coluzzii        acactctcgagcttgcaaaatggccgttaa-gcacgaggccggcc-aaataaacgtgttacgagtgacacatattttatg
+An_christyi        acactctcgaattggcaaaatggccgttaa--cacgaggccggcc-aaataaacgtgttacgagtgacacatattttatg
+An_gambiae         acactctcgagcttgcaaaatggccgttaa-gcacgaggccggcc-aaataaacgtgttacgagtgacacatattttatg
+An_quadriannulatus acactctcgagcttgcaaaatggccgttaa-gcacgaggccggcc-aaataaacgtgttacgagtgacacatattttatg
+An_arabiensis      acactctcgagcttgcaaaatggccgttaa-gcacgaggccggcc-aaataaacgtgttacgagtgacacatattttatg
+An_merus           acactctcgagcttgcaaaatggccgttaa-gcacgaggccggcc-aaataaacgtgttacgagtgacacatattttatg
+An_melas           acactctcgagcttgcaaaatggccgttaa-gcacgaggccggcc-aaataaacgtgttacgagtgacacatattttatg
+
+An_coluzzii        cgcatacatcattgcgttgatc-----------------ttgcctactgctgcgcttgctcatcccaccg----cacatt
+An_christyi        cgcatacatcattgcgttgatc-----------------ttgccttttgccccttttttttgtttcgtcc----gacggt
+An_gambiae         cgcatacatcattgcgttgatc-----------------ttgcctactgctgcgcttgctcatcccaccg----cacatt
+An_quadriannulatus cgcatacatcattgcgttgatc-----------------ttgcccactgctgcgcttgctcatcccaccg----cacatt
+An_arabiensis      cgcatacatcattgcgttgatc-----------------ttgcctactgctgcgcttgctcatcccaccg----cacatt
+An_merus           cgcatacatcattgcgttgatc-----------------ttgcctactgctgcgcttgctcatcccaccc----cacatt
+An_melas           cgcatacatcattgcgttgatc-----------------ttgcctactgctgcgcctgctcatcccaccg----cacatt
+
+An_coluzzii        ccc-----------aatttgcccagcataccaggggacac--gcggacatggacga-catcacttgataaccaaagaaaa
+An_christyi        atccattgcgatataatattcccaatttccctgtgtgcgctagcggacacgaatggccatcacttgataaccaaacaaaa
+An_gambiae         ccc-----------aatttgcccagcataccaggggacac--gcggacatggacga-catcacttgataaccaaagaaaa
+An_quadriannulatus ccc-----------aatttgcccagcataccaggggacac--gcggacatggacga-catcacttgataacaaaagaaaa
+An_arabiensis      ccc-----------aatttgcccagcataccaggggacac--gcggacatggacga-catcacttgataaccaaagaaaa
+An_merus           ccc-----------aatttgcccagcataccaggggacac--gcggacatggacga-catcacttgat------------
+An_melas           ccc-----------aatttgcccagcataccaggggactc--gcggacatgggcga-catcacttgataaccaaagaaaa
+
+An_coluzzii        catc-------acaaaaacaaaacgataaaaa------------------------------------gcggagcacatt
+An_christyi        tagcctaaaaaaaagaaacaaaaccataagaa------------------------------------gtt--gcacatt
+An_gambiae         catc-------acaaaaacaaaacgataaaaa------------------------------------gcggagcacatt
+An_quadriannulatus catc-------acaaaaacaaaacgataaaaa------------------------------------gcggggcacatt
+An_arabiensis      catc-------acaaaaacaaaacgataaaaa------------------------------------gcggagcacatt
+An_merus           --------------------------------aaccaaagaaaacatcacaaaacaaaacgataaaaagcggagcacatt
+An_melas           catc-------acaaaaacaaaacgataaaaa------------------------------------gcggagcacatt
+
+An_coluzzii        gctcaccctccgtctccgtctcccccaattcgctgtatgcaaatgtaaaccccacggaatg-gtgcg------ccaaagc
+An_christyi        gttga---tccgtctcttcct-------ttcgctgtatgcaaatg------ccttggaaca-gtgcg------cctaagc
+An_gambiae         gctcaccctccgtctccgtctcccccaatttgctgtatgcaaatgtaaaccccaccgaatg-gtgcg------ccaaagc
+An_quadriannulatus gctcaccctccgtctccgtctccnnnaatttgctgtatgcaaatgtacaccccacggaatg-gtgcg------ccaaagc
+An_arabiensis      gctcaccctccgtctccgtctcccccaatttgctgtatgcaaatgtaaaccccacggaatg-gtgcg------ccaaagc
+An_merus           gctcaccctccgtcttcgtct---ccaatttgctgtatgcaaatgtataccccgcggaatg-gtgcg------ccaaagc
+An_melas           gctcaccctccgtctccgtct---ccaatttgctgtatgcaaatgtataccccacggaatg-gtgcg------ccaaagc
+
+An_coluzzii        ataaccgcctt---cgtaatacgccattt-tcaaag--ctcctccag-gtcctgcccagtacaa----------------
+An_christyi        ataaccgcctt---cgtaatacgccattt-tcaaag--ctcctccag-gtcctg-gcatcacat----------------
+An_gambiae         ataaccgcctt---cgtaatacgccattt-tcaaag--ctcctccag-gtcctgctcagtacaa----------------
+An_quadriannulatus ataaccgcctt---cgtaatacgccattt-tcaaag--ctcctccag-gtcctgcccagtacaa----------------
+An_arabiensis      ataaccgcctt---cgtaatacgccattt-tcaaag--ctcctccac-gtcctgcccagtacaa----------------
+An_merus           ttaaccgcctt---cgtaatacgccattt-------------tctag-gtcctgtccagtacaa----------------
+An_melas           ataaccgcctt---cgtaatacgccattt-tcaaagctctcctccag-gtcctgcccagtacaa----------------
+
+An_coluzzii        --------gctgttgcttctgcatgtaagcgattacatcacattcaaattacttcc--------------------acc-
+An_christyi        --------gctgttgcttctgtaagtaagcgattacatcacattcaaataggttccaagtggagggagctgggcagaac-
+An_gambiae         --------gctgttgcttctgcatgtaagcgattacatcacattcaaattacttcc--------------------acc-
+An_quadriannulatus --------gctgttgcttctgtatgtaagcgattacatcacattcaaattgcttcc--------------------acc-
+An_arabiensis      --------gctgttgcttctgcatgtaagcgattacatcacattcaaattacttcc--------------------acc-
+An_merus           --------gctgttgcttctgcatgtaagcgattacatcatattcaaattacttcc--------------------acc-
+An_melas           --------gctgttgcttctgcatgtaagcgattacatcacattcaaattgcttcc--------------------acc-
+
+An_coluzzii        --------------------------------aagaaggacac--tgtgcactctcccgcttcccaag----c------a
+An_christyi        --------------------------------cagaaggacacattgcgcgctctgccactacccaaagcgct------g
+An_gambiae         --------------------------------aagaaggacac--tgtgcactctcccgcttcccaag----c------a
+An_quadriannulatus --------------------------------aagaaggacac--tgtacactctcccgcttcccaag----c------a
+An_arabiensis      --------------------------------aagaaggacac--tgtgcactctcccgcttcccaag----c------a
+An_merus           --------------------------------aagaaggacac--agtgcactctgccgcttccccag----c------a
+An_melas           --------------------------------aagaaggacac--tctgcactctcccgctacacaag----c------a
+
+An_coluzzii        ctgccctttaacttctgcccaaacggggttcacgtggtctcaggaaaggactc-----aggaagcgacgggaaaggcgtg
+An_christyi        ctgcactttaactgctgccaa----tgtttcacttggccctcgaaaaggacccgggggaggaagcggtagaa------cg
+An_gambiae         ctgccctttaacttctgcccaaacggggttcacgtggtctcaggaaaggactc-----aggaagcgacgggaaaggcgtg
+An_quadriannulatus ctgccctttaacttctgcctaaacggggtgcacgtggcctcagcaaaggactc-----aggaagcgacggcaaaggcgtg
+An_arabiensis      ctgccctttaacttctgcccaaacggggttcacgtggtctcaggaaaggactc-----aggaagcgacgggaaaggcgtg
+An_merus           ctgccctttaacttctgcccaaacggggttcacgtggtctccggaaaggactc-----aggaagcgacgggaaaggcgtg
+An_melas           ctgccctttaacttctgcccaaacggggtgcacgtggcctcaggaaaggactc-----aggcagcgacgggaaaggcgtg
+
+An_coluzzii        taatgttctagttgtag---------cgtttcgtgtggt---cactccctcaa-----------------acaatgacag
+An_christyi        taatgttctagttattgcgtttattccgtttcgtgcggt---cactccctcaa-----------------acagtgacag
+An_gambiae         taatgttctagttatag---------cgtttcgtgtggt---cactccctcaa-----------------acaatgacag
+An_quadriannulatus taatgttctagttatag---------cgtttnnnnnnnn---nnnnnnnnnaa-----------------acagtggcag
+An_arabiensis      taatgttctagttatag---------cgtttcgtgtggt---cactccctcaa-----------------acaatgacag
+An_merus           taatgttctagttatagcgtttatttcgtttcgtgcagt---cactccctcaa-----------------acagtgacag
+An_melas           taatgttctagttatagcgtttatttcgtttcgtgcggt---cactccctcaa-----------------acagtgacag
+
+An_coluzzii        agaagggttcatgtttt---tttgttgctctcgtattattttccattgcgtgcataaatccattgctaatcgggag--ct
+An_christyi        a----agcccctttttt--------tgctcttgttttattttccattgcgtgcataaatccatcgctaatcgggggctct
+An_gambiae         agaagggttcatgtttt---tttgttgctctcgtattattttccattgcgtgcataaatccattgctaatcgggag--ct
+An_quadriannulatus agaagggttcatgtttt--tttttttgctctcgtattattttccgttgcgtgcataaatccatcgctaatcgggag--ct
+An_arabiensis      agaagagttcatgtttt--ttttgttgctctcgtattattttccattgcgtgcataaatccatcgctaatcgggag--ct
+An_merus           agaagggttcatgtgtt-------ttgctctcgtattattttccattgcgtgcataaatccatcgctaatcgggag--ct
+An_melas           agaagggttcatgttttttttttgttgctctcgtattattttccattgcgtgcataaatccatcgctaatcgggag--ct
+
+An_coluzzii        --gcgtaacagaa-acacaa-------atc-ctt---------ggttgtgtgagtgagcgtatggaagtgtgtgtgcatt
+An_christyi        --gcgtaacagaa-acacaa-------aac-cta---catgtgagt----------------------------------
+An_gambiae         --gcgtaacagaa-acacaa-------atc-ctt---------ggttgtgtgagtgagcgtatggaagtgtgtgtgcatg
+An_quadriannulatus --gcgtaacagaa-acacaa-------atc-ctt---------cgt----------------------------------
+An_arabiensis      --gcgtaacagaa-acacaa-------atc-ctt---------cgt----------------------------------
+An_merus           --gcgtaacagaa-acacaa-------atc-ctttgttgtatgagt----------------------------------
+An_melas           --gcgtaacagaa-acacaa-------atc-ctt---------cgt----------------------------------
+
+An_coluzzii        tgtgt---------------------------------------------------------------------------
+An_christyi        ------------------------------------------------------gtgtatggaagagtgtgtacgtattt
+An_gambiae         tgtgt---------------------------------------------------------------------------
+An_quadriannulatus --------------------------------------------------------------------------------
+An_arabiensis      --------------------------------------------------------------------------------
+An_merus           ----------------------------------------------------gagcgtatggaagtgtgtgtacatttgt
+An_melas           --------------------------------------------------------------------------------
+
+An_coluzzii        --------------------------------------------------------------------------------
+An_christyi        --------------------------------------------------------------------------------
+An_gambiae         --------------------------------------------------------------------------------
+An_quadriannulatus -------------------------------------------tgtgtgagtgagcgtatggaagtgtgtgtgnncatgt
+An_arabiensis      --tgtgtgagtgagcgtatggaagtgtgtgtgtgcatgtgtgt-------------------------------------
+An_merus           gt------------------------------------------------------------------------------
+An_melas           --------------------------------------------------------------------------------
+
+An_coluzzii        ----ttctgattggggagtgag---------------------------------------------------------a
+An_christyi        ----ttgtgattggtgggtgag---------------------------------------------------------a
+An_gambiae         ----ttctgattggggagtgag---------------------------------------------------------a
+An_quadriannulatus gtgtttnnnnnnggggaatgag---------------------------------------------------------a
+An_arabiensis      ----ttctgattggggagtgag---------------------------------------------------------a
+An_merus           ----ttgtgattggggagtgag---------------------------------------------------------a
+An_melas           ----------------------tgtgtgagtgagcgtatggaagtgtgtgtgcttgtgtgtttgtgattggggagtgaga
+
+An_coluzzii        agg-ggc------aacagtttttgc------------aacgaa--tc------------accacgc------caag-tgc
+An_christyi        agg-aacaacaaaaaaggccgtctc------------aaccaacccc------------acctcgc------caagattc
+An_gambiae         agg-ggc------aacagtttttgc------------aacgaa--tc------------accacgc------caag-tgc
+An_quadriannulatus agg-ggcaac--aaacagttcttac------------aacgaa--tc------------accacgc------caag-tgc
+An_arabiensis      agg-ggcaac--aaacagtttttac------------aacgaa--tc------------accacgc------caag-tgc
+An_merus           agg-ggcaac--aaacagtttttac------------aacgaa--tc------------accacgc------caag-tgc
+An_melas           agg-ggcaac--aaacagtttttac------------aacgaa--tc------------accacgc------caag-tgc
+
+An_coluzzii        ga---aattaaa------ttccacct----cgaggatc------tc---------tccacatattaagtgcgagcctcat
+An_christyi        aatataaattaa------ttgtgctt----tgaggatcgccacatc---------tcaacatgttgatt--aaactt--g
+An_gambiae         ga---aattaaa------ttccacct----cgaggatc------tt---------tccacatattaagtgcgagcctcat
+An_quadriannulatus ga---aattaaa------ttcctcct----cgaggatc------tc---------tccacatattaagtgcgagcctcat
+An_arabiensis      ga---aattaaa------ttccacct----cgaggatc------tc---------tccacatattaagtgcgagcctcat
+An_merus           ga---aattaaa------ttccacct----cgaggatc------tc---------tccacatattaagtgcgagcctcat
+An_melas           ga---aattaaa------ttcttcct----cgaggata------tc---------tccacatattaagtgcgagcctcat
+
+An_coluzzii        tgcgaagtg-tttgggcatctc---aggttaaaaatgtgcgactgtgcttattaggaactgtttt-----aagaaattgt
+An_christyi        tacgaagtgttttggggatctccgaaaaataaaagtgt-cgtttgtacttgttagtagtgatttt-----atgaaacccc
+An_gambiae         tgcgaagtg-tttgggcatctc---aggttaaaaatgtgcgactgtgcttattaggaactgtttt-----aagaaattgt
+An_quadriannulatus tgcgaaacg-tttgggcatctc---aggttaaaaatgtgcgactgtgcttattaggaactgtttt-----aagaaattgt
+An_arabiensis      tgcgaagtg-tttgggcatctc---aggttaaacatgtgcgactgtgcttattaggaactgtttt-----aagaaattgt
+An_merus           tgcgaagcg-tttgggcatctc---aggttaaaaatgtgcgactgtgcttattaggaactgtttt-----aagaaattgt
+An_melas           tgcgaagcg-tttggacatctc---aggttaaaaatgtgcgactgtgcttattaggaactgtttt-----aagaaattgt
+
+An_coluzzii        ttttcccatgtccagcttgaat---ggaggttcga--ttactagtcattaaaaaaa---cacaaaacgcaaactccatca
+An_christyi        ttttctcatgtcccgatcgaacgaagaaggttcga--t----agtttatataaaaa--tggcaaag------------ca
+An_gambiae         ttttcccatgtccagcttgaat---ggaggttcga--ttactagtcattaaaaaaa---cacaaaacgcaaactccatca
+An_quadriannulatus ttttcccatgtccagcttgaat---ggaggttcga--ttactagtcattaaaaaan---cacaaaacgcaaactccatca
+An_arabiensis      ttttcccatgtccagcttgaat---ggaggttcga--ttactagtcattaaaaaaaaaacacaaaacgcaaactccatca
+An_merus           ttttcccatgtccagcttgaat---ggaggttcga--ttaccagtcattgaaaaaa---cacaaaacgcaaactccatca
+An_melas           ttttcccatgtccagcttgaat---ggaggttcga--ttaccagtcattaaaaaac---cccaaaccgcaaactccatca
+
+An_coluzzii        tacactcacatacatttgtacacaaaa---ggtggca---gttagctcaactgt------------tgaaaaatgatcaa
+An_christyi        ttaatacacattcatttgcaaacaaat---acagacg---gtttgcaaaacagt------------tgaaatatgat-aa
+An_gambiae         tacactcacatacatttgtacacaaaa---ggtggca---gttagctcaactgt------------tgaaaaatgatcaa
+An_quadriannulatus tacactcacatacatttgtacacaaaa---ggtggcagttgttagctcaactgt------------tgaaaaatgatcaa
+An_arabiensis      tacactcacatacatttgtacacaaaa---ggtggca---gttagctcaactgt------------tgaaaaatgatcaa
+An_merus           tacactcacatacatttgtacacaaaa---ggcggca---gttagttcaactgt------------tgaaaaatgatcaa
+An_melas           tacactcacatacatttgtacacaaaa---ggtggca---gttagctcaactgt------------tgaaaaatgagcaa
+
+An_coluzzii        aaataactcaccccat----------cccccg---------tgggtgcagtgggtggtgtagaattttcctgttgatggt
+An_christyi        aaataaatctacccaa-----------tgcct---------tctgcagagtgggtggtgtagagttttcctgttgatggc
+An_gambiae         aaataactcaccccat----------cccccg---------tgggtgcagtgggtggtgtagaattttcctgttgatggt
+An_quadriannulatus aaataactcaccccgc-----------ccccgtgggtgtaatgggtgcagtgggtggtgtagaattttcctgttgatggt
+An_arabiensis      aaataactcaccccat-----------ccccg---------tgggtgcagtgggtggtgtagaattttcctgttgatggt
+An_merus           aaataactcacccc-t----------gccccg---------tgggtgcagtgggtggtgtagaattttcctgttgatggt
+An_melas           aaataactcaccccgc-----------ccccg---------tgcgtgcagtgggtggtgtagaattttcctgttgatgat
+
+An_coluzzii        gcag-aaaaagtaagtcaacgcaaaa-----------------------cttgccact------atgcatgcattacgct
+An_christyi        gcagaaaaaagtaagtcagcgcaaaa-----------------------ccttccact------atgcatgcattacgct
+An_gambiae         gcag-aaaaagtaagtcaacgcaaaa-----------------------cttgccact------atgcatgcattacgct
+An_quadriannulatus gcag-aaaaagtaagtcaacgcaaaa-----------------------cttgccact------atgcatgcattacgct
+An_arabiensis      gcag-aaaaagtaagtcaacgcaaaa-----------------------cttgccact------atgcatgcattacgct
+An_merus           gcag-aaaaagtaagtcaacgcaaaa-----------------------cttgccact------atgcatgcattacgct
+An_melas           gcag-aaaaagtaagtcaacgcaaaa-----------------------cttgccact------atgcatgcattacgct
+
+An_coluzzii        tcccggggtgtaccccgattgtgcgccccattcattcgctaccggc---------aattgtgcagaaattacc-tcccct
+An_christyi        t--caggatgtacacca---gtgtgctccattcatt-actaccggc---------aattgtgcaaaaattacc-tgcc--
+An_gambiae         tcccggggtgtaccccgattgtgcgccccattcattcgctaccggc---------aattgtgcagaaattacc-tcccct
+An_quadriannulatus tcccggggtgtaccccgattgtgcgctcnattcattcgctactggc---------aattgtgcagaaattacc-tcccct
+An_arabiensis      tcccggggtgtaccccgattgtgcgccccattcattcgctaccggc---------aattgtgcagaaattacc-tcccct
+An_merus           tcccggggtgtaccctgattgtgcgccccattcattcgctaccggc---------aattgtgcagaaattacc-tcccct
+An_melas           tcccggggtgtaccccgattgtgcgccccattcattcgctaccggc---------aattgtgcagtaattacc-acccct
+
+An_coluzzii        tatgggcaatttctcgcacgataagcattttcat--cgctttatgcaaagcagtggggtcgcgtaagagaaaaaaaa--c
+An_christyi        tatgggcaatttctcgcacgataagcattttcacagcgctttatgcaaagcagt--ggccgtgcaacaacaaaaaaa---
+An_gambiae         tatgggcaatttctcgcacgataagcattttcat--cgctttatgcaaagcagtggggtcgcgtaagagaaaaaaaa--c
+An_quadriannulatus tatgggcaatttctcgcacgataagcattttcat--cgctttatgcaaagcagtggggtcgcgtgagagaaaaaaan--c
+An_arabiensis      tatgggcaatttctcgcacgataagcattttcat--cgctttatgcaaagcagtggggtcgcgtaagagaaaaaaaaaac
+An_merus           tatgggcaatttctcgcacgataagcattttcat--cgctttatgcaaagcagtggggtcgcgtaagagaaaaaaaa--g
+An_melas           tatgggcaatttctcgcacgataagcattttcat--tgctttatgcaaagcagtggggtcgcgtaagagaaaaaa----c
+
+An_coluzzii        aacgaatggccaaaaaggt----aaagtaaacagttttaccactataaggcatcaaatgaaagtaatgtcacttagtaga
+An_christyi        ------------agaagtttttaaaggtaaacagcttta-cactattaagcatacaataaaagtaatgttgtgaagaaga
+An_gambiae         aacgaatggccaaaaaggt----aaagtaaacagttttaccactataaagcatcaaatgaaagtaatgtcacttagtaga
+An_quadriannulatus aacgaatggccaaaaaggt----aaagtaaacagttttaccactataaggcatcaaataaaagtaatgtcactaagagga
+An_arabiensis      aacgaatggccaaaaaggt----aaagtaatcagttttaccactataaagcatcaaatgaaagtaatgtcacttagtaga
+An_merus           aacgaatggccaaaaaggt----aaagtaaacagttttaccactataaggcatcaaataaaagtaatgtcacttagtaga
+An_melas           aacgaatggtcaaaaaggt----aaagtaaacagttttaccactataaggcatcaaataaaagtaatgccactaagtaaa
+
+An_coluzzii        a----acctcatggttatgaaggatgttattgcaaacatgtaaatagtt--tgacgtt---tagag--------ttcgat
+An_christyi        agaaggttgaacggttatgaagcatgttattgaaatcatgtaaatagttggtgtagttctgtagcg--------ttcaat
+An_gambiae         a----acctcatggttatgaaggatgttattgcaaacatgtaaatagtt--tgacgtt---tagag--------ttcgat
+An_quadriannulatus a----gtcgcacggttatgaaggatgttattgcaaacatttaaatagtt--tgacgtt---tagag--------ttcgat
+An_arabiensis      a----acctcatggttatgaaggatgttattgcaaacatgtaaatagtt--tgacgtt---tagag--------ttccat
+An_merus           a----accgcacggttatgaaggatgttattgcaaacatgtaaatagtt--tgacgtt---tagag--------ttcgat
+An_melas           a----gccgcacggttatgaaggatgttattgcaaacatgtaaatagtt--tgacgtt---tagag--------ttcgat
+
+An_coluzzii        gcaataaggccttatttttcgg-----gcttttggccgcaaaacagaagacattcgaccattatcttctctgcgctgacc
+An_christyi        acaat-cggccttattttt--g-----ggttttgaccacaaagccgaagtcatttgaacattatc--cacagcgctgacc
+An_gambiae         gcaataaggccttatttttcgg-----gcttttggccgcaaaacagaagacattcgaccattatcttctctgcgctgacc
+An_quadriannulatus gcaataaggccttatttttcgg-----gcttttggccacaaaacagaagacattcgaccattatcttctctgcgctgacc
+An_arabiensis      gcaataaggccttatttttcgg-----gcttttggccgcaaaacagaagacattcgaccattatcttctctgcgctgacc
+An_merus           gcaataaggccttatttttcgg-----ggttttggccgcaaaacagaagacattcgaccattatcttctctgcgctgacc
+An_melas           gcaataaggccttatttttcgg-----gcttttggccgcaaaacagaagacattcgaccattatcttctttgcgctgaac
+
+An_coluzzii        gattaaatcatccattgattatgcagcaccccgcgcgccaacgatcgattaagtcgaccaacgaaatgactcgct-----
+An_christyi        gattaaatcatccatttattatgcagcgc----tacgccagcgatcgattaagtcgacgaacaaaatgactcgat-----
+An_gambiae         gattaaatcatccattgattatgcagcaccccgcgcgccaacgatcgattaagtcgaccaacgaaatggctcgct-----
+An_quadriannulatus gattaaatcatccattgattatgcagcaccccgcgccccaacgatcgattaagtcgaccaacgaaatgactcgct-----
+An_arabiensis      gattaaatcatccattgattatgcagcaccccgcgcgccaacgatcgattaagtcgaccaacgaaatgactcgct-----
+An_merus           gattaaatcatccattgattatgcagcaccccgcgcgccaacgatcgattaagtcgaccaacgaaatgactcgct-----
+An_melas           gattaaatcatccattgattatgcagcaccccgcgccccaacgatcgattaagtcgaccaacgaaatgactcgct-----
+
+An_coluzzii        --gtcgcgtct---gacccgcagtcggcacaggtcagcacg----aagaaatcgcccgctt---gc-cgaggtcaccggc
+An_christyi        -------gtct---gacccatagtcggcacaggtcagctcg----aagaaatcggccgctt---ccgccaggtcaccaac
+An_gambiae         --gtcgcgtct---gacccgcagtcggcacaggtcagcgcg----aagaaatcgcccgctt---gc-cgaggtcaccggc
+An_quadriannulatus --gtcgcgtct---gacccgcagtcggcacaggtcagcgcg----aagaaatcgcccgctt---gc-cgaggtcaccggc
+An_arabiensis      --gtcgcgtct---gacccgcagtcggcacaggtcagcgcg----aagaaatcgcccgctt---gc-cgaggtcaccggc
+An_merus           --gtcgcgtct---gacccgcagtcggcacaggtcagcgcg----aagaaatcgcccgctt---gc-cgaggtcaccggc
+An_melas           --gtcgcgtct---gacccgcagtcggtacaggtcagcgcg----aagaaatcgcccgctt---gc-cgaggtcaccggc
+
+An_coluzzii        -gag--gtcctccctggcgcagaagg---------------------tgttgcatccctcccgtgagagtcccggcgggg
+An_christyi        aaag--gttctttc--gcgtagaagg---------------------tgttgcatccatcccgtgggagtac---cgggg
+An_gambiae         -gag--gtcctccctggcgcagaagg---------------------tgttgcatccctcccgtgagagtcccggcgggg
+An_quadriannulatus -gag--gtcctccctggcgcagaagg---------------------tgttgcatccctcccgtgagagtcccgccgggg
+An_arabiensis      -gag--gtcctccctggcgcagaagg---------------------tgttgcatccctcccgtgagagtcccggcgggg
+An_merus           -gag--gtcctccctggcgcagaagg---------------------tgttgcatcccacccgtgagagtccaggcgggg
+An_melas           -gag--gtcctccctggcgcagaagg---------------------tgttgcatccctcccgtgagagtcccggcgggg
+
+An_coluzzii        ccgta---acgcaaggcagtggcggcagcgacggcgagatcgccctgtcagcacaagccgtgtgcgggacgccgttcttt
+An_christyi        ccgaatgggtgcctgacaacgtaacgtgcgacggagagatcgctttgtcatcacatgccatgtgccggg-aacgttcttt
+An_gambiae         ccgta---acgcaaggcagtggcggcagcgacggcgagatcgccctgtcagcacaagccgtgtgcgggacgccgttcttt
+An_quadriannulatus ccgta---atgcaaggcagtggcggcggcgacggcgagatcgccctgtcagcacatgccgtgtgcgggacgccgttcttt
+An_arabiensis      ccgta---acgcaaggcagtggcggcagcgacggcgagatcgccctgtcagcacaagccgtgtgcgggacgccgttcttt
+An_merus           ccgta---acgcaaggcagtggcggcggcgacggcgagatcgccctgtcagcacatgccgtgtgctggacgacgttcttt
+An_melas           ccgta---acgcaagatagtggcggcggcgacggcgagatcgccctgtcagcacatgccgtgcgcgggacgccgttcttt
+
+An_coluzzii        gagaacgacgttggtgcgtcggcggtgcaggcgaccg----atgtgca---cacgcgcgtttgcattggaaataagcata
+An_christyi        gaaaagtttggt-gtgcgtcggcggtgcaggagaccg----atgtgca---ca--cgcgtttgcattggaaataagcata
+An_gambiae         gagaacgtcgttggtgcgtcggcggtgcaggcgaccg----atgtgca---cacgcgcgtttgcattggaaataagcata
+An_quadriannulatus gagaacgacgttggtgcgtcggcggtgcaggcgaccg----atgtgca---cacgcgcgtttgcattggaaataagcata
+An_arabiensis      gagaacgacgttggtgcgtcggcggtgcaggcaaccg----atgtgca---cacgcgcgtttgcattggaaataagcata
+An_merus           gagaacgacgttggtgcgtcggcggtgcaggcgaccg----atgtgca---cacgcgcgtttgcattggaaataagcata
+An_melas           gagaacgtcgttggtgcgtcggcggtgcaggcgaccg----atgtgca---cacgcgcgtttgcattggaaataagcata
+
+An_coluzzii        tgaaaatgtatgagcta-----caatcgcgcatgaaagaccgggaagacctatgggcccacgctcacatgtttgtggg--
+An_christyi        tgaaaatttatgagcta-----caatcgcgcatgaaagaacggatatacctatatgcctgcacac--------gtggg--
+An_gambiae         tgaaaatgtatgagcta-----caatcgcgcatgaaagaccgggaagacctatgggcccacgctcacatgtttgtggg--
+An_quadriannulatus tgaaaatgtatgagcta-----caatcgcgcatgaaagaccgggaagacctatgggcccacgctcacatgtttgtggg--
+An_arabiensis      tgaaaatgtatgagcta-----caatcgcgcatgaaagaccgggaagacctatgggcccacgctcacatgtttgtggg--
+An_merus           tgaaaatgtatgagcta-----caatcgcgcatgaaagaccgggaagacctatgggcccacgctcacatgtttgtggg--
+An_melas           tgaaaatgtatgagcta-----caatcgcgcatgaaagaccgggaagacctatgggcccacgctcacatgtttgtggg--
+
+An_coluzzii        -----gctgggggaatggaaagaca--ttaaaaggaaagcggaatcggta------gtggaacgccgcgacct-tagtcg
+An_christyi        ggcaagcagggcgggttgaggtgtaggtttaaaggaaagctgaactcg--------gtggaac---acgacct-tagggt
+An_gambiae         -----gctgggggaatggaaagaca--ttaaaaggaaagcggaatcggta------gaggaacgcagcgacct-tagtcg
+An_quadriannulatus -----gctgggggaatggaaagaca--ttaaaaggaaagcggaatcggta------gtggaacgccgcgacct-tagtcg
+An_arabiensis      -----gctgggggaatggaaagaca--ttaaaaggaaagcggaatcggta------gtggaacgccgcgacct-tagtcg
+An_merus           -----gctgggagaatggaaagaca--ttaaaaggaaagcagaattggtagtggtggtggaacgccgcgacct-tagtcg
+An_melas           -----gctgggggaatggaaagaca--ttaaaaggaaagcggaatcggtagtgatgttggaacgccgcgacct-tagtcg
+
+An_coluzzii        cgaaaggtactcccgaaagctggccaaactaaacggagtatccnaaaaa-acggaaatattagggaaacaatatggacgc
+An_christyi        gggaatgtgctcccgaaagt--------------------------ata-ccgggagtattggggggaatagatcgtagc
+An_gambiae         cgaaaggtactcccgaaagctggccaaactaaacggagtatccaaaaaa-acggaaatattagggaaacaatatggacgc
+An_quadriannulatus cgaaaggtactcccgaaagctggccaaactaaacggagtatccaaaaaa-ncggaaatattagggaaacaatatggacgc
+An_arabiensis      cgaaaggtactcccgaaagctggccaaactaaacggagtatccaaaaaa-acggaaatattagggaaacaatatggacgc
+An_merus           cgaaaggtactcccgaaagcgggcaaaactaaacggagtatcaaaaaaaaacgggaatattagggaaacagtacggatgc
+An_melas           caaaaggtactcccgaaagctgccaaaactaaatggagtatccaaaaaa--cggatatattagggaaacagtatggacgc
+
+An_coluzzii        -aagctaataaacgt--taaggattaggcaaaactacgccacacc---gtgtatccgggtcatcagccaggataggttag
+An_christyi        aaagctaagaaacattctgaggagtattttaatcgaactaaaaccggagtacatccgggtcaccagctaggataggttag
+An_gambiae         -aagctaataaacgt--taaggattaggcaaaactacgccacacc---gtgtatccgggtcatcagccaggataggttag
+An_quadriannulatus -aagctaataaacgt--taaggattaggcaaaactacgccacacc---gtgtatccaggtcatcagccaggataggttag
+An_arabiensis      -aagctaataaacgt--taaggattaggcaaaactacgccacacc---gtgtatccgggtcatcagccaggataggttag
+An_merus           -aagctaataaacgt--taaggattaagcaaaactacgccacacc---gtgtatccgggtcatcagccaggataggttag
+An_melas           -aagctaataaacgt--taaggattaggcaaaactacgccacacc---gtgtatccgggtcatcagccaggataggttag
+
+An_coluzzii        cgtggtgtatgtgcatttaaaacgtaaaa--taaaacgtttagcataa-tatta--caaaaaaaa-ccttgag---atag
+An_christyi        cgtggtttatgtgcttttcaaaggtaaaa--taaaagttcaaaaataattatta--cacaaaa---ccttgag---acag
+An_gambiae         cgtggtgtatgtgcatttaaaacgtaaaa--taaaacgtttagcataa-tacta--caaaaaaaa-ccttgag---atag
+An_quadriannulatus cgcggtgtatgtgtttttaaaacgtaaaa--taaaacgtttagcataa-tatta--caaaaaaaaaccttgag---atag
+An_arabiensis      cgtggtgtatgtgcatttaaaacgtaaaa--taaaacgtttagcataa-tatta--caaaaaaaa-ccttgag---atag
+An_merus           cgcggtgtatgtgcttttaaaacgtaaaa--taatacatttagcataattatcacccaaaaaaaanccttgag---atag
+An_melas           cgcggtgtatgtgcttttaaaacgtaaaa--taaaacatttagcataattatca--cacaaaaaaatcttaag---atag
+
+An_coluzzii        aa-ggcttgggcaaggtc-tttaagaaaacattcatttcagcacgtct-agaaaccgtgc---cacagtggcgataccta
+An_christyi        agccgtttgtgcaaggtcttttttgaaaacattcatttcagcacgtct-aaaaaccgtgc---catcgtcgcgatacctt
+An_gambiae         aa-ggcttgggcaaggtc-tttaagaaaacattcatttcagcacgtct-agaaaccgtgc---cacagtggcgataccta
+An_quadriannulatus aa-ggcttgggcaaggtc-tttaagaaaacattcatttcagcacgtct-agaaaccgtgc---cacagtggcgataccta
+An_arabiensis      aa-ggcttgggcaaggtc-tttgagaaaacattcatttcagcacgtct-agaaaccgtgc---cacagtggcgataccta
+An_merus           aa-ggcttgggcaaggtc-tttaagaaaacattcatttcagcacgtct-agaaaccgtgc---tacagtggcaataccta
+An_melas           aa-ggcttgggcaaggtc-tttaagaaaacattcatttcagcacgtct-agaaaccgtgc---cacagtggcgataccta
+
+An_coluzzii        cttg---ggcccggtcctgcccatgcaggccctatgcatctggagaaatcc-tgctttagttactg-------ttttcta
+An_christyi        tgtgtgaagacttgtgctacaccggcaagccggagg-atatggagaaagtc-tcctttagtcactg-------tttcata
+An_gambiae         cata---agcccggtcctgccaatgcaggccctatgcatctggagaaatcc-tgctttagttactg-------ttttcta
+An_quadriannulatus ctcg---ggcccggtcctgcccatgcaggcactatgcgtctgaagaaatcc-tgctttagttacta-------ttttcta
+An_arabiensis      cttg---ggcccggtcctgcccatgcaggccctatgcatctggagaaatcc-tgctttagttactg-------ttttcta
+An_merus           cttg---tgcccggtcctgtccatgcaggccctatacgtctggagaaatcc-tgctttagttactg-------ttttcta
+An_melas           cttg---ggcccggtcctgcccatgcaggccctatgcatctggagaaatcc-ggctttagttactg-------ttttcta
+
+An_coluzzii        ttccttattttcaaaccatttca--------------gaacggttttgaaaagc-------gtctacactgtgaagcaaa
+An_christyi        ttgcttattttaaaaccattcct--------------taaaggttttcaaaagt-------ggttgcgcagt-aagaaaa
+An_gambiae         ttgcttattttcaaaccatttca--------------gaacggttttgaaaagc-------gtctacactgtgaagcaaa
+An_quadriannulatus ttccttattttcaaaccatttct--------------gaacggttttgaaaagc-------gtctgcactgtgaagcaaa
+An_arabiensis      ttccttattttcaaaccatttca--------------gaacggttttgaaaagc-------gtctgcactgtgaagcaaa
+An_merus           ttccttattttcaaaccatttct--------------gaacggttttgaaaagc-------gtctgcactgtgaagcaaa
+An_melas           ttgcttattttcaaaccatttca--------------gaacg--------------------------------------
+
+An_coluzzii        gagtgactccttttttcctaaacattacgttagttaggctttgttttgacttggcggtgtttgtgcagagtcgtctggtg
+An_christyi        aaggtatg-ctttttttctaaacattacgttggccgg--cttgttttgacttg-cagtg-----gcagagttgtctgctg
+An_gambiae         gagtgtcgccttttttcctaaacattacgttagttaggctttgttttgacttggcggtgtttgtgcagagtcgtctggtg
+An_quadriannulatus gagtgaca-tttttttcctaaacattacgttagttaggctttgttttgacttg---------------------------
+An_arabiensis      gagtgacgccttttttcctaaacattacgttagttaggctttgttttgacttg---------------------------
+An_merus           gaatgacg-cttttttcctaaacattacgttagttaggctttgttttgacttggcggtgtttgtgcagagtcgtctggtg
+An_melas           --------ctttttttcctaaacattacgttagttaggctttgttttgacttggcgatgtttgtgcagagtcgtctggtg
+
+An_coluzzii        ------tctgatgtctg--ctg----------------------------------------------------------
+An_christyi        ------tctgatgtctggactg----------------------------------------------------------
+An_gambiae         ------tctgatgtctg--ctg----------------------------------------------------------
+An_quadriannulatus ---------------------g----------------------------------------tggtgtttgtgcagagtc
+An_arabiensis      ---------------------gtggtgtttgtgcagagtcgtctggtgtctgatgtctgctg------------------
+An_merus           ------tctgatgtctg--ctg----------------------------------------------------------
+An_melas           ------tctgatgtctg--ctg----------------------------------------------------------
+
+An_coluzzii        ----------------------gagttgatgcgtgtgcgtgtccttggccaatgtttaccaccccgattgcaccctaatc
+An_christyi        ----------------------gaaatgatgcgtgtgc--gtccttgggcagttttt-acacatagattgcgc------c
+An_gambiae         ----------------------gagttgatgcgtgtgcgtgtccttggccaatgtttaacaccccgattgcaccctaatc
+An_quadriannulatus gtctggtgtctgatgtctgctggagttgatgcgtgtgcgtgtccttggccagtgttcgacaccccgattgcaccctaatc
+An_arabiensis      ----------------------gagttgatgcgtgtgcgtgtccttggccaatgtttaacactccgattgcaccctaatc
+An_merus           ----------------------gagttgaggcgtgtgcgtgtccttggccagtgtttgacaccccgattgcaccctaatc
+An_melas           ----------------------gagttgatgcgtgtgcgtgtccttggccattgtttgacaccccgagtgcaccctaatc
+
+An_coluzzii        cactttttctaaggcttcacggggcgtttgaactggagtgctactgttttatcatatttactcctcctaatgg-------
+An_christyi        aatagttgaaaagggtttggcaagagcattaaaaagagcaaaatagttttatcagatatacacc-cctaatggattcaag
+An_gambiae         cactttttctaaggcttcacggggcgtttgaaatggagtgctactgttttatcatatttactcctcctaatgg-------
+An_quadriannulatus cactttttctaaggcctcacggggcgtttgaaatggagtgcaactgttgtatcatatttacttctcctaatgg-------
+An_arabiensis      cactttttctaaggcttcacggtgcgtttgaaatggagtgcaactgttttatcatatttactcctcctaatgg-------
+An_merus           cactttttctaaggcttcacgggtagtttgaaatagagtacaacgagtttatcatatttactcctcctaatgg-------
+An_melas           cactttttctaaggcttcacggggtgtttgaaatggagtgcaacgggtttatcatatttactcctcctaatgg-------
+
+An_coluzzii        ----ttccatgcatggtttatcgtcgaaaatcctatcattgtttaactt--tctaatctagaaggtagcatc-----ttt
+An_christyi        acctcttcaagtcccgtctttcgttgaattccttataaacg----attt--tttca--------gcagcattaagcatta
+An_gambiae         ----ttccatgcatggtttatcgtcgaatttcctatcattgtttaactt--tctaatctagaagatagcatc-----ttt
+An_quadriannulatus ----ttccatgcatggtttatcgtcgaatttcctatcattgtttaactt--tctaatctagaa-gtagcatc-----ttt
+An_arabiensis      ----ttccatgcatggtttatcgtcgaatttcctatcattgtttaactt--tctaatctagaaggtagcatc-----ttt
+An_merus           ----tttcatgcatggtttatcgtcgagtttcctatcattgtttaactt--tctaatctagaa-gtagcatc-----ttt
+An_melas           ----ttccatgcatggtttatcgtcgaatttcctatcattgtttaactt--tctaatttagaa-gcagcatc-----ttt
+
+An_coluzzii        actca-taaaaataagattcaatatga------------cttacaaacttttcctatcagaagctattctgctattctg-
+An_christyi        actaagcaagattaagattcatttagaacgtgggttgtccttttatgcctactttagcataaaatgttaaactttaatgg
+An_gambiae         actca-taaaaataagattcaatatga------------cttacaaacttttcctatcagaagctattctgctattctg-
+An_quadriannulatus actca-taaaaataagattcaatatga------------cttacaaacttttcctataagatggtattctgctattctg-
+An_arabiensis      actca-ttaaaataagattcaatatga------------cttacaaacttttcctatcagaagctattttgctattctg-
+An_merus           gctta-taaaaataagattcgatgtga------------tttacaaacttttcccatcagaagctgttcagatattctg-
+An_melas           gctca-taaaaataagattccatgtga------------cttacaaacttttccttgcacaagctattctgctattatg-
+
+An_coluzzii        -------cattccttttga--------ctgctataaaa-ggcatgcattagttcattctacattatgttgtgctgtttcg
+An_christyi        tttaatttatttctttgaagccagcttcttttataaggtggcatacataacctcatccaacacaa---------------
+An_gambiae         -------cattccttttga--------ctgctataaaa-ggcatgcattagttcgttctacattatgttgtgctgtttcg
+An_quadriannulatus -------cattccttttga--------ctgttataaaa-ggcatgcattagttcattctacattatgttgtgttgttttg
+An_arabiensis      -------cattccttttga--------ctgctataaaa-ggcatgcattagttcgttctacattatgt-----tgtttcg
+An_merus           -------cattccttttga--------ctgctgtaaat-ggcatgcattagcttattctgcattatgttgtgctgtttcg
+An_melas           -------tattccttttga--------cttctataaaa-ggcacgcattggctcattctacattatgttgtgctgtttcg
+
+An_coluzzii        tttcgcccttctttggtcgttcatcaggcaacaagcaagtatcaataaacggc-aagaaattcattcataaatacgtgca
+An_christyi        ---------actgtggtcattaattaggc-----------tcgaataaatagc-aacagtttcattcataaatacacgca
+An_gambiae         tttcgcccttctttggtcgttcatcaggcaacaagcaagtatcaataaacggc-aagaaattcattcataaatacgtgca
+An_quadriannulatus tttcgcccttctttggtcgttcatcaggcaacaagcaagtatcaataaacggc-aagaaattcattcataaatacgtgca
+An_arabiensis      tttcgcccttctttggtcgttcatcaggcaacaagcaagtatcaataaacggc-aagaaattcattcataaatacgtgca
+An_merus           tttcgcccttctttggtcgttcattaggcaacaagcaagtatcaataaacggc-aagaaattcattcataaatacgtgca
+An_melas           ttttgcccttctttggtcgttcattaggcagcaagcaagtatcaataaacggc-aagaaattcattcataaatacgtgca
+
+An_coluzzii        --------tcggtttgcgtaaccaa--ttgaaaaaaaa---------cacacacaaaaacatccgtggttcccgttcatg
+An_christyi        --------ttggttttgatttacaaagtcgtaaaaaacaacacaataaaaaaacagaa-cactcgt-gctcccagtaaag
+An_gambiae         --------tcggtttgcgtaaccaa--ttgaaaaaaaa---------cacacacaaaaacatccgtggttcccgttcatg
+An_quadriannulatus --------tcggtttgcgtaaccaa--ttgaaaaaaaaaa-an---acacacacaaaa-catccgtggttcccgttcatg
+An_arabiensis      --------tcggtttgcgtaaccaa--ttgaaaaaaa----------cacacacaaaa-catccgtggttcccgttcatg
+An_merus           --------tcggtttacgtaaccaa--ttgaaacaaaaca------ttaaaaaaaaaa-catccgtggttcccattcatg
+An_melas           --------tcggtttgcgtaaccaa--ttgaaaaacacac-aca--aaaaacacaaaa-catccgtggttcccgttcatg
+
+An_coluzzii        tgct---------------tgttgacaagtacaaaatcggctgcgttgcaatttac--------ttccgtta----c-cc
+An_christyi        taca---------------tgttgacaagcacaaaaccagctgcgttgcattttgcacag-gtattgcttaa----cacc
+An_gambiae         tgct---------------tgttgacaagtacaaaatcggctgcgttgcaatttac--------ttccgtta----c-cc
+An_quadriannulatus tgct---------------tgttgacaagtacaaaatcagctgcgttgcaatttac--------ttccgtta----c-cc
+An_arabiensis      tgct---------------tgttgacaagtacaaaatcggctgcgttgcaatttac--------ttccgtta----c-cc
+An_merus           tgct---------------tgttgacaagtacaaaatcagctgcgttgcaatttac--------ttccgtta----c-cc
+An_melas           tgct---------------tgttgacaagtacaaaatcagctgcgttgcaatttac--------ttccgtta----c-cc
+
+An_coluzzii        gcaagtccacccgcgaagacaccttaatgttgcgttaa---------------tgcgttatgatgtatgact-----ttg
+An_christyi        taaattccacccgcaaacgca-attaat-tttcatta----------------tttgttatgatgtgag---------cg
+An_gambiae         gcaagtccacccgcgaagacaccttaatgttgcgttaa---------------tgcgttatgatgtatgact-----ttg
+An_quadriannulatus gcaagtccacccgcgaagaaaccttantgntgcgtta-----------------------tgatgtatgact-----ttg
+An_arabiensis      gcnagaaccctt---------------tgttgcgtcga---------------ttca------tgtatgact-----ttg
+An_merus           gcaagtccacccgcgaagacaccttaatgttacgttaa---------------tgcgttatgatgtatgatt-----ttg
+An_melas           gcaagtccacccgcgaagacaccttaatgttgcgttaa---------------ttca--acaaagtatgact-----ttg
+
+An_coluzzii        tttcgtttgacaaaaagggcggcctttctgtaaga--------------gcaacctttacgaagacaaatttaggt----
+An_christyi        ttgtgtttgagaaatagagttggtttttt--------------------------tttcttcagaaaagcttctgt----
+An_gambiae         tttcgtttgacaaaaagggcggcctttctgtaaga--------------gcaacctttacgaagacaaatttaggt----
+An_quadriannulatus tttcgtttgacaaaaagggtggtctttctgtaaga--------------gcaacttttacgaaggcaaatataggt----
+An_arabiensis      tttcgtttgacaaaaagggcggcctttctgtaaga--------------gcaacctttacgaagacaaatttaggt----
+An_merus           tttcgtatgataaaaagggtggcctttctgtaagg--------------ccaacctttacgaagtcaaataaaggt----
+An_melas           tttcgtatgacaaaaagggcggcctttctgtaaga--------------gcaacctttacgaagacaagtataggt----
+
+An_coluzzii        ---------ataatttaataatgtgg-atacattttgtatca----atcataaaatacatgaagtaaaaccgttacattc
+An_christyi        ---------ttaaagacgaaaattgg-at-tatttcttatcatttcattacaaaatataagaa-------cattgaattt
+An_gambiae         ---------ataatttaataatgtgg-atacattttgtatca----atcataaaatacatgaaatgacaccgttacattc
+An_quadriannulatus ---------ataatttaataatatgg-atacattttgtatca----atcataaaatacatgaaatgaaaccgttacattc
+An_arabiensis      ---------ataatttaataatgtgg-atacattttgtatca----atcataaaatacataaaatgaaaccgttacattc
+An_merus           ---------ataatttaataatgttg-atacattttgtatcc----atcataaaatacatgaaatgaaaccgttacattc
+An_melas           ---------ataattcaataatgttg-atacattttgtatca----atcataaaacacatgaaatgaaaccgttacattc
+
+An_coluzzii        gaacat----attag----tttctctgttcagact--g---caattatggtaagaattcaa-----------aacaaat-
+An_christyi        aaacatt---tttag----attattttttgacatttat---taaattttgtcttaatttta-----------aaaaaat-
+An_gambiae         gaacat----attag----ttcctctgttcagact--g---caattatggtaagaattcaa-----------aacaaat-
+An_quadriannulatus gaacat----attag----ttcctctgttcagact--g---caattatggtaagaattcaa-----------aacaaat-
+An_arabiensis      gaacat----attag----ttcctttgttcagact--g---caattatggtaagaattcaa-----------aacaaat-
+An_merus           gaacat----gttag----ttcctccgttcagact--g---caattatgataagaattcaa-----------aacaaat-
+An_melas           gaatatgttagttag----ttcctccgttcagact--g---caataatggtaagaattcaaatcaaacaaacaacaaat-
+
+An_coluzzii        ggaagcg--------------------------------------------------ttat---gtgttaaattttactc
+An_christyi        tgacgtgagtattttaatggcactttttagcttagtttgtaataagtcattttcatatcat---gtgtt-aattaccctt
+An_gambiae         ggaagcg--------------------------------------------------ttat---gtgttaaattttactc
+An_quadriannulatus ggaagcg--------------------------------------------------ttat---gcgttaaatttcactc
+An_arabiensis      ggaagcg--------------------------------------------------ttat---gtgttaaattttactc
+An_merus           ggaagcg--------------------------------------------------ttat---gagtcaaatttcactc
+An_melas           ggaagcg--------------------------------------------------ttat---gtgttaaatttcactc
+
+An_coluzzii        t---taataggtatatcgcattat---------------gtcttgc----------------ggtattatctgt------
+An_christyi        t---acaaagatatgttgtgatacaaaaatacaaacacaatttttccataactttgacgcaggaaagagtcagt------
+An_gambiae         t---taataggtatatcgcattat---------------gtcttgc----------------ggtattatctgt------
+An_quadriannulatus t---caataggtatatcgcatttt---------------gtcttgcta-------gatgca-gatagta-ccgt------
+An_arabiensis      t---taataagggtatcgcattat---------------gtcttgc----------------ggtattatctgt------
+An_merus           t---taataggtatatcgcattat---------------atcttgc----------------ggtactatctac------
+An_melas           t---taataggtatatcgtattat---------------gtattgc----------------ggtactatcggtactatg
+
+An_coluzzii        --ttattta--------tttttttcgatacaaaactgatctc---------------------attttggat--aaga-a
+An_christyi        --ttttttgtggtaagctttcattctaaacaaggcttaagtcaataatataaaacatagctatattttggaatcgaaa-a
+An_gambiae         --ttattta--------tttttttcgatccaaaactgatctc---------------------attttggaa--aaga-a
+An_quadriannulatus --ttattta--------tttttttcgatacaaaactgatctc---------------------attttggaa--aaga-a
+An_arabiensis      --ttattta--------tttttttcgatacaaaactgatctc---------------------attttggaa--aaga-a
+An_merus           --ttattta--------atagtttcaatgcaaaac-----------------------------------at--ggaa-a
+An_melas           tcatatttg--------atagtttcaatgcaaaactggtctc---------------------attttagaa-----a-a
+
+An_coluzzii        aaat--------gaaacatg-------------tgtctcccaattttggtcggccgcg-tttgcgtactcgattcggctc
+An_christyi        aaatacttattaagaaaata-------------ggcctaccga-ttcgctccgtaacgttttgcgttcacgactcggctc
+An_gambiae         aaat--------gaaacatg-------------tgtctcccaattttggtcggccgcg-tttgcgtactcgattcggctc
+An_quadriannulatus aaat--------gaaacatg-------------tgtctctcaattttggtcggccgcg-tttgcgtactcgattcggctc
+An_arabiensis      aaat--------gaaacatg-------------tgtctcccaattttggtcggccgcg-tttgcgtactcgattcggctc
+An_merus           aaat--------gaaacat-----------------------------gtcggccgcg-tttgcgtactcgactcgg---
+An_melas           aaat--------gaaacatg-------------tgtctcccaattttggtcggacgcg-tttgcgtactcgactcggctc
+
+An_coluzzii        ctcctttcggtgga-----------------tttttttt---------ctttctaaaataggg---actcccactggtat
+An_christyi        ctcctatcgaatga-----------------tttttttg----------tggtaacaatacgg---actctctctgtttt
+An_gambiae         ctcctttcggtgga-----------------tttttttt---------ctttctaaaataggg---actcccactggtat
+An_quadriannulatus ctcctttcggtaga-----------------tttttttt---------ctttctaaaataggg---actcccactggtat
+An_arabiensis      ctcctttcggtgga-----------------tttttttt-tt------ctnnntaaaataggg---actcccactggtat
+An_merus           -----------gga-----------------tttttttc-tt------ctctctaaaataggg---actcccactggtat
+An_melas           ctcctttcggtgga-----------------ttttttttctt------ctttctaaaataggg---actcccactggtat
+
+An_coluzzii        tggcatcatcccc-aaaaagtatgttcaccaccaccatcatg---gctcacgtgcgcgccacctcc-tttgtgggttggt
+An_christyi        tggcactatcccc-agaacgtatacacaccacaa-------g---gctcacgt--gcgccacctc--tttatggggtggt
+An_gambiae         tggcatcatctcc-aaaaagtatgttcaccaccaccatcatg---gctcacgtgcgggccacctcc-tttgtgggttggt
+An_quadriannulatus tggcatcatcccc-aaaaagtatgttcaccaccactatcatg---gctcacgtgcgcgccacctccttttgttggttggt
+An_arabiensis      tggcatcatcccc-aaaaagtatgttcaccaccaccatcatg---gctcacgtgcgcgccacctcc-tttgtgggttggt
+An_merus           tggcatcatcccc-aaaaagtatgtacagtaccaccatcatg---gctcacgtgcgcgccacctcc-tttgtgaaatggt
+An_melas           tggcatcatcccc-aaaaagtatgttcaccaccaccatcatggttgctcacgtgcgcgccacctcc-tttgtggaatggt
+
+An_coluzzii        ggttggctggtgttcatacttacgtct-ccatttttcccgctcctgccaccgctcttgctcatttgtgtttcattacgtg
+An_christyi        gtttggcttctattcatatttacgttt-attttttt--------tgccgctgctcgcgttcatttgtgtttcattacgtg
+An_gambiae         ggttggctggtgttcatacttacgtct-ccatttttcccgctcctgccaccgctcttgctcatttgtgtttcattacgtg
+An_quadriannulatus ggttggctgctgttcatacttacgtct-ccatttttcccgctcctgccaccgcccttgctcatttgtgtttcattacgtg
+An_arabiensis      ggttggctgctgttcatacttacgtct-ccatttttcccgctcctgccaccgctcttgctcatttgtgtttcattacgtg
+An_merus           ggttggctgctgttcatacttacgtct-ccttttttcccgctcctgccaccgcccttgctcatttgtgtttgattacgtg
+An_melas           ggttggctgctgttcatatttacgtct-cctattttcccgttcctgccaccgcccttgctcatttgtgtttcattacgtg
+
+An_coluzzii        cgattttttggcacaaattatcacggcctcaacggtg----g----cctgcgtcgcttgcgtgca---gattcc-aaaaa
+An_christyi        agattttttggcacaaattatcatggtc-caacgatgcgatg----ccgggcctgcttgcgtgca---gattccaaaaaa
+An_gambiae         cgattttttggcacaaattatcacggccccaacggtg----g----cctgcgtcgcttgcgtgca---gattcc-aaaaa
+An_quadriannulatus cgattttttggcacaaattatcacggccccaaccgtg----g----cctgcgtcgcttgcgtgca---gattcc-aaaaa
+An_arabiensis      cgattttttggcacaaattatcacggcctcagcggtg----g----cctgcgtcgcttgcgtgca---gattcc-aaaaa
+An_merus           cgattttttggcacaaattatcacggccccaacggtg----g----cctgcgtcgcttgcgtgca---gattcc-aaaaa
+An_melas           cgattttttggcacaaattatcacggccccaacggtg----g----cctgcgtcgcttgcgtgca---gattcc-aaaaa
+
+An_coluzzii        cacgcctacag-tttggctc--cttcacggttggaagcattcttgatgaatctttcattatctcctcccttggggacctc
+An_christyi        cacgcctacag-tttggctct-cttctcggttggaagcattcttgatgaatcttttattatctccc----ggtagacctc
+An_gambiae         cacgcctacag-tttggctc--cttcacggttggaagcattcttgatgaatctttcattatctcctcccgtggggacctc
+An_quadriannulatus cacgcctacag-tttggctc--cttcacggttggaagaattcttgatgaatctttcattatctcctcccgtggggacctc
+An_arabiensis      cacgcctacag-tttggctc--cttcacggttggaagcattcttgatgaatctttcattatttcctcccgtggggacctc
+An_merus           cacgcctacag-tttggctc--cttcacggttggaagcattcttgatgaatctttcattatctcctcccgtggggacctc
+An_melas           cacgcctacag-tttggctg--cttcacggttggaaccattcttaatgaatctttcattatctcctcccgtgcggacctc
+
+An_coluzzii        cgcg-------aacacaaacacccttgacaaggtgcgcgatctcgactg----------ccccgaaggttccccgaagca
+An_christyi        cacg-------atcacaaaca-ctttaacagagc-cgcgatcttcgcctcacccccgacccctggaggttcgcaaaagca
+An_gambiae         cgcg-------aacacaaacacccttgacaaggtgcgcgatctcgactg----------ccccgaaggttccccgaagca
+An_quadriannulatus cgcg-------aacacaaacacccttgacaaggtgcgcgatctcggctg----------ccccgaaggttccccgaagca
+An_arabiensis      cgcg-------aacacaaacacccttgacaaggtgcgcgatctcgactg----------ccccgaaggttccccgaagca
+An_merus           cgcg-------aacacaaacacccttgacaaggtgcgcgatctcggctg----------ctccgaaggttccccgaagca
+An_melas           cgcg-------aacacaaacacccttgacaaggtgcacgatctcggctg----------ccccgaaggttccccgaagca
+
+An_coluzzii        aaattattagaaacggaaaa-acatc--ccaac----------gtacccccggcaacatgatgctgctgctgccgctgct
+An_christyi        aaattaatagaaaagg-aaa-acatc--ccaac----------gca--cccggcaaca----------------------
+An_gambiae         aaattattagaaacggaaaa-acatc--ccaac----------gtacccccggcaacatgatgctgctgctgccgctgct
+An_quadriannulatus aaattattagaaacggaaaa-acatc--ccaac----------gtacccccggcaaca----------------------
+An_arabiensis      aaattattagaaacggaaaa-acatc--ccaac----------gtacccccggcaaca----------------------
+An_merus           aaattattagaaacgaaaaa-acatc--ccaac----------gcacccccggcaaca----------------------
+An_melas           aaattattagaaacggaaaa-acatc--ccaac----------gca-ccccggcaaca----------------------
+
+An_coluzzii        gct-----------------------------------------------------------------------------
+An_christyi        --------------------------------------------------------------------------------
+An_gambiae         gct-----------------------------------------------------------------------------
+An_quadriannulatus -----------------------------------------------------tgatgctgctgctgccgctgctgct--
+An_arabiensis      ----------------------------tgatgctgctgctgccgctgcatct---------------------------
+An_merus           --------------------------------------------------------------------------------
+An_melas           ------------------------------------------------------------------------------tg
+
+An_coluzzii        -----------a-------------------------catggc--gggcgagatatt-----------------------
+An_christyi        -------------------------------------tgttgcatgggcaatagata-----------------------
+An_gambiae         -----------a-------------------------cacggc--gggcgagatatt-----------------------
+An_quadriannulatus -----------a-------------------------catggc--gggcgagatatt-----------------------
+An_arabiensis      -----------a-------------------------catggc--gggcgagatatt-----------------------
+An_merus           -----------tgatgctgctgctgccgctgctgcttcatggc--aggggagatatt-----------------------
+An_melas           atgctgctgcta-------------------------catggt--gggcgagatatt-----------------------
+
+An_coluzzii        --------------------ctctccccaatcatttgctccacttcgggtagctgcgggtgtgcggcgttaaaacaaata
+An_christyi        --------------------tgctctccaatcatttgctctacttcg--tagctgcgggtgtgcggcgttaaaacaaata
+An_gambiae         --------------------ctctccccaatcatttgctccacttcgggtagctgcgggtgtgcggcgttaaaacaaata
+An_quadriannulatus --------------------ctctccccaatcatttgctccacttcggatagctgcgggtgtgcggcgttaaaacaaata
+An_arabiensis      --------------------ctctccccaatcatttgctccacttcgggtagctgcgggtgtgcggcgttaaaacaaata
+An_merus           --------------------ctctccccaatcatttgctccacttcgggtagctgcgggtgtgcggcgttaaaacaaata
+An_melas           --------------------ctctccccaatcatttgctccacttcaggtagctgcgggtgtgcggcgttaaaacaaata
+
+An_coluzzii        tttaattcacaccg--tctcgatcacgg-ttagagctcctgcagtgggcatac---------------------------
+An_christyi        tttaattcacaccg--tctcgatctcggtttagagctcctgccgagccaaatc---------------------------
+An_gambiae         tttaattcacaccg--tctcgatcacgg-ttagagctcctgcagtgggcatac---------------------------
+An_quadriannulatus tttaattcacaccg--tctcgatcacgg-ttagagctcctgcagtgggcatac---------------------------
+An_arabiensis      tttaattcacaccg--tctcgatcacgg-ttagagctcctgcagtgggcatac---------------------------
+An_merus           tttaattcacaccg--tctcgatcacgg-ttagagctcctgcagcgagcatac---------------------------
+An_melas           tttaattcacaccg--tctcgatcacgg-ttagagctcctgcagcgggcatac---------------------------
+
+An_coluzzii        --------tattggaatcatttttggatacgag-----------cgatgtcgatcaacctgttccgccgata--cgattg
+An_christyi        --------tacaggag--atttgtgggta---------------cgatgtcgatcaaccagctct-tcgata--cgattg
+An_gambiae         --------tattggaatcatttttggatacgag-----------cgatgtcgatcaacctgtttcgccgata--cgattg
+An_quadriannulatus --------tattggaatcatttttggatacgag-----------cgatgtcgatcaacctgttccgccgata--cgattg
+An_arabiensis      --------tattggaatcattttttgatacgag-----------cgatgtcgatcaacctgttccgccgata--cgattg
+An_merus           --------tattggaatcatttttggatacgag-----------cgatgtggatcaacctgttccgccgata--cgattg
+An_melas           --------tattggaatcatttttggatacgaa-----------cgatgtcgatcaacctgttccgccgata--cgattg
+
+An_coluzzii        acgaatacgattggaat--tcccgcagtgtgtgcttgtgtgtctgtgtatgtgtgtg-----------------------
+An_christyi        acg--ctcgattgaaat--tcctgta------------------------------------------------------
+An_gambiae         acgaatacgattggaat--tcccgcagtgtatgcttgtgtgtctgtgtatgtgtgtg-----------------------
+An_quadriannulatus acgaatacgattggaat--tcccgca------------------------------------------------------
+An_arabiensis      acgaatacgattggaat--tcccgca------------------------------------------------------
+An_merus           acgaatacgattggaat--taccgca------------------------------------------------------
+An_melas           acgaatacgattggaat--tcccgca------------------------------------------------------
+
+An_coluzzii        --------------------------------------------------------------------------------
+An_christyi        --------------------------------------------------------------------------------
+An_gambiae         --------------------------------------------------------------------------------
+An_quadriannulatus --------------------------------------------------------------------------------
+An_arabiensis      ---------------------------------------------------------------------gtgtgtgcttg
+An_merus           --------------------------------------gtgtgtgcgtgtgtgtctgtgtatgtgtgtg-----------
+An_melas           --------------------------------------------------------------------------------
+
+An_coluzzii        -----------------------------------------------------------catgtaccatgcgaggagtcc
+An_christyi        ------------------------gtatg------------------------------tttgtacgatg-gagcagtcc
+An_gambiae         -----------------------------------------------------------catgtaccatgcgaggagtcc
+An_quadriannulatus ------------------------gtttgtgcttgtgtgtctgtgtatgtgtgtgnntgtatgtaccatgcgaggagtcc
+An_arabiensis      tgtgtctgtgtatgtgtgtgtgtg-----------------------------------tatgtaccatgcgaggagtcc
+An_merus           -----------------------------------------------------------tatgtaccatacgaggagtcc
+An_melas           ------------------------gtgtgtgcgcgtgtgtctgtg--------------tatgtaccatgcgaggagtcc
+
+An_coluzzii        tg----tggaatgctgccacctgccaaacagcagacccatgttgcccttcgatcac-tccgcgatcacgacacacgtcgt
+An_christyi        tg----tggaatgctgccacctgccaaa---cagactgagttttctcttcgatcac-tc--------cgacaca---cgt
+An_gambiae         tg----tggaatgctgccacctgccaaacagcagacccatgttgcccttcgatcac-tccgcgatcacgacacacgtcgt
+An_quadriannulatus tg----tggaatgctgccacctgccaaacagcagacccatgttgcccttcgatcac-tccgcgatcacgacacacgtcgt
+An_arabiensis      tg----tggaatgctgccacctgccaaaccgcagacccatgttgcccttcgatcac-tccgcgatcacgacacacgtcgt
+An_merus           tg----tggaatgctgccacctgccaaacagcagacccatgttgcccttcgatcac-tccacgatcacgacacacgtcgt
+An_melas           tg----tggaatgctgccacctgccaaacagcagacccatgttgcccttcgatcac-tccgcgatcacgacacacgtcgt
+
+An_coluzzii        ccgcttttgttttacggtgtgagccaccccgggccaattaccattcacccgggcaggtcactgtg-gactggcgtctcga
+An_christyi        ccccttttgtttt-cgttctgagccaccccagtc--attgtcattcagccgaatagggcaatgtgaaaccgcccgccctt
+An_gambiae         ccgcttttgttttacggtgtgagccaccccgggccaattaccattcacccgggcaggtcactgtg-gactggcgtctcga
+An_quadriannulatus ccgcttttgttttacgatgtgagccaccccgggccaattaccattcacccgggcaggtcactgtg-gactggcgtctcga
+An_arabiensis      ccgcttttgttttacggtgtgagccaccccgggccaattaccattcacccgggcaggtcactgtg-gactggcgtctcga
+An_merus           ccgcttttgttttacggtgtgagccaccccgggccaattaccattcacccgggcaggtcactgtg-gactggcgtctcga
+An_melas           ccgcttttgttttacggtgtgagccaccccgggccaattaccattcacccgggcaggtcactgtg-gactggcgtctcga
+
+An_coluzzii        tcttcgatggattagaaaaccga-actgtcgtcgtgttccctccc-----------------tttatgctacggttcaca
+An_christyi        ttcgtggtggattagaaaactga-gctgtcgtcgtattcctcctt-----------------tttatgccgttgtg----
+An_gambiae         tcttcgatggattagaaaaccga-actgtcgtcgtgttccctccc-----------------tttatgctacggttcaca
+An_quadriannulatus tcttcgatggattagaaaaccga-actgtcgtcgtgtttcctccc-----------------tttatgctacggtt----
+An_arabiensis      tcttcgatggattagaaaaccga-actgtcgtcgtgttccctccc-----------------tttatgctacggtt----
+An_merus           tcttcgatggattagaaaactga-actgttgtcgtgttccctccc-----------------tttatgctacggtt----
+An_melas           tcttcgatggattagaaaaccga-actgtcgtcgtgttccctctc-----------------tttatgctacggtt----
+
+An_coluzzii        aacacacacacacac-----------------------------------------------------------------
+An_christyi        --------------------------------------------------------tacaacct----------------
+An_gambiae         aacacacacacacac-----------------------------------------------------------------
+An_quadriannulatus --------------------------------------------------------------------------------
+An_arabiensis      -----------------------------------------------------------------------------cac
+An_merus           --------------------------------------------------------cataaacacacacacacacgc---
+An_melas           --------------------------------------------------------cacaaacactcacacacagac---
+
+An_coluzzii        ---------------------------------------tctgctccaccc--catcgtggagtacaaattagcgcaatg
+An_christyi        ---------------------------------------tctgctccaccc--tatcgtggagcacaaattagcgcaatg
+An_gambiae         ---------------------------------------tctgctccaccc--catcgtggagtacaaattagcgcaatg
+An_quadriannulatus ------------------cacaannacacacacacagactctgctccaccc--catcgtggagtacaaattagcgcaatg
+An_arabiensis      aaacacacacacacacac---------------------tctgctccaccc--catcgtggagtacaaattagcgcaatg
+An_merus           ---------------------------------------tctgctccaccc--catcggggagtacaaattagcgcaatg
+An_melas           ---------------------------------------tctgctccaccc--catcgtggagtacaaattaacgcaatg
+
+An_coluzzii        tccaag-caacagtatcacggcacggcacaagttcgctccgctatg------tgtgta--acactttccaaaaa-cagcc
+An_christyi        tccaag-aaactgtagcacgacac-----aagtt-gctctgttatg------tgtgtacgatactttccaaaaaccagcc
+An_gambiae         tccaag-caacagtatcacggcacggcacaagttcgctccgctatg------tgtgta--acactttccaaaaa-cagcc
+An_quadriannulatus tccaag-caacagtatcacggcacagcacaagttcactccgctatg------tgtgta--acactttccaaaag-cagcc
+An_arabiensis      tccaag-caacagtatcacggcac-----aagttcgctccgctatg------agtgta--acactttccaaaag-cagcc
+An_merus           tccaag-caacagcatcacggcacggcacaagctcgctccgctatg------tgtgta--acactttccaaaag-cagcc
+An_melas           tccaag-caacagtatcacggcacggcacaagttcgctccgctatg------tgtgta--acactttccaaaag-cagcc
+
+An_coluzzii        cg-------tgtgtatctcgtgtgcagcctcctggtagacgcaagtacaggcaggaga--tcacgcatgttttggccgag
+An_christyi        cggctccgttgctactgctgtgtccagcctccaggtag--gcaagcacaagcggaacgtttccccccaaccctattcgtt
+An_gambiae         cg-------tgtgtatctcgtgtgcagcctcctggtagacgcaagtacaggcaggaga--tcacgcatgttttggccgag
+An_quadriannulatus cg-------tgtgtatctcatgtgcagcctcctggtagacgcaagtacaggcgggaga--tctcgcatgttttggccgag
+An_arabiensis      cg-------tgtgtatctcgtgtgcagcctcctggtagacgcaagtacaggcaggaga--tcacgcatgttttggccgag
+An_merus           cg-------tgtgtatctcgtgtgcagcctcctggtagacgcaagtgcag--atcaga--tcacgcatgttttggccgag
+An_melas           cg-------tgtgtatctcttgtgcagcctcctggtagacgcaagtactggcgggaga--tcacgcatgttttggccgag
+
+An_coluzzii        agacccctt-----ctcgttcctccgtcgccgggcgagcaatcttgttgg------gggtgagaacaaaaacgcgcacca
+An_christyi        acatcccctggaaccccgttcct------ttcgtcgtggaatcttgttggccatatggaggagaagggaaaaaaacgaaa
+An_gambiae         agacccctt-----ctcgttcctccgtcgccgggcgagcaatcttgttgg------gggtgagaacaaaaaggcgcacca
+An_quadriannulatus agacccctt-----ctcgttcctccgtccccgggcgaacaatcttgttgg------gggtgagaacaaaaaggcccacca
+An_arabiensis      agacccctt-----ctcgttcctccgtcgccgggcgagcaatcttgttgg------gggtgagaacaaaaaggcgcacca
+An_merus           agacccctt-----ctcgttcctccgtccctgggcgagcaatcttgttgg------gggtgagaacaaaaaggcgcacca
+An_melas           agacccctt-----ctcgttcctccatccccgggcgagcaatcttgttgg------gggtgagaacaaaaaggcgcacca
+
+An_coluzzii        cagaaatcacccgaaaa-acctccctggtagat--gaatattaaaatgataaatttgacagatcgaggcctt----aagt
+An_christyi        cacaaatcaccccaaaa-aacctcccggtagat--gaatattaaaatgataaatttgacatatcgaggcctt----aaga
+An_gambiae         cacaaatcacccgaaaa-acctccctggtagat--gaatattaaaatgataaatttgacagatcgaggcctt----aagt
+An_quadriannulatus cacaaatcacacgaaaa-acctccctggtagat--gaatattaaaatgataaatttgacagatcgaggcctt----aagt
+An_arabiensis      cacaaatcacccgaaaa-acctccctggtagat--gaatattaaaatgataaatttgacagatcgaggcctt----aagt
+An_merus           cacaaatcacccgaaaa-acctccctggtagat--gaatattaaaatgataaatttgacagatcgaggcctt----aagt
+An_melas           cacaaatcaccacaaaa-acctccctggtagat--gaatattaaaatgataaatttgacagatcgaggcctt----aagt
+
+An_coluzzii        gagg----ccggagacaaacg--aaaatgcacaaaaag----------gacaagatgattccgatggggagaaaacgcga
+An_christyi        gagt----ccggagacaaatgaaaaaacgcacaagaag----------gacagaatgctacaaaagggggaaaa---caa
+An_gambiae         gagg----ccggagacaaacg--aaaatgcacaaaaag----------gacaagatgattccgatggggagaaaacgcga
+An_quadriannulatus gagg----ccggagacaaacg--aaaatgcacaaaaag----------gacaagatgattccgatggggagaaaacgcga
+An_arabiensis      gagg----ccggagacaaacg--aaaatgcacaaaaag----------gacaagatgattccgatggggagaaaacgcga
+An_merus           gagg----ccggagacaaacg--aaaatgcacaaaaag----------gacaagatgattcagatggggagaaaacgcga
+An_melas           gagg----ccggagacaaacg--aaaatgcacaaaaag----------gacaagatggttccgatggggagaaaaagcga
+
+An_coluzzii        gcccaaatcgcgctccgttcgtgcactaatggcgcaggattattcgggttgtattacgaagcgaaccagaagaag--aaa
+An_christyi        gctaaaat--cgctcggttcgtgcactaatggtgcaggattatttgggtgcgattacgatgcgcaccaga-------aaa
+An_gambiae         gcccaaatcgcgctccgttcgtgcactaatggcgcaggattattcgggttgtattacgaagcgaaccagaagaag--aaa
+An_quadriannulatus gcccaaatcgcgctccattcgtgcactaatggcgcaggattattcgggttgtattacgaagcgaaccagaagaag--aaa
+An_arabiensis      gcccaaatcccgctccgttcgtgcactaatggcgcaggattattcgggttgtattacgaagcgaaccagaagaag--aaa
+An_merus           gcccaaatcgcgctccgttcgtgcactaatggcgcaggattattcgggctgtattacgaagcgaaccagaagaagaaaaa
+An_melas           gcccaaatcgcgctccgttcgtgcactaatggcgcaggattattcgggctgtattacgaagcgaaccagaagaag--aag
+
+An_coluzzii        aaaatggtactactgtcaaacgattgtccctcagctcgttacacgcgggcgggagaaaattaaccgtggcg----gggta
+An_christyi        aaagcgcttctctcatttaaaacactgcccgtggctcgttacac-cggttgagagaaaattagcctt---------agta
+An_gambiae         ataatggtactactgtcaaacgattgtccctcagctcgttacacgcgggcgggagaaaattaaccgcggct----gggta
+An_quadriannulatus aaaatggtactactgtcaaacgattgtccctcagctcgttacacgcgggcgggagaaaattaaccg---------gggta
+An_arabiensis      aaaatggtactactgtcaaacgattgtccctcagctcgttactcgcgggtgggagaaaattaaccgtggcg----gggta
+An_merus           aaaaaggtaatactgtcaaacgattgtccctcagctcgttacatgcgggcgggagaaaattaaccatggca----gggta
+An_melas           aaaatggtactactgtcaaacgatagtccctcagctcgttacacgcgggcgggaaaaaattaaccgtggcg----aggta
+
+An_coluzzii        ctgcggtttggggacgttcgcaattcggcag--caaatagctcgatttg
+An_christyi        cagc-gcttggaaacgatcgcaattcggcag--caaatggcccgaattg
+An_gambiae         ctgcggtttggggacgttcgcaattcggcag--caaatagctcgatttg
+An_quadriannulatus ctgcggcttggggaagttcgcaattcggcag--caaatagctcgatttt
+An_arabiensis      ctgcggtttggggacgttcgcaattcggcag--caaatagctcgatttg
+An_merus           ctgcggtttggggacgttcgcaattcggcag--caaatagcttgatttg
+An_melas           ctgcggtttggggacgttcgcaattcggcag--caaatagctcgatttg
+
+;
+END; [CHARACTERS]
+
+BEGIN ALGORITHM;
+TITLE 'Input Data Filter';
+LINK CHARACTERS = 'Input Characters';
+NAME 'Characters Taxa Filter';
+OPTIONS
+;
+END; [ALGORITHM]
+
+BEGIN CHARACTERS;
+TITLE 'Working Characters';
+LINK ALGORITHM = 'Input Data Filter';
+DIMENSIONS ntax=6 nchar=9409;
+FORMAT
+	datatype='DNAwithAmbiguityCodes' missing=? gap=- symbols="acgnt" labels=left transpose=no interleave=yes;
+MATRIX
+An_coluzzii        ggtgttaatcttacgaaattgatgctgccggtcg-gccagcctctt-aagg-tgccc-ttttttcggt--gtctctcttc
+An_gambiae         ggtgttaatcttacgaaattgatgctgccggtcg-gctagcctctt-aagg-tgccc-ttttttcggt--gtctctcttc
+An_quadriannulatus ggtgttaatcttacgaaattgatgctgccggtcg-gccagcctcta-aagg-tgccc-ttttttcgga--gtctctcttc
+An_arabiensis      ggtgttaatcttacgaaattgatgctgccggtcg-gccagcctctt-aagg-tgccc-ttttttcggt--gtctctcttt
+An_merus           ggtgttaatcttacgaaattgatgctgccggtcg-gccagcctctt-aagg-tgccctttttttcggt--gtctctcttc
+An_melas           ggtgttaatcttacgaaattgatgctgccggtcg-gccagcctctt-aagt-tgccctttttttcggt--gtctctcttc
+
+An_coluzzii        ttgccgcctcaacacccaggacaggaagtgacgctgattacgcctggagcagca-------gcatcccatacccgggcag
+An_gambiae         ttgccgcctcaacacccaggacaggaagtgacgctgattacgcctggagcagca-------gcatcccatacccgggcag
+An_quadriannulatus ttgccgcctcaacacccaggacaggaagtgacgctgattacgcctggagcagca-------gcatcccatacccgggcgg
+An_arabiensis      ttgccgcctcaacacccaggacaggaagtgacgctgattacgcctggagcagca-------gcatcccatacccgggcgg
+An_merus           ttgccgcctgaacacccaggacaggaagtgacgctgattacgcctggagctgca-------gcatcccatacccgggcgg
+An_melas           ttgccgcctcaacacccaggacaggaagtgacgctgattacgcctggagcagca-------gcatcccatacccgggcgg
+
+An_coluzzii        cagtgcagtgtcgtc-gtcctccttatcgtttccccttttt----cttcagcc---------g--agccagattcggaca
+An_gambiae         cagtgcagtgtcgtc-gtccaccttatcgtttccccttttt----cttcagcc---------g--agccagattcggaca
+An_quadriannulatus cagtgcagtgtcgtc-gtccaccttatcgtttccccttttt----cttcagcc---------g--agccagatttgg---
+An_arabiensis      cagtgcagtgtcgtc-gtccaccttatcgtttccccttttt----cttcagcc---------g--agccagattcgg---
+An_merus           cagtgcagtgtcgtc-gtccaccttatcgtttccccttttt----cttcagcc---------g--agccagattcgg---
+An_melas           cagtgcagtgtcgtc-gtccaccttatcgtttccccttttt----cttcaaac---------g--agccagattcgg---
+
+An_coluzzii        catacacacacacacacaca------------------------------------------------------------
+An_gambiae         catacacacacacacacaca------------------------------------------------------------
+An_quadriannulatus ---------------------------------------------acacatacacnnnnnnnnnnnnnnnnnnnnnnnnn
+An_arabiensis      --------------------------------------------------------------------------------
+An_merus           --------------------------------------------------------------------------------
+An_melas           --------------------------------------------------------------------------------
+
+An_coluzzii        --------------------------------------------a--------------------atggtt-ggagaaaa
+An_gambiae         --------------------------------------------a--------------------atggtt-ggagaaaa
+An_quadriannulatus nnnnnnnnnnnnnnnnnnnnnnnacacatacacacacacacacta--------------------atggtt-agagaaaa
+An_arabiensis      --------------------------------------------a--cacatacacacacacaa-atggtt-ggagaaaa
+An_merus           --------------------------------------------a--cacatacacacacacaa-atggtt-ggagaaaa
+An_melas           --------------------------------------------a--------cacacacacaa-atggct-ggagaaaa
+
+An_coluzzii        ttatcccacgggtggggtaacgcccgc--ga------------------------------gcatca-------------
+An_gambiae         ttatcccacgggtggggtaacgcccgc--ga------------------------------gcatca-------------
+An_quadriannulatus ttatcccacgggtggggtaacgcccgc--ga------------------------------gcatca-------------
+An_arabiensis      ttatcccacgggtggggtaacgcccgc--ga------------------------------gcatca-------------
+An_merus           ttatcccacgggtggggtaacgcccgc--ga------------------------------gcatca-------------
+An_melas           ttatcccacgggtggggtaacgcccgc--ga------------------------------gcatca-------------
+
+An_coluzzii        ------------ccccaaaatgtcaccgattcccttcagcacc---ggaatc-gcccgccagtccg--cccgccgattgg
+An_gambiae         ------------ccccaaaatgtcaccgattccctctagcacc---ggaatc-gcccgccagtccg--cccgccgattgg
+An_quadriannulatus ------------ccccaaaatgtcaccgattccctccagcacc---ggaatc-gcccgccagtccg--cccgccgattgg
+An_arabiensis      ------------ccccaaaatgtcaccgattccctccagcacc---ggaatc-gcccgccagtccg--cccgccgattgg
+An_merus           ------------ccccaaaatgtcaccgattccctccagcacc---ggaatc-gcccgccagtccg--cccggcgattgg
+An_melas           ------------ccccaaaatgtcaccgattccctccagcacc---ggaatcggcccgccagtccg--cccgccgattgg
+
+An_coluzzii        cggagacaccg--gccattaaaatatgttatatg----gtggagtttagcgcggtgtgtgcgcgcgcgattctgtcatca
+An_gambiae         cggagacaccg--gccattaaaatatgttatatg----gtggagtttagcgcggtgtgtgcgcgcgcgattctgtcatca
+An_quadriannulatus cggagacaccg--gccattaaaatatgttatatg----gtggagtttagcgcggtgtgtgcgcgcgcgattctgtcatca
+An_arabiensis      cggagacactg--gccattaaaatatgttatatg----gtggagtttagcgcggtgtgtgcgcgcgcgattctgtcatca
+An_merus           cggagacaccg--gccattaaaatatgttatatg----gtagagtttagcgcggtgtgtgcgcgcgcgattctgtcatca
+An_melas           cggagacaccg--gccattaaaatatgttatatg----gtggagtttagcgcggtgtgtgcgcgcgcgattctgtcatca
+
+An_coluzzii        aaaga--gtgtcggggtcga--------cgg-----gatgtgggaatggacgaaaatcacaaaagacgcaaacacacaca
+An_gambiae         aaaga--gtgtcggggtcga--------cgg-----gatgtgggaatggacgaaaatcacaaaagacgcaaacacacaca
+An_quadriannulatus aaaga--gtgtcggggtcga--------cgg-----gatgtgggaatggacgaaaat-----------------------
+An_arabiensis      aaaga--gtgtcggggtcga--------cgg-----gatgtgggaatggacgaaaat-----------------------
+An_merus           aaaga--gtgtcggggtcga--------cgg-----gatgtgggaatggacgaaaat-----------------------
+An_melas           aaaga--gtgtcggggtcga--------cgg-----gatgtgggaatggacgaaaat-----------------------
+
+An_coluzzii        cacacac-------------------------------------------------------------------------
+An_gambiae         cacacac-------------------------------------------------------------------------
+An_quadriannulatus --------------------------------------------------------------------------------
+An_arabiensis      --------------------------------------------------------------------------------
+An_merus           ------------------------------------------------------------------ca-----caaaaga
+An_melas           ------------------------------------------------------------------ca-----caaaaga
+
+An_coluzzii        --------------------------------------------------------------------------------
+An_gambiae         --------------------------------------------------------------------------------
+An_quadriannulatus -------------------------------------------------------------------------------c
+An_arabiensis      -----------------------------------------------cacaaaagacgcaaacacacacacacacacac-
+An_merus           cgcaa----------------------------acacacacacacac---------------------------------
+An_melas           cgcaannacacacacacacacacacacacacac-----------------------------------------------
+
+An_coluzzii        -------------------------------ggtcgcacgatggattgcaatctccagcgcgcgaccgcaagaaaatggc
+An_gambiae         -------------------------------ggtcgcacgatggattgcaatctccagcgcgcgaccgcaagaaaatggc
+An_quadriannulatus acaaaagacgcaaacacacacacacacacnnggtcgcacgatggattgcaatctccagcgcgcgaccgcaagaaaatggc
+An_arabiensis      -------------------------------ggtcgcacgatggattgcaatctccagcgcgcgaccgcaagaaaatggc
+An_merus           -------------------------------ggtcgtacgatggattgcaatctccagcgcgcgaccgcaagaaaatggc
+An_melas           -------------------------------ggtcgcacgatggattgcaatctccagcgcgcgaccgcaagaaaatggc
+
+An_coluzzii        c-tttttggggcggatgcgggagtgagatatg-ttgaaggtgttccccttgccccgcactgtcctatccacgcgcgatgg
+An_gambiae         c-tttttggggcggatgcgggagtgagatatg-ttgaaggtgttccccttgccccgcactgtcctatccacgcgcgatgg
+An_quadriannulatus cttttttggggcggatgcgggagtgagatatg-ttgaaggtgttccccttgccccgcactgtgctatcctcgcgcgatgg
+An_arabiensis      cttttttggggcggatgcgggagtgagatatg-ttgaaggtgttccccttgccccacactgtcctatccacgcgcgatgg
+An_merus           cttttttggggcggatgcgggagtgagatatg-ctgaaggtgttccccttgccccacactgtcctatccacgcgcgatgg
+An_melas           cttttttggggcggatgcgggagtgagatatg-ttgaaggtgttccccttgccccacactgtcctatccacgcgcgatgg
+
+An_coluzzii        caatcatcatcgtcgtacctcaaaaa-a-tctatgctgaagcgcgcattgtctc-tttgattccatcagctttgtcggat
+An_gambiae         caatcatcatcgtcgtacctcaaaaa-a-tctatgctgaagcgcgcattgtctc-tttgattccatcagctttgtcggat
+An_quadriannulatus caatcatcatcgtcgtacctcaaaaa-a-tctatgctgaagcgcgcattgtctc-tttgattccatcagctttgtcggat
+An_arabiensis      caatcatcatcgtcgtacctcaaaaa-a-tctatgctgaagcgcgcattgtctc-tttgattccatcagctttgtcggat
+An_merus           caatcatcatcgtcgtacctcaaaaa-a-tctatgctgaagcgcgcattgtctc-tttgattccatcagctttgtcggat
+An_melas           caatcatcatcgtcgtacctcaaaaa-a-tctatgctgaagcgtgcattgtctc-tttgattccatcagctttgtcggat
+
+An_coluzzii        ggtgga-gactgaggaaaaaaaagacgagga-ccatacgagagaccaaaggcggattgataaattgttatcgtttccgga
+An_gambiae         ggtgga-gactgaggaaaaaaaagacgagga-ccatacgagagaccaaaggcggattgataaattgttatcgtttccgga
+An_quadriannulatus ggtgga-gagtgaggaaaaaaa--acgaggagacatacgagagaccaaaggcggattgataaattgttatcgtttccgga
+An_arabiensis      ggtgga-gagtgagg-aaaaaaanacgagga-ccatacgagagaccaaaggcggattgataaattgttatcgtttccgga
+An_merus           ggcgga-gagtgaggaaaaaaaagacgagga-ccatacgagagaccaaaggcggattgataaattgttatcgtttccgga
+An_melas           ggcggaggagtgaggaaaaaaaagacgagga-ccatacgagagaccaaaggcggattgataaattgttatcgtttccgga
+
+An_coluzzii        ggatgtgagcatgt--cgc----gcctg---------ttgtcccaca------tgcccata-------------------
+An_gambiae         ggatgtgagcatgt--cgc----gcctg---------ttgtcccaca------tgcccata-------------------
+An_quadriannulatus ggatgtgagcatgt--cgc----gcctg---------ttgtcccaca------tgccccta-------------------
+An_arabiensis      ggatgtgagcatgt--cgc----gcctg---------ttgtcccata------tgcccctagtctgtatgtgtgtgtgtg
+An_merus           ggatgtgagcatgt--cgc----gcctg---------ttgtcc-------------------------------------
+An_melas           ggatgtgagcatgt--cgc----gcctg---------ttgtcccaca------tgccccta-------------------
+
+An_coluzzii        --------gtc-tg--tatatgtgtgtgtgtg-t----------------------------------------g-----
+An_gambiae         --------gtc-tg--tatatgtgtgtgtgtg-t----------------------------------------g-----
+An_quadriannulatus --------gtc-tgtatatgtgtgtgtgtgtg-t----------------------------------------g-----
+An_arabiensis      tgtgggtg------------------------------------------------------------------------
+An_merus           ----------------------------------cacatgcccctagtctgtatgtgtgtgtatgtgtgtgtgtg-----
+An_melas           -------------gtctgtatgtgtgtgtgtg-t----------------------------------------g-----
+
+An_coluzzii        ----------------------------------------------------------------------------gggt
+An_gambiae         ----------------------------------------------------------------------------gggt
+An_quadriannulatus ----------------------------------------------------------------------------gggt
+An_arabiensis      ----------------------------------------------------------------------------gggt
+An_merus           ----------------------------------------------------------------------------gggt
+An_melas           ----------------------------------------------------------------------------gggt
+
+An_coluzzii        g-gaccattt--aagacattggggcaataaaaa--------agaaaatcataagg-ttgaaatagtcaaaccgtca----
+An_gambiae         g-gaccattt--aagacattggggcaataaaaa--------agaaaatcataagg-ttgaaatagtcaaaccgtca----
+An_quadriannulatus g-gaccattt--aagacattggggcaataaaaa--------agaaaatcataagg-ttgaaatagtcaaaccgtca----
+An_arabiensis      g-gaccattt--aagacattggggcaataaaaa--------agaaaatcataagg-ttgaaatagtcaaaccgtca----
+An_merus           g-gaccattt--aagacattggggcaataaaaa--------agaaaatcataagg-ttgaaatagtcaaaccgtca----
+An_melas           g-gaccattt--aagacattggggcaataaaaa--------agaaaatcataagg-ttgaaatagtcaaaccgtca----
+
+An_coluzzii        ccataatgagatcgatgggacggctcgccaacagcatgctgatgtgc--acatttcagtgttcaactttttggggaataa
+An_gambiae         ccataatgagatcgatgggacggctcgccaacagcatgttgatgtgc--acatttcagtgttcaactttttggggaataa
+An_quadriannulatus ccataatgagatcgatgggacggctcgccgacagcatgctgatgtgc--acatttcagtgttcaactttttggagaataa
+An_arabiensis      ccataatgagatcgatgggacggcttgccgacagcatgctgatgtgc--acatttcagtgttcaactttttggagaataa
+An_merus           ccataatgagatcgatgggacggctcgccgacagcatgctgatgtgc--acatttcagtgttcaactttttggagaataa
+An_melas           ccataatgagatcgatgggacggctcgccgacagcatgctgatgtgc--acatttcagtgttcaactttttggagaataa
+
+An_coluzzii        atattctgaatttgtaccgaaa---acgcatggt-c---tacatcga------aactgtgcttctaattgtatc------
+An_gambiae         atattctgaatttgtaccgaaa---acgcatggt-c---tacatcga------aactgtgcttctaattgtatc------
+An_quadriannulatus atattccgaatttgtaccgaaa---acgcttgat-c---ttcatcga------aactgtgcttctaattgtatc------
+An_arabiensis      atattctaaatttgtacctaaa---acgcatggt-c---ttcatcga------aactgtgcttctaattgtatc------
+An_merus           gtattctgaatttgtaccgaaa---acgcttggt-c---ttcatcaa------aactgtgcttctaattgtatc------
+An_melas           ataatctgcatttgtaccgaaa---acgcttggt-c---ttcatcga------aactgtgcttctaattgtatc------
+
+An_coluzzii        ------------------------------a------------------------atttgaataattattcccattttac
+An_gambiae         ------------------------------a------------------------atttgaataattattcccattttac
+An_quadriannulatus ------------------------------a------------------------atttgaataattattcccatttcac
+An_arabiensis      ------------------------------a------------------------atttgaataattattcccattttac
+An_merus           ------------------------------a------------------------atttgaataattattcacattttac
+An_melas           ------------------------------a------------------------atttgaataattattcccattttac
+
+An_coluzzii        tggaaatttgt--tagttgcatttcac--caccgcacaag-ttg------------------------------------
+An_gambiae         tggaaatttgt--tagttgcatttcac--caccgcacaag-ttg------------------------------------
+An_quadriannulatus tggaaatttgt--tagttgcatttcac--caccgcacaag-ttg------------------------------------
+An_arabiensis      tggaaatttgt--tacttgcatttcac--caccgcacaag-ttg------------------------------------
+An_merus           tggaaattttt--tagttgcatttcac--caccgcacaag-ttg------------------------------------
+An_melas           tggaaatttgt--tagttgcatttcac--caccgcgcaag-ttg------------------------------------
+
+An_coluzzii        --------------------------------------------------------------------------------
+An_gambiae         --------------------------------------------------------------------------------
+An_quadriannulatus --------------------------------------------------------------------------------
+An_arabiensis      --------------------------------------------------------------------------------
+An_merus           --------------------------------------------------------------------------------
+An_melas           --------------------------------------------------------------------------------
+
+An_coluzzii        --------accagggtttgtttattaatagttactgtcggctagatataacaaaaaaacagaaactg-cccgacactcaa
+An_gambiae         --------accagggtttgtttattaatagttactgtcggctagatataacaaaaaaacagaaactg-cccgacactcaa
+An_quadriannulatus --------accagggtttatttattaatagttactgtcggctagatataac-aaaaaacagaaactgccccgacactcaa
+An_arabiensis      --------accagggtttatttattaatagttactgccggctagatata---aaaaaacagaaactgccccgacactcaa
+An_merus           --------accagggtttatttatttatagctactgtcggctagatataac-aaaaaacagaaactgccccgacactcaa
+An_melas           --------accagggtttatttattaatagttactgtcggctagatataacaaaaaaacagaaactgccccgacactcaa
+
+An_coluzzii        atgtggaaccggaaatggactcgtcgctactttcaaaatcccacatgtggtcgcggtggtcaagattttttgt-tgtggc
+An_gambiae         atgtggaaccggaaatggactcgtcgctactttcaaaatcccacatgtggtcgcggtggtcaagattttttgt-tgtggc
+An_quadriannulatus atgtggaaccggaaatggactcgtcgctactttcaaaatcccacatgtggtcgcggtggtcaagattttttgt-tgtggc
+An_arabiensis      atgtggaaccggaaatggactcgtcgctactttcaaaatcccacatgtggtcgcggtggtcaagattttttgt-tgtggc
+An_merus           atttggaaccggaaatggactcgtcgctactttcaaaatcccacatgtggtcgcggtggtcaagattttttgt-tgtggc
+An_melas           atgtggaaccggaaatggactcgtcgctactttcaaaatcccacatgtggtcgcggtggtcaagattttttgt-tgtggc
+
+An_coluzzii        tcaagg---agcgattaatatgtgtagtggtggtgatgacattttttttt--------------gccctcagcaggagtt
+An_gambiae         tcaagg---agcgattaatatgtgtagtggtggtgatgacattttttttt--------------gccctcagcaggagtt
+An_quadriannulatus tcaagg---agcgattaatatgtgtagtggtggtgatgacattttttttt--------------gcgctcagcaggagtt
+An_arabiensis      tcaagg---agcgattaatatgtgtagtggtggtgatgacattttttttt-----------tttgcgctcagcaggagtt
+An_merus           tcaagg---aacgattaatatgtgtagtggtggtgatgacattttttttt--------------gcgctcagcaggagtt
+An_melas           tcaagt---agcgattaatatgtgtagtggtggtgatgacattttttttt--------------gcgctcagcaggagtt
+
+An_coluzzii        ccgaaagtgtaccccgtgcctcaattcccaccagatgttgcgca-gtggatagaaatggag--gaaaacaaactcacaaa
+An_gambiae         ccgaaagtgtaccccgtgcctcaattcccaccagatgttgcgca-gtggctagaaatggag--gaaaacaaactcaaaaa
+An_quadriannulatus ccgaaagtgtaccccgtgcctcaattcccaccagatgttgcgca-gtggctagaaatggag--gaaaacaaactcacaaa
+An_arabiensis      ccgaaagtgtaccccgtgcctcaatttccaccagatgttgcgca-gtggatagaaatggag--gaaaacaaactcacaaa
+An_merus           ccgaaagtgtaccccgtgcctcaattcccaccagatgttgcact-gtggctaggaatggag--gaaaacaaactcgcaaa
+An_melas           ccaaaagtgtacaccgtgcctcaattcccaccagatgttacgca-gtggctagaaatggag--gaaaacaaactccaaaa
+
+An_coluzzii        ga--------ttattaaaatgagcgtgtatgagctctacgatgc--ttctaaaacctttaaacttacacgtggtggcatt
+An_gambiae         ga--------ttattaaaatgagtgtgtatgagctctacgatgc--ttctaaaacctttaaacttacacgtgatggcatt
+An_quadriannulatus ga--------ttattaaaatgagtgtgtatgagctctagtatgc--ttctaaaacctttaaacttacacgtggtggcatt
+An_arabiensis      ta--------ttattaaaatgagcgtgtatgagctctacgatgc--ttctaaaacctttaaacttacacgtggtggcatt
+An_merus           ga--------ttattaaaatgagcgtgtatgagctctacgatgc--ttctaaaacctttaaacttacacgtggtggcatt
+An_melas           ga--------ttattaaaatgagcgtgtatgagctctacgatgc--ttctaaaacctttaaacttacacgtggtggcatt
+
+An_coluzzii        gacatggcgtttctacaataaagcttatttatcacaatataacacaaaatcatgtgg-taagatcgatgatgcatcataa
+An_gambiae         gacatggcgtttctacaataaagcttatttatcacaatataacacaaaatcatgtgg-taagatcgatgatgcatcataa
+An_quadriannulatus gacatggcatttctacaatanngcttatttatcacaatataacacaaaatcatgtgg-gaagatcgatgatgcat-----
+An_arabiensis      gacatggcgtttctacaataaagcttatttatcacaatataacacaaaatcatgtgg-taagatc---gatgaatcataa
+An_merus           gacgtggcgtttctgcaataaagcttctttatcaaaatataacacaaaatcatgtgg-taagatcgatgatgcatcataa
+An_melas           tacatggcgtttctgcaatgaagcttatttatcacaatattacacaaaatcatgtgg-taagatcgatgatgcatcataa
+
+An_coluzzii        cacgagtgttacagcacgttaaaaagcagcacaccacacctcacgatggaaatgcttcgctgataatgttcgc-------
+An_gambiae         cacgagtgttacagcacgttaaaaagcagcacaccacacctcacgatggaaatgcttcgctgataatgttcgc-------
+An_quadriannulatus ---gagtgttacagcacgttaaaaagcagcacaccacacctcacgatggaaatgcttcgctgataatgttcgc-------
+An_arabiensis      catgagtgttacagcacgttaaaaagcagcacaccacacctcacgatggaaatgcttcgctgataatgttcgc-------
+An_merus           catgagtgttacagcacgttaaaaagcagcacaccacacctcatgatcgaaatgcttcgctgataatgttcgc-------
+An_melas           catgagtgttacagcacgttaaaaagcagcacaccacacctcacgatagaaatgcttcgctgataatgttcgc-------
+
+An_coluzzii        ------------tcg-----------aactttac-caacgac-atgagcgcattatgaatagaacatg-ccgaatatgtt
+An_gambiae         ------------tcg-----------aactttac-caacgac-atgagcgcattatgaatagaacatg-ccgaatatgtt
+An_quadriannulatus ------------tcg-----------aactttac-caacgac-atgagcgcattatgaatagaacatg-ccgaatatgtt
+An_arabiensis      ------------tcg-----------aactttac-caacgac-atgagcgcattatgaatagaacatg-ccgaatatgtt
+An_merus           ------------tcg-----------aactttac-caacaac-atgagcgtattatgaatagaacatg-ctgaatatgtt
+An_melas           ------------ttg-----------aattttac-caacgac-atgagcgcattatgaatagaacatg-ccgaatatgtt
+
+An_coluzzii        acactctcgagcttgcaaaatggccgttaa-gcacgaggccggcc-aaataaacgtgttacgagtgacacatattttatg
+An_gambiae         acactctcgagcttgcaaaatggccgttaa-gcacgaggccggcc-aaataaacgtgttacgagtgacacatattttatg
+An_quadriannulatus acactctcgagcttgcaaaatggccgttaa-gcacgaggccggcc-aaataaacgtgttacgagtgacacatattttatg
+An_arabiensis      acactctcgagcttgcaaaatggccgttaa-gcacgaggccggcc-aaataaacgtgttacgagtgacacatattttatg
+An_merus           acactctcgagcttgcaaaatggccgttaa-gcacgaggccggcc-aaataaacgtgttacgagtgacacatattttatg
+An_melas           acactctcgagcttgcaaaatggccgttaa-gcacgaggccggcc-aaataaacgtgttacgagtgacacatattttatg
+
+An_coluzzii        cgcatacatcattgcgttgatc-----------------ttgcctactgctgcgcttgctcatcccaccg----cacatt
+An_gambiae         cgcatacatcattgcgttgatc-----------------ttgcctactgctgcgcttgctcatcccaccg----cacatt
+An_quadriannulatus cgcatacatcattgcgttgatc-----------------ttgcccactgctgcgcttgctcatcccaccg----cacatt
+An_arabiensis      cgcatacatcattgcgttgatc-----------------ttgcctactgctgcgcttgctcatcccaccg----cacatt
+An_merus           cgcatacatcattgcgttgatc-----------------ttgcctactgctgcgcttgctcatcccaccc----cacatt
+An_melas           cgcatacatcattgcgttgatc-----------------ttgcctactgctgcgcctgctcatcccaccg----cacatt
+
+An_coluzzii        ccc-----------aatttgcccagcataccaggggacac--gcggacatggacga-catcacttgataaccaaagaaaa
+An_gambiae         ccc-----------aatttgcccagcataccaggggacac--gcggacatggacga-catcacttgataaccaaagaaaa
+An_quadriannulatus ccc-----------aatttgcccagcataccaggggacac--gcggacatggacga-catcacttgataacaaaagaaaa
+An_arabiensis      ccc-----------aatttgcccagcataccaggggacac--gcggacatggacga-catcacttgataaccaaagaaaa
+An_merus           ccc-----------aatttgcccagcataccaggggacac--gcggacatggacga-catcacttgat------------
+An_melas           ccc-----------aatttgcccagcataccaggggactc--gcggacatgggcga-catcacttgataaccaaagaaaa
+
+An_coluzzii        catc-------acaaaaacaaaacgataaaaa------------------------------------gcggagcacatt
+An_gambiae         catc-------acaaaaacaaaacgataaaaa------------------------------------gcggagcacatt
+An_quadriannulatus catc-------acaaaaacaaaacgataaaaa------------------------------------gcggggcacatt
+An_arabiensis      catc-------acaaaaacaaaacgataaaaa------------------------------------gcggagcacatt
+An_merus           --------------------------------aaccaaagaaaacatcacaaaacaaaacgataaaaagcggagcacatt
+An_melas           catc-------acaaaaacaaaacgataaaaa------------------------------------gcggagcacatt
+
+An_coluzzii        gctcaccctccgtctccgtctcccccaattcgctgtatgcaaatgtaaaccccacggaatg-gtgcg------ccaaagc
+An_gambiae         gctcaccctccgtctccgtctcccccaatttgctgtatgcaaatgtaaaccccaccgaatg-gtgcg------ccaaagc
+An_quadriannulatus gctcaccctccgtctccgtctccnnnaatttgctgtatgcaaatgtacaccccacggaatg-gtgcg------ccaaagc
+An_arabiensis      gctcaccctccgtctccgtctcccccaatttgctgtatgcaaatgtaaaccccacggaatg-gtgcg------ccaaagc
+An_merus           gctcaccctccgtcttcgtct---ccaatttgctgtatgcaaatgtataccccgcggaatg-gtgcg------ccaaagc
+An_melas           gctcaccctccgtctccgtct---ccaatttgctgtatgcaaatgtataccccacggaatg-gtgcg------ccaaagc
+
+An_coluzzii        ataaccgcctt---cgtaatacgccattt-tcaaag--ctcctccag-gtcctgcccagtacaa----------------
+An_gambiae         ataaccgcctt---cgtaatacgccattt-tcaaag--ctcctccag-gtcctgctcagtacaa----------------
+An_quadriannulatus ataaccgcctt---cgtaatacgccattt-tcaaag--ctcctccag-gtcctgcccagtacaa----------------
+An_arabiensis      ataaccgcctt---cgtaatacgccattt-tcaaag--ctcctccac-gtcctgcccagtacaa----------------
+An_merus           ttaaccgcctt---cgtaatacgccattt-------------tctag-gtcctgtccagtacaa----------------
+An_melas           ataaccgcctt---cgtaatacgccattt-tcaaagctctcctccag-gtcctgcccagtacaa----------------
+
+An_coluzzii        --------gctgttgcttctgcatgtaagcgattacatcacattcaaattacttcc--------------------acc-
+An_gambiae         --------gctgttgcttctgcatgtaagcgattacatcacattcaaattacttcc--------------------acc-
+An_quadriannulatus --------gctgttgcttctgtatgtaagcgattacatcacattcaaattgcttcc--------------------acc-
+An_arabiensis      --------gctgttgcttctgcatgtaagcgattacatcacattcaaattacttcc--------------------acc-
+An_merus           --------gctgttgcttctgcatgtaagcgattacatcatattcaaattacttcc--------------------acc-
+An_melas           --------gctgttgcttctgcatgtaagcgattacatcacattcaaattgcttcc--------------------acc-
+
+An_coluzzii        --------------------------------aagaaggacac--tgtgcactctcccgcttcccaag----c------a
+An_gambiae         --------------------------------aagaaggacac--tgtgcactctcccgcttcccaag----c------a
+An_quadriannulatus --------------------------------aagaaggacac--tgtacactctcccgcttcccaag----c------a
+An_arabiensis      --------------------------------aagaaggacac--tgtgcactctcccgcttcccaag----c------a
+An_merus           --------------------------------aagaaggacac--agtgcactctgccgcttccccag----c------a
+An_melas           --------------------------------aagaaggacac--tctgcactctcccgctacacaag----c------a
+
+An_coluzzii        ctgccctttaacttctgcccaaacggggttcacgtggtctcaggaaaggactc-----aggaagcgacgggaaaggcgtg
+An_gambiae         ctgccctttaacttctgcccaaacggggttcacgtggtctcaggaaaggactc-----aggaagcgacgggaaaggcgtg
+An_quadriannulatus ctgccctttaacttctgcctaaacggggtgcacgtggcctcagcaaaggactc-----aggaagcgacggcaaaggcgtg
+An_arabiensis      ctgccctttaacttctgcccaaacggggttcacgtggtctcaggaaaggactc-----aggaagcgacgggaaaggcgtg
+An_merus           ctgccctttaacttctgcccaaacggggttcacgtggtctccggaaaggactc-----aggaagcgacgggaaaggcgtg
+An_melas           ctgccctttaacttctgcccaaacggggtgcacgtggcctcaggaaaggactc-----aggcagcgacgggaaaggcgtg
+
+An_coluzzii        taatgttctagttgtag---------cgtttcgtgtggt---cactccctcaa-----------------acaatgacag
+An_gambiae         taatgttctagttatag---------cgtttcgtgtggt---cactccctcaa-----------------acaatgacag
+An_quadriannulatus taatgttctagttatag---------cgtttnnnnnnnn---nnnnnnnnnaa-----------------acagtggcag
+An_arabiensis      taatgttctagttatag---------cgtttcgtgtggt---cactccctcaa-----------------acaatgacag
+An_merus           taatgttctagttatagcgtttatttcgtttcgtgcagt---cactccctcaa-----------------acagtgacag
+An_melas           taatgttctagttatagcgtttatttcgtttcgtgcggt---cactccctcaa-----------------acagtgacag
+
+An_coluzzii        agaagggttcatgtttt---tttgttgctctcgtattattttccattgcgtgcataaatccattgctaatcgggag--ct
+An_gambiae         agaagggttcatgtttt---tttgttgctctcgtattattttccattgcgtgcataaatccattgctaatcgggag--ct
+An_quadriannulatus agaagggttcatgtttt--tttttttgctctcgtattattttccgttgcgtgcataaatccatcgctaatcgggag--ct
+An_arabiensis      agaagagttcatgtttt--ttttgttgctctcgtattattttccattgcgtgcataaatccatcgctaatcgggag--ct
+An_merus           agaagggttcatgtgtt-------ttgctctcgtattattttccattgcgtgcataaatccatcgctaatcgggag--ct
+An_melas           agaagggttcatgttttttttttgttgctctcgtattattttccattgcgtgcataaatccatcgctaatcgggag--ct
+
+An_coluzzii        --gcgtaacagaa-acacaa-------atc-ctt---------ggttgtgtgagtgagcgtatggaagtgtgtgtgcatt
+An_gambiae         --gcgtaacagaa-acacaa-------atc-ctt---------ggttgtgtgagtgagcgtatggaagtgtgtgtgcatg
+An_quadriannulatus --gcgtaacagaa-acacaa-------atc-ctt---------cgt----------------------------------
+An_arabiensis      --gcgtaacagaa-acacaa-------atc-ctt---------cgt----------------------------------
+An_merus           --gcgtaacagaa-acacaa-------atc-ctttgttgtatgagt----------------------------------
+An_melas           --gcgtaacagaa-acacaa-------atc-ctt---------cgt----------------------------------
+
+An_coluzzii        tgtgt---------------------------------------------------------------------------
+An_gambiae         tgtgt---------------------------------------------------------------------------
+An_quadriannulatus --------------------------------------------------------------------------------
+An_arabiensis      --------------------------------------------------------------------------------
+An_merus           ----------------------------------------------------gagcgtatggaagtgtgtgtacatttgt
+An_melas           --------------------------------------------------------------------------------
+
+An_coluzzii        --------------------------------------------------------------------------------
+An_gambiae         --------------------------------------------------------------------------------
+An_quadriannulatus -------------------------------------------tgtgtgagtgagcgtatggaagtgtgtgtgnncatgt
+An_arabiensis      --tgtgtgagtgagcgtatggaagtgtgtgtgtgcatgtgtgt-------------------------------------
+An_merus           gt------------------------------------------------------------------------------
+An_melas           --------------------------------------------------------------------------------
+
+An_coluzzii        ----ttctgattggggagtgag---------------------------------------------------------a
+An_gambiae         ----ttctgattggggagtgag---------------------------------------------------------a
+An_quadriannulatus gtgtttnnnnnnggggaatgag---------------------------------------------------------a
+An_arabiensis      ----ttctgattggggagtgag---------------------------------------------------------a
+An_merus           ----ttgtgattggggagtgag---------------------------------------------------------a
+An_melas           ----------------------tgtgtgagtgagcgtatggaagtgtgtgtgcttgtgtgtttgtgattggggagtgaga
+
+An_coluzzii        agg-ggc------aacagtttttgc------------aacgaa--tc------------accacgc------caag-tgc
+An_gambiae         agg-ggc------aacagtttttgc------------aacgaa--tc------------accacgc------caag-tgc
+An_quadriannulatus agg-ggcaac--aaacagttcttac------------aacgaa--tc------------accacgc------caag-tgc
+An_arabiensis      agg-ggcaac--aaacagtttttac------------aacgaa--tc------------accacgc------caag-tgc
+An_merus           agg-ggcaac--aaacagtttttac------------aacgaa--tc------------accacgc------caag-tgc
+An_melas           agg-ggcaac--aaacagtttttac------------aacgaa--tc------------accacgc------caag-tgc
+
+An_coluzzii        ga---aattaaa------ttccacct----cgaggatc------tc---------tccacatattaagtgcgagcctcat
+An_gambiae         ga---aattaaa------ttccacct----cgaggatc------tt---------tccacatattaagtgcgagcctcat
+An_quadriannulatus ga---aattaaa------ttcctcct----cgaggatc------tc---------tccacatattaagtgcgagcctcat
+An_arabiensis      ga---aattaaa------ttccacct----cgaggatc------tc---------tccacatattaagtgcgagcctcat
+An_merus           ga---aattaaa------ttccacct----cgaggatc------tc---------tccacatattaagtgcgagcctcat
+An_melas           ga---aattaaa------ttcttcct----cgaggata------tc---------tccacatattaagtgcgagcctcat
+
+An_coluzzii        tgcgaagtg-tttgggcatctc---aggttaaaaatgtgcgactgtgcttattaggaactgtttt-----aagaaattgt
+An_gambiae         tgcgaagtg-tttgggcatctc---aggttaaaaatgtgcgactgtgcttattaggaactgtttt-----aagaaattgt
+An_quadriannulatus tgcgaaacg-tttgggcatctc---aggttaaaaatgtgcgactgtgcttattaggaactgtttt-----aagaaattgt
+An_arabiensis      tgcgaagtg-tttgggcatctc---aggttaaacatgtgcgactgtgcttattaggaactgtttt-----aagaaattgt
+An_merus           tgcgaagcg-tttgggcatctc---aggttaaaaatgtgcgactgtgcttattaggaactgtttt-----aagaaattgt
+An_melas           tgcgaagcg-tttggacatctc---aggttaaaaatgtgcgactgtgcttattaggaactgtttt-----aagaaattgt
+
+An_coluzzii        ttttcccatgtccagcttgaat---ggaggttcga--ttactagtcattaaaaaaa---cacaaaacgcaaactccatca
+An_gambiae         ttttcccatgtccagcttgaat---ggaggttcga--ttactagtcattaaaaaaa---cacaaaacgcaaactccatca
+An_quadriannulatus ttttcccatgtccagcttgaat---ggaggttcga--ttactagtcattaaaaaan---cacaaaacgcaaactccatca
+An_arabiensis      ttttcccatgtccagcttgaat---ggaggttcga--ttactagtcattaaaaaaaaaacacaaaacgcaaactccatca
+An_merus           ttttcccatgtccagcttgaat---ggaggttcga--ttaccagtcattgaaaaaa---cacaaaacgcaaactccatca
+An_melas           ttttcccatgtccagcttgaat---ggaggttcga--ttaccagtcattaaaaaac---cccaaaccgcaaactccatca
+
+An_coluzzii        tacactcacatacatttgtacacaaaa---ggtggca---gttagctcaactgt------------tgaaaaatgatcaa
+An_gambiae         tacactcacatacatttgtacacaaaa---ggtggca---gttagctcaactgt------------tgaaaaatgatcaa
+An_quadriannulatus tacactcacatacatttgtacacaaaa---ggtggcagttgttagctcaactgt------------tgaaaaatgatcaa
+An_arabiensis      tacactcacatacatttgtacacaaaa---ggtggca---gttagctcaactgt------------tgaaaaatgatcaa
+An_merus           tacactcacatacatttgtacacaaaa---ggcggca---gttagttcaactgt------------tgaaaaatgatcaa
+An_melas           tacactcacatacatttgtacacaaaa---ggtggca---gttagctcaactgt------------tgaaaaatgagcaa
+
+An_coluzzii        aaataactcaccccat----------cccccg---------tgggtgcagtgggtggtgtagaattttcctgttgatggt
+An_gambiae         aaataactcaccccat----------cccccg---------tgggtgcagtgggtggtgtagaattttcctgttgatggt
+An_quadriannulatus aaataactcaccccgc-----------ccccgtgggtgtaatgggtgcagtgggtggtgtagaattttcctgttgatggt
+An_arabiensis      aaataactcaccccat-----------ccccg---------tgggtgcagtgggtggtgtagaattttcctgttgatggt
+An_merus           aaataactcacccc-t----------gccccg---------tgggtgcagtgggtggtgtagaattttcctgttgatggt
+An_melas           aaataactcaccccgc-----------ccccg---------tgcgtgcagtgggtggtgtagaattttcctgttgatgat
+
+An_coluzzii        gcag-aaaaagtaagtcaacgcaaaa-----------------------cttgccact------atgcatgcattacgct
+An_gambiae         gcag-aaaaagtaagtcaacgcaaaa-----------------------cttgccact------atgcatgcattacgct
+An_quadriannulatus gcag-aaaaagtaagtcaacgcaaaa-----------------------cttgccact------atgcatgcattacgct
+An_arabiensis      gcag-aaaaagtaagtcaacgcaaaa-----------------------cttgccact------atgcatgcattacgct
+An_merus           gcag-aaaaagtaagtcaacgcaaaa-----------------------cttgccact------atgcatgcattacgct
+An_melas           gcag-aaaaagtaagtcaacgcaaaa-----------------------cttgccact------atgcatgcattacgct
+
+An_coluzzii        tcccggggtgtaccccgattgtgcgccccattcattcgctaccggc---------aattgtgcagaaattacc-tcccct
+An_gambiae         tcccggggtgtaccccgattgtgcgccccattcattcgctaccggc---------aattgtgcagaaattacc-tcccct
+An_quadriannulatus tcccggggtgtaccccgattgtgcgctcnattcattcgctactggc---------aattgtgcagaaattacc-tcccct
+An_arabiensis      tcccggggtgtaccccgattgtgcgccccattcattcgctaccggc---------aattgtgcagaaattacc-tcccct
+An_merus           tcccggggtgtaccctgattgtgcgccccattcattcgctaccggc---------aattgtgcagaaattacc-tcccct
+An_melas           tcccggggtgtaccccgattgtgcgccccattcattcgctaccggc---------aattgtgcagtaattacc-acccct
+
+An_coluzzii        tatgggcaatttctcgcacgataagcattttcat--cgctttatgcaaagcagtggggtcgcgtaagagaaaaaaaa--c
+An_gambiae         tatgggcaatttctcgcacgataagcattttcat--cgctttatgcaaagcagtggggtcgcgtaagagaaaaaaaa--c
+An_quadriannulatus tatgggcaatttctcgcacgataagcattttcat--cgctttatgcaaagcagtggggtcgcgtgagagaaaaaaan--c
+An_arabiensis      tatgggcaatttctcgcacgataagcattttcat--cgctttatgcaaagcagtggggtcgcgtaagagaaaaaaaaaac
+An_merus           tatgggcaatttctcgcacgataagcattttcat--cgctttatgcaaagcagtggggtcgcgtaagagaaaaaaaa--g
+An_melas           tatgggcaatttctcgcacgataagcattttcat--tgctttatgcaaagcagtggggtcgcgtaagagaaaaaa----c
+
+An_coluzzii        aacgaatggccaaaaaggt----aaagtaaacagttttaccactataaggcatcaaatgaaagtaatgtcacttagtaga
+An_gambiae         aacgaatggccaaaaaggt----aaagtaaacagttttaccactataaagcatcaaatgaaagtaatgtcacttagtaga
+An_quadriannulatus aacgaatggccaaaaaggt----aaagtaaacagttttaccactataaggcatcaaataaaagtaatgtcactaagagga
+An_arabiensis      aacgaatggccaaaaaggt----aaagtaatcagttttaccactataaagcatcaaatgaaagtaatgtcacttagtaga
+An_merus           aacgaatggccaaaaaggt----aaagtaaacagttttaccactataaggcatcaaataaaagtaatgtcacttagtaga
+An_melas           aacgaatggtcaaaaaggt----aaagtaaacagttttaccactataaggcatcaaataaaagtaatgccactaagtaaa
+
+An_coluzzii        a----acctcatggttatgaaggatgttattgcaaacatgtaaatagtt--tgacgtt---tagag--------ttcgat
+An_gambiae         a----acctcatggttatgaaggatgttattgcaaacatgtaaatagtt--tgacgtt---tagag--------ttcgat
+An_quadriannulatus a----gtcgcacggttatgaaggatgttattgcaaacatttaaatagtt--tgacgtt---tagag--------ttcgat
+An_arabiensis      a----acctcatggttatgaaggatgttattgcaaacatgtaaatagtt--tgacgtt---tagag--------ttccat
+An_merus           a----accgcacggttatgaaggatgttattgcaaacatgtaaatagtt--tgacgtt---tagag--------ttcgat
+An_melas           a----gccgcacggttatgaaggatgttattgcaaacatgtaaatagtt--tgacgtt---tagag--------ttcgat
+
+An_coluzzii        gcaataaggccttatttttcgg-----gcttttggccgcaaaacagaagacattcgaccattatcttctctgcgctgacc
+An_gambiae         gcaataaggccttatttttcgg-----gcttttggccgcaaaacagaagacattcgaccattatcttctctgcgctgacc
+An_quadriannulatus gcaataaggccttatttttcgg-----gcttttggccacaaaacagaagacattcgaccattatcttctctgcgctgacc
+An_arabiensis      gcaataaggccttatttttcgg-----gcttttggccgcaaaacagaagacattcgaccattatcttctctgcgctgacc
+An_merus           gcaataaggccttatttttcgg-----ggttttggccgcaaaacagaagacattcgaccattatcttctctgcgctgacc
+An_melas           gcaataaggccttatttttcgg-----gcttttggccgcaaaacagaagacattcgaccattatcttctttgcgctgaac
+
+An_coluzzii        gattaaatcatccattgattatgcagcaccccgcgcgccaacgatcgattaagtcgaccaacgaaatgactcgct-----
+An_gambiae         gattaaatcatccattgattatgcagcaccccgcgcgccaacgatcgattaagtcgaccaacgaaatggctcgct-----
+An_quadriannulatus gattaaatcatccattgattatgcagcaccccgcgccccaacgatcgattaagtcgaccaacgaaatgactcgct-----
+An_arabiensis      gattaaatcatccattgattatgcagcaccccgcgcgccaacgatcgattaagtcgaccaacgaaatgactcgct-----
+An_merus           gattaaatcatccattgattatgcagcaccccgcgcgccaacgatcgattaagtcgaccaacgaaatgactcgct-----
+An_melas           gattaaatcatccattgattatgcagcaccccgcgccccaacgatcgattaagtcgaccaacgaaatgactcgct-----
+
+An_coluzzii        --gtcgcgtct---gacccgcagtcggcacaggtcagcacg----aagaaatcgcccgctt---gc-cgaggtcaccggc
+An_gambiae         --gtcgcgtct---gacccgcagtcggcacaggtcagcgcg----aagaaatcgcccgctt---gc-cgaggtcaccggc
+An_quadriannulatus --gtcgcgtct---gacccgcagtcggcacaggtcagcgcg----aagaaatcgcccgctt---gc-cgaggtcaccggc
+An_arabiensis      --gtcgcgtct---gacccgcagtcggcacaggtcagcgcg----aagaaatcgcccgctt---gc-cgaggtcaccggc
+An_merus           --gtcgcgtct---gacccgcagtcggcacaggtcagcgcg----aagaaatcgcccgctt---gc-cgaggtcaccggc
+An_melas           --gtcgcgtct---gacccgcagtcggtacaggtcagcgcg----aagaaatcgcccgctt---gc-cgaggtcaccggc
+
+An_coluzzii        -gag--gtcctccctggcgcagaagg---------------------tgttgcatccctcccgtgagagtcccggcgggg
+An_gambiae         -gag--gtcctccctggcgcagaagg---------------------tgttgcatccctcccgtgagagtcccggcgggg
+An_quadriannulatus -gag--gtcctccctggcgcagaagg---------------------tgttgcatccctcccgtgagagtcccgccgggg
+An_arabiensis      -gag--gtcctccctggcgcagaagg---------------------tgttgcatccctcccgtgagagtcccggcgggg
+An_merus           -gag--gtcctccctggcgcagaagg---------------------tgttgcatcccacccgtgagagtccaggcgggg
+An_melas           -gag--gtcctccctggcgcagaagg---------------------tgttgcatccctcccgtgagagtcccggcgggg
+
+An_coluzzii        ccgta---acgcaaggcagtggcggcagcgacggcgagatcgccctgtcagcacaagccgtgtgcgggacgccgttcttt
+An_gambiae         ccgta---acgcaaggcagtggcggcagcgacggcgagatcgccctgtcagcacaagccgtgtgcgggacgccgttcttt
+An_quadriannulatus ccgta---atgcaaggcagtggcggcggcgacggcgagatcgccctgtcagcacatgccgtgtgcgggacgccgttcttt
+An_arabiensis      ccgta---acgcaaggcagtggcggcagcgacggcgagatcgccctgtcagcacaagccgtgtgcgggacgccgttcttt
+An_merus           ccgta---acgcaaggcagtggcggcggcgacggcgagatcgccctgtcagcacatgccgtgtgctggacgacgttcttt
+An_melas           ccgta---acgcaagatagtggcggcggcgacggcgagatcgccctgtcagcacatgccgtgcgcgggacgccgttcttt
+
+An_coluzzii        gagaacgacgttggtgcgtcggcggtgcaggcgaccg----atgtgca---cacgcgcgtttgcattggaaataagcata
+An_gambiae         gagaacgtcgttggtgcgtcggcggtgcaggcgaccg----atgtgca---cacgcgcgtttgcattggaaataagcata
+An_quadriannulatus gagaacgacgttggtgcgtcggcggtgcaggcgaccg----atgtgca---cacgcgcgtttgcattggaaataagcata
+An_arabiensis      gagaacgacgttggtgcgtcggcggtgcaggcaaccg----atgtgca---cacgcgcgtttgcattggaaataagcata
+An_merus           gagaacgacgttggtgcgtcggcggtgcaggcgaccg----atgtgca---cacgcgcgtttgcattggaaataagcata
+An_melas           gagaacgtcgttggtgcgtcggcggtgcaggcgaccg----atgtgca---cacgcgcgtttgcattggaaataagcata
+
+An_coluzzii        tgaaaatgtatgagcta-----caatcgcgcatgaaagaccgggaagacctatgggcccacgctcacatgtttgtggg--
+An_gambiae         tgaaaatgtatgagcta-----caatcgcgcatgaaagaccgggaagacctatgggcccacgctcacatgtttgtggg--
+An_quadriannulatus tgaaaatgtatgagcta-----caatcgcgcatgaaagaccgggaagacctatgggcccacgctcacatgtttgtggg--
+An_arabiensis      tgaaaatgtatgagcta-----caatcgcgcatgaaagaccgggaagacctatgggcccacgctcacatgtttgtggg--
+An_merus           tgaaaatgtatgagcta-----caatcgcgcatgaaagaccgggaagacctatgggcccacgctcacatgtttgtggg--
+An_melas           tgaaaatgtatgagcta-----caatcgcgcatgaaagaccgggaagacctatgggcccacgctcacatgtttgtggg--
+
+An_coluzzii        -----gctgggggaatggaaagaca--ttaaaaggaaagcggaatcggta------gtggaacgccgcgacct-tagtcg
+An_gambiae         -----gctgggggaatggaaagaca--ttaaaaggaaagcggaatcggta------gaggaacgcagcgacct-tagtcg
+An_quadriannulatus -----gctgggggaatggaaagaca--ttaaaaggaaagcggaatcggta------gtggaacgccgcgacct-tagtcg
+An_arabiensis      -----gctgggggaatggaaagaca--ttaaaaggaaagcggaatcggta------gtggaacgccgcgacct-tagtcg
+An_merus           -----gctgggagaatggaaagaca--ttaaaaggaaagcagaattggtagtggtggtggaacgccgcgacct-tagtcg
+An_melas           -----gctgggggaatggaaagaca--ttaaaaggaaagcggaatcggtagtgatgttggaacgccgcgacct-tagtcg
+
+An_coluzzii        cgaaaggtactcccgaaagctggccaaactaaacggagtatccnaaaaa-acggaaatattagggaaacaatatggacgc
+An_gambiae         cgaaaggtactcccgaaagctggccaaactaaacggagtatccaaaaaa-acggaaatattagggaaacaatatggacgc
+An_quadriannulatus cgaaaggtactcccgaaagctggccaaactaaacggagtatccaaaaaa-ncggaaatattagggaaacaatatggacgc
+An_arabiensis      cgaaaggtactcccgaaagctggccaaactaaacggagtatccaaaaaa-acggaaatattagggaaacaatatggacgc
+An_merus           cgaaaggtactcccgaaagcgggcaaaactaaacggagtatcaaaaaaaaacgggaatattagggaaacagtacggatgc
+An_melas           caaaaggtactcccgaaagctgccaaaactaaatggagtatccaaaaaa--cggatatattagggaaacagtatggacgc
+
+An_coluzzii        -aagctaataaacgt--taaggattaggcaaaactacgccacacc---gtgtatccgggtcatcagccaggataggttag
+An_gambiae         -aagctaataaacgt--taaggattaggcaaaactacgccacacc---gtgtatccgggtcatcagccaggataggttag
+An_quadriannulatus -aagctaataaacgt--taaggattaggcaaaactacgccacacc---gtgtatccaggtcatcagccaggataggttag
+An_arabiensis      -aagctaataaacgt--taaggattaggcaaaactacgccacacc---gtgtatccgggtcatcagccaggataggttag
+An_merus           -aagctaataaacgt--taaggattaagcaaaactacgccacacc---gtgtatccgggtcatcagccaggataggttag
+An_melas           -aagctaataaacgt--taaggattaggcaaaactacgccacacc---gtgtatccgggtcatcagccaggataggttag
+
+An_coluzzii        cgtggtgtatgtgcatttaaaacgtaaaa--taaaacgtttagcataa-tatta--caaaaaaaa-ccttgag---atag
+An_gambiae         cgtggtgtatgtgcatttaaaacgtaaaa--taaaacgtttagcataa-tacta--caaaaaaaa-ccttgag---atag
+An_quadriannulatus cgcggtgtatgtgtttttaaaacgtaaaa--taaaacgtttagcataa-tatta--caaaaaaaaaccttgag---atag
+An_arabiensis      cgtggtgtatgtgcatttaaaacgtaaaa--taaaacgtttagcataa-tatta--caaaaaaaa-ccttgag---atag
+An_merus           cgcggtgtatgtgcttttaaaacgtaaaa--taatacatttagcataattatcacccaaaaaaaanccttgag---atag
+An_melas           cgcggtgtatgtgcttttaaaacgtaaaa--taaaacatttagcataattatca--cacaaaaaaatcttaag---atag
+
+An_coluzzii        aa-ggcttgggcaaggtc-tttaagaaaacattcatttcagcacgtct-agaaaccgtgc---cacagtggcgataccta
+An_gambiae         aa-ggcttgggcaaggtc-tttaagaaaacattcatttcagcacgtct-agaaaccgtgc---cacagtggcgataccta
+An_quadriannulatus aa-ggcttgggcaaggtc-tttaagaaaacattcatttcagcacgtct-agaaaccgtgc---cacagtggcgataccta
+An_arabiensis      aa-ggcttgggcaaggtc-tttgagaaaacattcatttcagcacgtct-agaaaccgtgc---cacagtggcgataccta
+An_merus           aa-ggcttgggcaaggtc-tttaagaaaacattcatttcagcacgtct-agaaaccgtgc---tacagtggcaataccta
+An_melas           aa-ggcttgggcaaggtc-tttaagaaaacattcatttcagcacgtct-agaaaccgtgc---cacagtggcgataccta
+
+An_coluzzii        cttg---ggcccggtcctgcccatgcaggccctatgcatctggagaaatcc-tgctttagttactg-------ttttcta
+An_gambiae         cata---agcccggtcctgccaatgcaggccctatgcatctggagaaatcc-tgctttagttactg-------ttttcta
+An_quadriannulatus ctcg---ggcccggtcctgcccatgcaggcactatgcgtctgaagaaatcc-tgctttagttacta-------ttttcta
+An_arabiensis      cttg---ggcccggtcctgcccatgcaggccctatgcatctggagaaatcc-tgctttagttactg-------ttttcta
+An_merus           cttg---tgcccggtcctgtccatgcaggccctatacgtctggagaaatcc-tgctttagttactg-------ttttcta
+An_melas           cttg---ggcccggtcctgcccatgcaggccctatgcatctggagaaatcc-ggctttagttactg-------ttttcta
+
+An_coluzzii        ttccttattttcaaaccatttca--------------gaacggttttgaaaagc-------gtctacactgtgaagcaaa
+An_gambiae         ttgcttattttcaaaccatttca--------------gaacggttttgaaaagc-------gtctacactgtgaagcaaa
+An_quadriannulatus ttccttattttcaaaccatttct--------------gaacggttttgaaaagc-------gtctgcactgtgaagcaaa
+An_arabiensis      ttccttattttcaaaccatttca--------------gaacggttttgaaaagc-------gtctgcactgtgaagcaaa
+An_merus           ttccttattttcaaaccatttct--------------gaacggttttgaaaagc-------gtctgcactgtgaagcaaa
+An_melas           ttgcttattttcaaaccatttca--------------gaacg--------------------------------------
+
+An_coluzzii        gagtgactccttttttcctaaacattacgttagttaggctttgttttgacttggcggtgtttgtgcagagtcgtctggtg
+An_gambiae         gagtgtcgccttttttcctaaacattacgttagttaggctttgttttgacttggcggtgtttgtgcagagtcgtctggtg
+An_quadriannulatus gagtgaca-tttttttcctaaacattacgttagttaggctttgttttgacttg---------------------------
+An_arabiensis      gagtgacgccttttttcctaaacattacgttagttaggctttgttttgacttg---------------------------
+An_merus           gaatgacg-cttttttcctaaacattacgttagttaggctttgttttgacttggcggtgtttgtgcagagtcgtctggtg
+An_melas           --------ctttttttcctaaacattacgttagttaggctttgttttgacttggcgatgtttgtgcagagtcgtctggtg
+
+An_coluzzii        ------tctgatgtctg--ctg----------------------------------------------------------
+An_gambiae         ------tctgatgtctg--ctg----------------------------------------------------------
+An_quadriannulatus ---------------------g----------------------------------------tggtgtttgtgcagagtc
+An_arabiensis      ---------------------gtggtgtttgtgcagagtcgtctggtgtctgatgtctgctg------------------
+An_merus           ------tctgatgtctg--ctg----------------------------------------------------------
+An_melas           ------tctgatgtctg--ctg----------------------------------------------------------
+
+An_coluzzii        ----------------------gagttgatgcgtgtgcgtgtccttggccaatgtttaccaccccgattgcaccctaatc
+An_gambiae         ----------------------gagttgatgcgtgtgcgtgtccttggccaatgtttaacaccccgattgcaccctaatc
+An_quadriannulatus gtctggtgtctgatgtctgctggagttgatgcgtgtgcgtgtccttggccagtgttcgacaccccgattgcaccctaatc
+An_arabiensis      ----------------------gagttgatgcgtgtgcgtgtccttggccaatgtttaacactccgattgcaccctaatc
+An_merus           ----------------------gagttgaggcgtgtgcgtgtccttggccagtgtttgacaccccgattgcaccctaatc
+An_melas           ----------------------gagttgatgcgtgtgcgtgtccttggccattgtttgacaccccgagtgcaccctaatc
+
+An_coluzzii        cactttttctaaggcttcacggggcgtttgaactggagtgctactgttttatcatatttactcctcctaatgg-------
+An_gambiae         cactttttctaaggcttcacggggcgtttgaaatggagtgctactgttttatcatatttactcctcctaatgg-------
+An_quadriannulatus cactttttctaaggcctcacggggcgtttgaaatggagtgcaactgttgtatcatatttacttctcctaatgg-------
+An_arabiensis      cactttttctaaggcttcacggtgcgtttgaaatggagtgcaactgttttatcatatttactcctcctaatgg-------
+An_merus           cactttttctaaggcttcacgggtagtttgaaatagagtacaacgagtttatcatatttactcctcctaatgg-------
+An_melas           cactttttctaaggcttcacggggtgtttgaaatggagtgcaacgggtttatcatatttactcctcctaatgg-------
+
+An_coluzzii        ----ttccatgcatggtttatcgtcgaaaatcctatcattgtttaactt--tctaatctagaaggtagcatc-----ttt
+An_gambiae         ----ttccatgcatggtttatcgtcgaatttcctatcattgtttaactt--tctaatctagaagatagcatc-----ttt
+An_quadriannulatus ----ttccatgcatggtttatcgtcgaatttcctatcattgtttaactt--tctaatctagaa-gtagcatc-----ttt
+An_arabiensis      ----ttccatgcatggtttatcgtcgaatttcctatcattgtttaactt--tctaatctagaaggtagcatc-----ttt
+An_merus           ----tttcatgcatggtttatcgtcgagtttcctatcattgtttaactt--tctaatctagaa-gtagcatc-----ttt
+An_melas           ----ttccatgcatggtttatcgtcgaatttcctatcattgtttaactt--tctaatttagaa-gcagcatc-----ttt
+
+An_coluzzii        actca-taaaaataagattcaatatga------------cttacaaacttttcctatcagaagctattctgctattctg-
+An_gambiae         actca-taaaaataagattcaatatga------------cttacaaacttttcctatcagaagctattctgctattctg-
+An_quadriannulatus actca-taaaaataagattcaatatga------------cttacaaacttttcctataagatggtattctgctattctg-
+An_arabiensis      actca-ttaaaataagattcaatatga------------cttacaaacttttcctatcagaagctattttgctattctg-
+An_merus           gctta-taaaaataagattcgatgtga------------tttacaaacttttcccatcagaagctgttcagatattctg-
+An_melas           gctca-taaaaataagattccatgtga------------cttacaaacttttccttgcacaagctattctgctattatg-
+
+An_coluzzii        -------cattccttttga--------ctgctataaaa-ggcatgcattagttcattctacattatgttgtgctgtttcg
+An_gambiae         -------cattccttttga--------ctgctataaaa-ggcatgcattagttcgttctacattatgttgtgctgtttcg
+An_quadriannulatus -------cattccttttga--------ctgttataaaa-ggcatgcattagttcattctacattatgttgtgttgttttg
+An_arabiensis      -------cattccttttga--------ctgctataaaa-ggcatgcattagttcgttctacattatgt-----tgtttcg
+An_merus           -------cattccttttga--------ctgctgtaaat-ggcatgcattagcttattctgcattatgttgtgctgtttcg
+An_melas           -------tattccttttga--------cttctataaaa-ggcacgcattggctcattctacattatgttgtgctgtttcg
+
+An_coluzzii        tttcgcccttctttggtcgttcatcaggcaacaagcaagtatcaataaacggc-aagaaattcattcataaatacgtgca
+An_gambiae         tttcgcccttctttggtcgttcatcaggcaacaagcaagtatcaataaacggc-aagaaattcattcataaatacgtgca
+An_quadriannulatus tttcgcccttctttggtcgttcatcaggcaacaagcaagtatcaataaacggc-aagaaattcattcataaatacgtgca
+An_arabiensis      tttcgcccttctttggtcgttcatcaggcaacaagcaagtatcaataaacggc-aagaaattcattcataaatacgtgca
+An_merus           tttcgcccttctttggtcgttcattaggcaacaagcaagtatcaataaacggc-aagaaattcattcataaatacgtgca
+An_melas           ttttgcccttctttggtcgttcattaggcagcaagcaagtatcaataaacggc-aagaaattcattcataaatacgtgca
+
+An_coluzzii        --------tcggtttgcgtaaccaa--ttgaaaaaaaa---------cacacacaaaaacatccgtggttcccgttcatg
+An_gambiae         --------tcggtttgcgtaaccaa--ttgaaaaaaaa---------cacacacaaaaacatccgtggttcccgttcatg
+An_quadriannulatus --------tcggtttgcgtaaccaa--ttgaaaaaaaaaa-an---acacacacaaaa-catccgtggttcccgttcatg
+An_arabiensis      --------tcggtttgcgtaaccaa--ttgaaaaaaa----------cacacacaaaa-catccgtggttcccgttcatg
+An_merus           --------tcggtttacgtaaccaa--ttgaaacaaaaca------ttaaaaaaaaaa-catccgtggttcccattcatg
+An_melas           --------tcggtttgcgtaaccaa--ttgaaaaacacac-aca--aaaaacacaaaa-catccgtggttcccgttcatg
+
+An_coluzzii        tgct---------------tgttgacaagtacaaaatcggctgcgttgcaatttac--------ttccgtta----c-cc
+An_gambiae         tgct---------------tgttgacaagtacaaaatcggctgcgttgcaatttac--------ttccgtta----c-cc
+An_quadriannulatus tgct---------------tgttgacaagtacaaaatcagctgcgttgcaatttac--------ttccgtta----c-cc
+An_arabiensis      tgct---------------tgttgacaagtacaaaatcggctgcgttgcaatttac--------ttccgtta----c-cc
+An_merus           tgct---------------tgttgacaagtacaaaatcagctgcgttgcaatttac--------ttccgtta----c-cc
+An_melas           tgct---------------tgttgacaagtacaaaatcagctgcgttgcaatttac--------ttccgtta----c-cc
+
+An_coluzzii        gcaagtccacccgcgaagacaccttaatgttgcgttaa---------------tgcgttatgatgtatgact-----ttg
+An_gambiae         gcaagtccacccgcgaagacaccttaatgttgcgttaa---------------tgcgttatgatgtatgact-----ttg
+An_quadriannulatus gcaagtccacccgcgaagaaaccttantgntgcgtta-----------------------tgatgtatgact-----ttg
+An_arabiensis      gcnagaaccctt---------------tgttgcgtcga---------------ttca------tgtatgact-----ttg
+An_merus           gcaagtccacccgcgaagacaccttaatgttacgttaa---------------tgcgttatgatgtatgatt-----ttg
+An_melas           gcaagtccacccgcgaagacaccttaatgttgcgttaa---------------ttca--acaaagtatgact-----ttg
+
+An_coluzzii        tttcgtttgacaaaaagggcggcctttctgtaaga--------------gcaacctttacgaagacaaatttaggt----
+An_gambiae         tttcgtttgacaaaaagggcggcctttctgtaaga--------------gcaacctttacgaagacaaatttaggt----
+An_quadriannulatus tttcgtttgacaaaaagggtggtctttctgtaaga--------------gcaacttttacgaaggcaaatataggt----
+An_arabiensis      tttcgtttgacaaaaagggcggcctttctgtaaga--------------gcaacctttacgaagacaaatttaggt----
+An_merus           tttcgtatgataaaaagggtggcctttctgtaagg--------------ccaacctttacgaagtcaaataaaggt----
+An_melas           tttcgtatgacaaaaagggcggcctttctgtaaga--------------gcaacctttacgaagacaagtataggt----
+
+An_coluzzii        ---------ataatttaataatgtgg-atacattttgtatca----atcataaaatacatgaagtaaaaccgttacattc
+An_gambiae         ---------ataatttaataatgtgg-atacattttgtatca----atcataaaatacatgaaatgacaccgttacattc
+An_quadriannulatus ---------ataatttaataatatgg-atacattttgtatca----atcataaaatacatgaaatgaaaccgttacattc
+An_arabiensis      ---------ataatttaataatgtgg-atacattttgtatca----atcataaaatacataaaatgaaaccgttacattc
+An_merus           ---------ataatttaataatgttg-atacattttgtatcc----atcataaaatacatgaaatgaaaccgttacattc
+An_melas           ---------ataattcaataatgttg-atacattttgtatca----atcataaaacacatgaaatgaaaccgttacattc
+
+An_coluzzii        gaacat----attag----tttctctgttcagact--g---caattatggtaagaattcaa-----------aacaaat-
+An_gambiae         gaacat----attag----ttcctctgttcagact--g---caattatggtaagaattcaa-----------aacaaat-
+An_quadriannulatus gaacat----attag----ttcctctgttcagact--g---caattatggtaagaattcaa-----------aacaaat-
+An_arabiensis      gaacat----attag----ttcctttgttcagact--g---caattatggtaagaattcaa-----------aacaaat-
+An_merus           gaacat----gttag----ttcctccgttcagact--g---caattatgataagaattcaa-----------aacaaat-
+An_melas           gaatatgttagttag----ttcctccgttcagact--g---caataatggtaagaattcaaatcaaacaaacaacaaat-
+
+An_coluzzii        ggaagcg--------------------------------------------------ttat---gtgttaaattttactc
+An_gambiae         ggaagcg--------------------------------------------------ttat---gtgttaaattttactc
+An_quadriannulatus ggaagcg--------------------------------------------------ttat---gcgttaaatttcactc
+An_arabiensis      ggaagcg--------------------------------------------------ttat---gtgttaaattttactc
+An_merus           ggaagcg--------------------------------------------------ttat---gagtcaaatttcactc
+An_melas           ggaagcg--------------------------------------------------ttat---gtgttaaatttcactc
+
+An_coluzzii        t---taataggtatatcgcattat---------------gtcttgc----------------ggtattatctgt------
+An_gambiae         t---taataggtatatcgcattat---------------gtcttgc----------------ggtattatctgt------
+An_quadriannulatus t---caataggtatatcgcatttt---------------gtcttgcta-------gatgca-gatagta-ccgt------
+An_arabiensis      t---taataagggtatcgcattat---------------gtcttgc----------------ggtattatctgt------
+An_merus           t---taataggtatatcgcattat---------------atcttgc----------------ggtactatctac------
+An_melas           t---taataggtatatcgtattat---------------gtattgc----------------ggtactatcggtactatg
+
+An_coluzzii        --ttattta--------tttttttcgatacaaaactgatctc---------------------attttggat--aaga-a
+An_gambiae         --ttattta--------tttttttcgatccaaaactgatctc---------------------attttggaa--aaga-a
+An_quadriannulatus --ttattta--------tttttttcgatacaaaactgatctc---------------------attttggaa--aaga-a
+An_arabiensis      --ttattta--------tttttttcgatacaaaactgatctc---------------------attttggaa--aaga-a
+An_merus           --ttattta--------atagtttcaatgcaaaac-----------------------------------at--ggaa-a
+An_melas           tcatatttg--------atagtttcaatgcaaaactggtctc---------------------attttagaa-----a-a
+
+An_coluzzii        aaat--------gaaacatg-------------tgtctcccaattttggtcggccgcg-tttgcgtactcgattcggctc
+An_gambiae         aaat--------gaaacatg-------------tgtctcccaattttggtcggccgcg-tttgcgtactcgattcggctc
+An_quadriannulatus aaat--------gaaacatg-------------tgtctctcaattttggtcggccgcg-tttgcgtactcgattcggctc
+An_arabiensis      aaat--------gaaacatg-------------tgtctcccaattttggtcggccgcg-tttgcgtactcgattcggctc
+An_merus           aaat--------gaaacat-----------------------------gtcggccgcg-tttgcgtactcgactcgg---
+An_melas           aaat--------gaaacatg-------------tgtctcccaattttggtcggacgcg-tttgcgtactcgactcggctc
+
+An_coluzzii        ctcctttcggtgga-----------------tttttttt---------ctttctaaaataggg---actcccactggtat
+An_gambiae         ctcctttcggtgga-----------------tttttttt---------ctttctaaaataggg---actcccactggtat
+An_quadriannulatus ctcctttcggtaga-----------------tttttttt---------ctttctaaaataggg---actcccactggtat
+An_arabiensis      ctcctttcggtgga-----------------tttttttt-tt------ctnnntaaaataggg---actcccactggtat
+An_merus           -----------gga-----------------tttttttc-tt------ctctctaaaataggg---actcccactggtat
+An_melas           ctcctttcggtgga-----------------ttttttttctt------ctttctaaaataggg---actcccactggtat
+
+An_coluzzii        tggcatcatcccc-aaaaagtatgttcaccaccaccatcatg---gctcacgtgcgcgccacctcc-tttgtgggttggt
+An_gambiae         tggcatcatctcc-aaaaagtatgttcaccaccaccatcatg---gctcacgtgcgggccacctcc-tttgtgggttggt
+An_quadriannulatus tggcatcatcccc-aaaaagtatgttcaccaccactatcatg---gctcacgtgcgcgccacctccttttgttggttggt
+An_arabiensis      tggcatcatcccc-aaaaagtatgttcaccaccaccatcatg---gctcacgtgcgcgccacctcc-tttgtgggttggt
+An_merus           tggcatcatcccc-aaaaagtatgtacagtaccaccatcatg---gctcacgtgcgcgccacctcc-tttgtgaaatggt
+An_melas           tggcatcatcccc-aaaaagtatgttcaccaccaccatcatggttgctcacgtgcgcgccacctcc-tttgtggaatggt
+
+An_coluzzii        ggttggctggtgttcatacttacgtct-ccatttttcccgctcctgccaccgctcttgctcatttgtgtttcattacgtg
+An_gambiae         ggttggctggtgttcatacttacgtct-ccatttttcccgctcctgccaccgctcttgctcatttgtgtttcattacgtg
+An_quadriannulatus ggttggctgctgttcatacttacgtct-ccatttttcccgctcctgccaccgcccttgctcatttgtgtttcattacgtg
+An_arabiensis      ggttggctgctgttcatacttacgtct-ccatttttcccgctcctgccaccgctcttgctcatttgtgtttcattacgtg
+An_merus           ggttggctgctgttcatacttacgtct-ccttttttcccgctcctgccaccgcccttgctcatttgtgtttgattacgtg
+An_melas           ggttggctgctgttcatatttacgtct-cctattttcccgttcctgccaccgcccttgctcatttgtgtttcattacgtg
+
+An_coluzzii        cgattttttggcacaaattatcacggcctcaacggtg----g----cctgcgtcgcttgcgtgca---gattcc-aaaaa
+An_gambiae         cgattttttggcacaaattatcacggccccaacggtg----g----cctgcgtcgcttgcgtgca---gattcc-aaaaa
+An_quadriannulatus cgattttttggcacaaattatcacggccccaaccgtg----g----cctgcgtcgcttgcgtgca---gattcc-aaaaa
+An_arabiensis      cgattttttggcacaaattatcacggcctcagcggtg----g----cctgcgtcgcttgcgtgca---gattcc-aaaaa
+An_merus           cgattttttggcacaaattatcacggccccaacggtg----g----cctgcgtcgcttgcgtgca---gattcc-aaaaa
+An_melas           cgattttttggcacaaattatcacggccccaacggtg----g----cctgcgtcgcttgcgtgca---gattcc-aaaaa
+
+An_coluzzii        cacgcctacag-tttggctc--cttcacggttggaagcattcttgatgaatctttcattatctcctcccttggggacctc
+An_gambiae         cacgcctacag-tttggctc--cttcacggttggaagcattcttgatgaatctttcattatctcctcccgtggggacctc
+An_quadriannulatus cacgcctacag-tttggctc--cttcacggttggaagaattcttgatgaatctttcattatctcctcccgtggggacctc
+An_arabiensis      cacgcctacag-tttggctc--cttcacggttggaagcattcttgatgaatctttcattatttcctcccgtggggacctc
+An_merus           cacgcctacag-tttggctc--cttcacggttggaagcattcttgatgaatctttcattatctcctcccgtggggacctc
+An_melas           cacgcctacag-tttggctg--cttcacggttggaaccattcttaatgaatctttcattatctcctcccgtgcggacctc
+
+An_coluzzii        cgcg-------aacacaaacacccttgacaaggtgcgcgatctcgactg----------ccccgaaggttccccgaagca
+An_gambiae         cgcg-------aacacaaacacccttgacaaggtgcgcgatctcgactg----------ccccgaaggttccccgaagca
+An_quadriannulatus cgcg-------aacacaaacacccttgacaaggtgcgcgatctcggctg----------ccccgaaggttccccgaagca
+An_arabiensis      cgcg-------aacacaaacacccttgacaaggtgcgcgatctcgactg----------ccccgaaggttccccgaagca
+An_merus           cgcg-------aacacaaacacccttgacaaggtgcgcgatctcggctg----------ctccgaaggttccccgaagca
+An_melas           cgcg-------aacacaaacacccttgacaaggtgcacgatctcggctg----------ccccgaaggttccccgaagca
+
+An_coluzzii        aaattattagaaacggaaaa-acatc--ccaac----------gtacccccggcaacatgatgctgctgctgccgctgct
+An_gambiae         aaattattagaaacggaaaa-acatc--ccaac----------gtacccccggcaacatgatgctgctgctgccgctgct
+An_quadriannulatus aaattattagaaacggaaaa-acatc--ccaac----------gtacccccggcaaca----------------------
+An_arabiensis      aaattattagaaacggaaaa-acatc--ccaac----------gtacccccggcaaca----------------------
+An_merus           aaattattagaaacgaaaaa-acatc--ccaac----------gcacccccggcaaca----------------------
+An_melas           aaattattagaaacggaaaa-acatc--ccaac----------gca-ccccggcaaca----------------------
+
+An_coluzzii        gct-----------------------------------------------------------------------------
+An_gambiae         gct-----------------------------------------------------------------------------
+An_quadriannulatus -----------------------------------------------------tgatgctgctgctgccgctgctgct--
+An_arabiensis      ----------------------------tgatgctgctgctgccgctgcatct---------------------------
+An_merus           --------------------------------------------------------------------------------
+An_melas           ------------------------------------------------------------------------------tg
+
+An_coluzzii        -----------a-------------------------catggc--gggcgagatatt-----------------------
+An_gambiae         -----------a-------------------------cacggc--gggcgagatatt-----------------------
+An_quadriannulatus -----------a-------------------------catggc--gggcgagatatt-----------------------
+An_arabiensis      -----------a-------------------------catggc--gggcgagatatt-----------------------
+An_merus           -----------tgatgctgctgctgccgctgctgcttcatggc--aggggagatatt-----------------------
+An_melas           atgctgctgcta-------------------------catggt--gggcgagatatt-----------------------
+
+An_coluzzii        --------------------ctctccccaatcatttgctccacttcgggtagctgcgggtgtgcggcgttaaaacaaata
+An_gambiae         --------------------ctctccccaatcatttgctccacttcgggtagctgcgggtgtgcggcgttaaaacaaata
+An_quadriannulatus --------------------ctctccccaatcatttgctccacttcggatagctgcgggtgtgcggcgttaaaacaaata
+An_arabiensis      --------------------ctctccccaatcatttgctccacttcgggtagctgcgggtgtgcggcgttaaaacaaata
+An_merus           --------------------ctctccccaatcatttgctccacttcgggtagctgcgggtgtgcggcgttaaaacaaata
+An_melas           --------------------ctctccccaatcatttgctccacttcaggtagctgcgggtgtgcggcgttaaaacaaata
+
+An_coluzzii        tttaattcacaccg--tctcgatcacgg-ttagagctcctgcagtgggcatac---------------------------
+An_gambiae         tttaattcacaccg--tctcgatcacgg-ttagagctcctgcagtgggcatac---------------------------
+An_quadriannulatus tttaattcacaccg--tctcgatcacgg-ttagagctcctgcagtgggcatac---------------------------
+An_arabiensis      tttaattcacaccg--tctcgatcacgg-ttagagctcctgcagtgggcatac---------------------------
+An_merus           tttaattcacaccg--tctcgatcacgg-ttagagctcctgcagcgagcatac---------------------------
+An_melas           tttaattcacaccg--tctcgatcacgg-ttagagctcctgcagcgggcatac---------------------------
+
+An_coluzzii        --------tattggaatcatttttggatacgag-----------cgatgtcgatcaacctgttccgccgata--cgattg
+An_gambiae         --------tattggaatcatttttggatacgag-----------cgatgtcgatcaacctgtttcgccgata--cgattg
+An_quadriannulatus --------tattggaatcatttttggatacgag-----------cgatgtcgatcaacctgttccgccgata--cgattg
+An_arabiensis      --------tattggaatcattttttgatacgag-----------cgatgtcgatcaacctgttccgccgata--cgattg
+An_merus           --------tattggaatcatttttggatacgag-----------cgatgtggatcaacctgttccgccgata--cgattg
+An_melas           --------tattggaatcatttttggatacgaa-----------cgatgtcgatcaacctgttccgccgata--cgattg
+
+An_coluzzii        acgaatacgattggaat--tcccgcagtgtgtgcttgtgtgtctgtgtatgtgtgtg-----------------------
+An_gambiae         acgaatacgattggaat--tcccgcagtgtatgcttgtgtgtctgtgtatgtgtgtg-----------------------
+An_quadriannulatus acgaatacgattggaat--tcccgca------------------------------------------------------
+An_arabiensis      acgaatacgattggaat--tcccgca------------------------------------------------------
+An_merus           acgaatacgattggaat--taccgca------------------------------------------------------
+An_melas           acgaatacgattggaat--tcccgca------------------------------------------------------
+
+An_coluzzii        --------------------------------------------------------------------------------
+An_gambiae         --------------------------------------------------------------------------------
+An_quadriannulatus --------------------------------------------------------------------------------
+An_arabiensis      ---------------------------------------------------------------------gtgtgtgcttg
+An_merus           --------------------------------------gtgtgtgcgtgtgtgtctgtgtatgtgtgtg-----------
+An_melas           --------------------------------------------------------------------------------
+
+An_coluzzii        -----------------------------------------------------------catgtaccatgcgaggagtcc
+An_gambiae         -----------------------------------------------------------catgtaccatgcgaggagtcc
+An_quadriannulatus ------------------------gtttgtgcttgtgtgtctgtgtatgtgtgtgnntgtatgtaccatgcgaggagtcc
+An_arabiensis      tgtgtctgtgtatgtgtgtgtgtg-----------------------------------tatgtaccatgcgaggagtcc
+An_merus           -----------------------------------------------------------tatgtaccatacgaggagtcc
+An_melas           ------------------------gtgtgtgcgcgtgtgtctgtg--------------tatgtaccatgcgaggagtcc
+
+An_coluzzii        tg----tggaatgctgccacctgccaaacagcagacccatgttgcccttcgatcac-tccgcgatcacgacacacgtcgt
+An_gambiae         tg----tggaatgctgccacctgccaaacagcagacccatgttgcccttcgatcac-tccgcgatcacgacacacgtcgt
+An_quadriannulatus tg----tggaatgctgccacctgccaaacagcagacccatgttgcccttcgatcac-tccgcgatcacgacacacgtcgt
+An_arabiensis      tg----tggaatgctgccacctgccaaaccgcagacccatgttgcccttcgatcac-tccgcgatcacgacacacgtcgt
+An_merus           tg----tggaatgctgccacctgccaaacagcagacccatgttgcccttcgatcac-tccacgatcacgacacacgtcgt
+An_melas           tg----tggaatgctgccacctgccaaacagcagacccatgttgcccttcgatcac-tccgcgatcacgacacacgtcgt
+
+An_coluzzii        ccgcttttgttttacggtgtgagccaccccgggccaattaccattcacccgggcaggtcactgtg-gactggcgtctcga
+An_gambiae         ccgcttttgttttacggtgtgagccaccccgggccaattaccattcacccgggcaggtcactgtg-gactggcgtctcga
+An_quadriannulatus ccgcttttgttttacgatgtgagccaccccgggccaattaccattcacccgggcaggtcactgtg-gactggcgtctcga
+An_arabiensis      ccgcttttgttttacggtgtgagccaccccgggccaattaccattcacccgggcaggtcactgtg-gactggcgtctcga
+An_merus           ccgcttttgttttacggtgtgagccaccccgggccaattaccattcacccgggcaggtcactgtg-gactggcgtctcga
+An_melas           ccgcttttgttttacggtgtgagccaccccgggccaattaccattcacccgggcaggtcactgtg-gactggcgtctcga
+
+An_coluzzii        tcttcgatggattagaaaaccga-actgtcgtcgtgttccctccc-----------------tttatgctacggttcaca
+An_gambiae         tcttcgatggattagaaaaccga-actgtcgtcgtgttccctccc-----------------tttatgctacggttcaca
+An_quadriannulatus tcttcgatggattagaaaaccga-actgtcgtcgtgtttcctccc-----------------tttatgctacggtt----
+An_arabiensis      tcttcgatggattagaaaaccga-actgtcgtcgtgttccctccc-----------------tttatgctacggtt----
+An_merus           tcttcgatggattagaaaactga-actgttgtcgtgttccctccc-----------------tttatgctacggtt----
+An_melas           tcttcgatggattagaaaaccga-actgtcgtcgtgttccctctc-----------------tttatgctacggtt----
+
+An_coluzzii        aacacacacacacac-----------------------------------------------------------------
+An_gambiae         aacacacacacacac-----------------------------------------------------------------
+An_quadriannulatus --------------------------------------------------------------------------------
+An_arabiensis      -----------------------------------------------------------------------------cac
+An_merus           --------------------------------------------------------cataaacacacacacacacgc---
+An_melas           --------------------------------------------------------cacaaacactcacacacagac---
+
+An_coluzzii        ---------------------------------------tctgctccaccc--catcgtggagtacaaattagcgcaatg
+An_gambiae         ---------------------------------------tctgctccaccc--catcgtggagtacaaattagcgcaatg
+An_quadriannulatus ------------------cacaannacacacacacagactctgctccaccc--catcgtggagtacaaattagcgcaatg
+An_arabiensis      aaacacacacacacacac---------------------tctgctccaccc--catcgtggagtacaaattagcgcaatg
+An_merus           ---------------------------------------tctgctccaccc--catcggggagtacaaattagcgcaatg
+An_melas           ---------------------------------------tctgctccaccc--catcgtggagtacaaattaacgcaatg
+
+An_coluzzii        tccaag-caacagtatcacggcacggcacaagttcgctccgctatg------tgtgta--acactttccaaaaa-cagcc
+An_gambiae         tccaag-caacagtatcacggcacggcacaagttcgctccgctatg------tgtgta--acactttccaaaaa-cagcc
+An_quadriannulatus tccaag-caacagtatcacggcacagcacaagttcactccgctatg------tgtgta--acactttccaaaag-cagcc
+An_arabiensis      tccaag-caacagtatcacggcac-----aagttcgctccgctatg------agtgta--acactttccaaaag-cagcc
+An_merus           tccaag-caacagcatcacggcacggcacaagctcgctccgctatg------tgtgta--acactttccaaaag-cagcc
+An_melas           tccaag-caacagtatcacggcacggcacaagttcgctccgctatg------tgtgta--acactttccaaaag-cagcc
+
+An_coluzzii        cg-------tgtgtatctcgtgtgcagcctcctggtagacgcaagtacaggcaggaga--tcacgcatgttttggccgag
+An_gambiae         cg-------tgtgtatctcgtgtgcagcctcctggtagacgcaagtacaggcaggaga--tcacgcatgttttggccgag
+An_quadriannulatus cg-------tgtgtatctcatgtgcagcctcctggtagacgcaagtacaggcgggaga--tctcgcatgttttggccgag
+An_arabiensis      cg-------tgtgtatctcgtgtgcagcctcctggtagacgcaagtacaggcaggaga--tcacgcatgttttggccgag
+An_merus           cg-------tgtgtatctcgtgtgcagcctcctggtagacgcaagtgcag--atcaga--tcacgcatgttttggccgag
+An_melas           cg-------tgtgtatctcttgtgcagcctcctggtagacgcaagtactggcgggaga--tcacgcatgttttggccgag
+
+An_coluzzii        agacccctt-----ctcgttcctccgtcgccgggcgagcaatcttgttgg------gggtgagaacaaaaacgcgcacca
+An_gambiae         agacccctt-----ctcgttcctccgtcgccgggcgagcaatcttgttgg------gggtgagaacaaaaaggcgcacca
+An_quadriannulatus agacccctt-----ctcgttcctccgtccccgggcgaacaatcttgttgg------gggtgagaacaaaaaggcccacca
+An_arabiensis      agacccctt-----ctcgttcctccgtcgccgggcgagcaatcttgttgg------gggtgagaacaaaaaggcgcacca
+An_merus           agacccctt-----ctcgttcctccgtccctgggcgagcaatcttgttgg------gggtgagaacaaaaaggcgcacca
+An_melas           agacccctt-----ctcgttcctccatccccgggcgagcaatcttgttgg------gggtgagaacaaaaaggcgcacca
+
+An_coluzzii        cagaaatcacccgaaaa-acctccctggtagat--gaatattaaaatgataaatttgacagatcgaggcctt----aagt
+An_gambiae         cacaaatcacccgaaaa-acctccctggtagat--gaatattaaaatgataaatttgacagatcgaggcctt----aagt
+An_quadriannulatus cacaaatcacacgaaaa-acctccctggtagat--gaatattaaaatgataaatttgacagatcgaggcctt----aagt
+An_arabiensis      cacaaatcacccgaaaa-acctccctggtagat--gaatattaaaatgataaatttgacagatcgaggcctt----aagt
+An_merus           cacaaatcacccgaaaa-acctccctggtagat--gaatattaaaatgataaatttgacagatcgaggcctt----aagt
+An_melas           cacaaatcaccacaaaa-acctccctggtagat--gaatattaaaatgataaatttgacagatcgaggcctt----aagt
+
+An_coluzzii        gagg----ccggagacaaacg--aaaatgcacaaaaag----------gacaagatgattccgatggggagaaaacgcga
+An_gambiae         gagg----ccggagacaaacg--aaaatgcacaaaaag----------gacaagatgattccgatggggagaaaacgcga
+An_quadriannulatus gagg----ccggagacaaacg--aaaatgcacaaaaag----------gacaagatgattccgatggggagaaaacgcga
+An_arabiensis      gagg----ccggagacaaacg--aaaatgcacaaaaag----------gacaagatgattccgatggggagaaaacgcga
+An_merus           gagg----ccggagacaaacg--aaaatgcacaaaaag----------gacaagatgattcagatggggagaaaacgcga
+An_melas           gagg----ccggagacaaacg--aaaatgcacaaaaag----------gacaagatggttccgatggggagaaaaagcga
+
+An_coluzzii        gcccaaatcgcgctccgttcgtgcactaatggcgcaggattattcgggttgtattacgaagcgaaccagaagaag--aaa
+An_gambiae         gcccaaatcgcgctccgttcgtgcactaatggcgcaggattattcgggttgtattacgaagcgaaccagaagaag--aaa
+An_quadriannulatus gcccaaatcgcgctccattcgtgcactaatggcgcaggattattcgggttgtattacgaagcgaaccagaagaag--aaa
+An_arabiensis      gcccaaatcccgctccgttcgtgcactaatggcgcaggattattcgggttgtattacgaagcgaaccagaagaag--aaa
+An_merus           gcccaaatcgcgctccgttcgtgcactaatggcgcaggattattcgggctgtattacgaagcgaaccagaagaagaaaaa
+An_melas           gcccaaatcgcgctccgttcgtgcactaatggcgcaggattattcgggctgtattacgaagcgaaccagaagaag--aag
+
+An_coluzzii        aaaatggtactactgtcaaacgattgtccctcagctcgttacacgcgggcgggagaaaattaaccgtggcg----gggta
+An_gambiae         ataatggtactactgtcaaacgattgtccctcagctcgttacacgcgggcgggagaaaattaaccgcggct----gggta
+An_quadriannulatus aaaatggtactactgtcaaacgattgtccctcagctcgttacacgcgggcgggagaaaattaaccg---------gggta
+An_arabiensis      aaaatggtactactgtcaaacgattgtccctcagctcgttactcgcgggtgggagaaaattaaccgtggcg----gggta
+An_merus           aaaaaggtaatactgtcaaacgattgtccctcagctcgttacatgcgggcgggagaaaattaaccatggca----gggta
+An_melas           aaaatggtactactgtcaaacgatagtccctcagctcgttacacgcgggcgggaaaaaattaaccgtggcg----aggta
+
+An_coluzzii        ctgcggtttggggacgttcgcaattcggcag--caaatagctcgatttg
+An_gambiae         ctgcggtttggggacgttcgcaattcggcag--caaatagctcgatttg
+An_quadriannulatus ctgcggcttggggaagttcgcaattcggcag--caaatagctcgatttt
+An_arabiensis      ctgcggtttggggacgttcgcaattcggcag--caaatagctcgatttg
+An_merus           ctgcggtttggggacgttcgcaattcggcag--caaatagcttgatttg
+An_melas           ctgcggtttggggacgttcgcaattcggcag--caaatagctcgatttg
+
+;
+END; [CHARACTERS]
+
+BEGIN ALGORITHM;
+TITLE 'P Distance';
+LINK CHARACTERS = 'Working Characters';
+NAME 'P Distance';
+OPTIONS
+	HandleAmbiguousStates = 'Ignore';
+END; [ALGORITHM]
+
+BEGIN DISTANCES;
+TITLE 'Distances';
+LINK ALGORITHM = 'P Distance';
+DIMENSIONS ntax=6;
+FORMAT labels=left diagonal triangle=Both;
+MATRIX
+[1] 'An_coluzzii'          0 0.00792346 0.02414706 0.01263059 0.03618988 0.03381942
+[2] 'An_gambiae'           0.00792346 0 0.02570093 0.01465544 0.03806391 0.03474484
+[3] 'An_quadriannulatus'   0.02414706 0.02570093 0 0.02576186 0.04225576 0.0378539
+[4] 'An_arabiensis'        0.01263059 0.01465544 0.02576186 0 0.03842505 0.03487276
+[5] 'An_merus'             0.03618988 0.03806391 0.04225576 0.03842505 0 0.04271632
+[6] 'An_melas'             0.03381942 0.03474484 0.0378539 0.03487276 0.04271632 0
+;
+END; [DISTANCES]
+
+BEGIN ALGORITHM;
+TITLE 'Neighbor Net';
+LINK DISTANCES = 'Distances';
+NAME 'Neighbor Net';
+OPTIONS
+	InferenceAlgorithm = 'ActiveSet';
+END; [ALGORITHM]
+
+BEGIN SPLITS;
+TITLE 'Splits';
+LINK ALGORITHM = 'Neighbor Net';
+DIMENSIONS ntax=6 nsplits=12;
+FORMAT labels=no weights=yes confidences=no;
+PROPERTIES fit=100 circular;
+CYCLE 1 2 3 6 5 4;
+MATRIX
+[1, size=1] 	 0.00295149 	 1,
+[2, size=2] 	 0.00021127 	 1 4,
+[3, size=3] 	 0.00010647 	 1 4 5,
+[4, size=1] 	 0.00465115 	 1 3 4 5 6,
+[5, size=1] 	 0.00713355 	 1 2 3 5 6,
+[6, size=2] 	 0.00254619 	 1 2,
+[7, size=1] 	 0.02286258 	 1 2 3 4 6,
+[8, size=2] 	 0.00440599 	 1 2 3 4,
+[9, size=3] 	 0.00350827 	 1 2 4,
+[10, size=1] 	 0.01915942 	 1 2 3 4 5,
+[11, size=2] 	 0.00058403 	 1 2 4 5,
+[12, size=1] 	 0.01428988 	 1 2 4 5 6,
+;
+END; [SPLITS]
+
+BEGIN ALGORITHM;
+TITLE 'Show Splits';
+LINK SPLITS = 'Splits';
+NAME 'Show Splits';
+OPTIONS
+	View = 'SplitNetwork';
+END; [ALGORITHM]
+
+BEGIN VIEW;
+TITLE 'SplitNetwork';
+LINK ALGORITHM = 'Show Splits';
+NAME 'SplitNetworkView';
+INPUT 'SPLITS';
+OPTIONS
+	Diagram = 'Splits',
+	Orientation = 'Rotate0Deg',
+	Rooting = 'None',
+	ZoomFactor = 1,
+	FontScaleFactor = 1,
+	RootAngle = 160,
+	OutlineFill = 0xffe6b3ff,
+	LabelSplitsBy = 'None',
+	ShowQRCode = 'false';
+END; [VIEW]

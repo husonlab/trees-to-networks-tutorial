@@ -11,7 +11,7 @@ corresponding precomputed file and rejoin the group at the next step.
   MCC tree)
 - `astral/` - wASTRAL coalescent species tree from the gene tree set
 - `networks/` - SplitsTree NeighborNet, consensus network, and
-  PhyloFusion outputs
+  PhyloCompare outputs
 
 ## Use during the tutorial
 

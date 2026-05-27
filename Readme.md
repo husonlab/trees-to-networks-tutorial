@@ -27,7 +27,7 @@ alignments to phylogenetic networks:
   coalescent species-tree estimation with wASTRAL (ASTER)
 - **Part II — Networks** (110 min): visualizing conflicting phylogenetic
   signal with SplitsTree, building networks interactively with PhyloSketch,
-  and inferring networks from gene tree sets with PhyloFusion.
+  and inferring networks from gene tree sets with PhyloCompare.
 
 The pedagogical core: when the genome has been pervasively introgressed,
 trees and tree-summary methods can return confident but biologically
@@ -102,6 +102,6 @@ by the phylogenetics community:
 - [BEAST X](https://beast.community) — Baele, Drummond, Suchard, Rambaut, Lemey et al.
 - [ASTRAL](https://github.com/smirarab/ASTRAL) —  Rabiee, Sayyari, and Mirarab
 - [Tracer](https://github.com/beast-dev/tracer) — Rambaut et al.
-- [SplitsTree](https://software-ab.cs.uni-tuebingen.de/) — Huson lab
-- [PhyloSketch](https://software-ab.cs.uni-tuebingen.de/) — Huson lab
-- [PhyloFusion](https://github.com/husonlab/) — Huson lab
+- [SplitsTree](https://github.com/husonlab/splitstree6) — Huson lab
+- [PhyloSketch](https://github.com/husonlab/phylosketch2) — Huson lab
+- [PhyloCompare](https://github.com/husonlab/phylocompare) — Huson lab
