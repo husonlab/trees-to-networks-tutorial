@@ -1,5 +1,9 @@
 # Attendee Setup Instructions
 
+**ISMB 2026 Tutorial IP3**
+Daniel H. Huson, Anupam Gautam, Banu Cetinkaya
+University of Tubingen
+
 **Action required before tutorial day.** Please complete the software
 installation and data download below. Allow **about 60 minutes** the first
 time you work through it; some installers are large.
@@ -8,6 +12,19 @@ If you hit setup problems, please reach out **before** the tutorial —
 diagnosing installs in person on the day takes time away from the actual
 tutorial. Contact details at the bottom of this page.
 
+---
+
+These instructions are hosted here:
+
+```html
+https://github.com/husonlab/trees-to-networks-tutorial/blob/main/doc/Setup.md
+```
+
+Additional setup steps for **Windows** are here: 
+
+```html
+https://github.com/husonlab/trees-to-networks-tutorial/blob/main/doc/Setup-Windows.md
+```
 ---
 
 ## Hardware Requirements
@@ -202,6 +219,15 @@ rm /tmp/setup_test_*
 
 ---
 
+### Windows
+
+Additional setup steps for **Windows** are here:
+
+```html
+https://github.com/husonlab/trees-to-networks-tutorial/blob/main/doc/Setup-Windows.md
+```
+---
+
 ## Help and Contact
 
 If you run into problems during setup, please reach out before the tutorial:
@@ -211,3 +237,4 @@ If you run into problems during setup, please reach out before the tutorial:
 We strongly recommend completing setup at least a few days before tutorial
 day. Debugging install issues in real time during the tutorial eats into
 the content time for everyone in the room.
+
