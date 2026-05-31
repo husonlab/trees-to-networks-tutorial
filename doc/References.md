@@ -70,28 +70,28 @@ https://doi.org/10.1093/bioinformatics/btu462
 
 ### SplitsTree
 
-Huson, D.H., Bryant, D. The SplitsTree App: interactive analysis and visualization using phylogenetic trees and networks. Nat Methods 21, 1773–1774 (2024). https://doi.org/10.1038/s41592-024-02406-3
+Huson, D.H. and Bryant, D. The SplitsTree App: interactive analysis and visualization using phylogenetic trees and networks. Nat Methods 21, 1773–1774 (2024). https://doi.org/10.1038/s41592-024-02406-3
 
-Huson, D.H., Bryant, D. (2006). Application of phylogenetic networks in
+Huson, D.H. and Bryant, D. (2006). Application of phylogenetic networks in
 evolutionary studies. *Molecular Biology and Evolution* 23(2): 254-267.
 https://doi.org/10.1093/molbev/msj030
 
-David Bryant, Vincent Moulton, Neighbor-Net: An Agglomerative Method for the Construction of Phylogenetic Networks, Molecular Biology and Evolution, 21(2):255–265 (2004). https://doi.org/10.1093/molbev/msh018
+Bryant, D. and Moulton, V., Neighbor-Net: An Agglomerative Method for the Construction of Phylogenetic Networks, Molecular Biology and Evolution, 21(2):255–265 (2004). https://doi.org/10.1093/molbev/msh018
 
 ### PhyloSketch
 
-Huson DH (2025) Sketch, capture and layout phylogenies. PLOS Computational Biology 21(12): e1013805. https://doi.org/10.1371/journal.pcbi.1013805
+Huson D.H. (2025) Sketch, capture and layout phylogenies. PLOS Computational Biology 21(12): e1013805. https://doi.org/10.1371/journal.pcbi.1013805
 
-### PhyloFusion and PhyloSketch
+### PhyloCompare and PhyloFusion
 
-Louxin Zhang, Banu Cetinkaya, Daniel H Huson, PhyloFusion—Fast and Easy Fusion of Rooted Phylogenetic Trees into Rooted Phylogenetic Networks, Systematic Biology, Volume 75, Issue 1, January 2026, Pages 88–99, https://doi.org/10.1093/sysbio/syaf049
+D.H. Huson, B. Cetinkaya and L. Zhang,
+PhyloCompare: visualizing agreement and conflict among trees as phylogenetic parallelograms, manuscript in preparation.
 
-Daniel H Huson, Banu Cetinkaya and Louxin Zhang, 
-Visualizing agreement and conflict among phylogenetic trees with PhyloCompare, manuscript in preparation.
+Zhang, L., Banu Cetinkaya, B. and Huson, D.H. (2026) PhyloFusion—Fast and Easy Fusion of Rooted Phylogenetic Trees into Rooted Phylogenetic Networks, Systematic Biology,75(1):88-99 https://doi.org/10.1093/sysbio/syaf049
 
 ### Networks: general references
 
-Huson, D.H., Rupp, R., Scornavacca, C. (2010). *Phylogenetic Networks:
+Huson, D.H., Rupp, R. and Scornavacca, C. (2010). *Phylogenetic Networks:
 Concepts, Algorithms and Applications.* Cambridge University Press.
 ISBN 978-0521755962.
 
@@ -112,12 +112,12 @@ and Evolution* 28(8): 2239-2252. https://doi.org/10.1093/molbev/msr048
 
 Hibbins, M.S., Hahn, M.W. (2022). Phylogenomic approaches to detecting and
 characterizing introgression. *Genetics* 220(2): iyab173.
-https://doi.org/10.1093/genetics/iyab173 (A current review.)
+https://doi.org/10.1093/genetics/iyab173
 
 ## Tutorial Citation
 
 If you use these tutorial materials, please cite:
 
-> Huson, D.H., Gautam, A., Cetinkaya, B. (2026). *From Trees to Networks.*
+> Huson, D.H., Gautam, A. and Cetinkaya, B. (2026). *From Trees to Networks.*
 > ISMB 2026 Tutorial.
 > https://github.com/husonlab/trees-to-networks-tutorial

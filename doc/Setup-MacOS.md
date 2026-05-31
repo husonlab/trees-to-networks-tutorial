@@ -165,12 +165,12 @@ Download the x86_64 build from the [PhyloSketch2 v2.2.12 release page](https://g
 ### Apple Silicon (M-series):
 
 ```bash
-curl -LO https://github.com/husonlab/phylocompare/releases/download/v1.0.1/PhyloCompare-1.0.1-macos-aarch64.dmg
+curl -LO https://github.com/husonlab/phylocompare/releases/download/v1.0.2/PhyloCompare-1.0.2-macos-aarch64.dmg
 ```
 
 ### Intel Macs:
 
-Download the x86_64 build from the [PhyloCompare v1.0.1 release page](https://github.com/husonlab/phylocompare/releases/tag/v1.0.1) — look under **Assets** for a file ending in `macos-x86_64`.
+curl -LO https://github.com/husonlab/phylocompare/releases/download/v1.0.2/PhyloCompare-1.0.2-macos-x86_64.dmg
 
 ### Install:
 
@@ -185,7 +185,7 @@ Download the x86_64 build from the [PhyloCompare v1.0.1 release page](https://gi
 
 When you first launch one of the DMG apps, macOS may block it with a message like:
 
-> *"SplitsTree" cannot be opened because the developer cannot be verified.*
+> *"Beast" cannot be opened because the developer cannot be verified.*
 
 This is normal for academic software that isn't signed with an Apple Developer ID. To bypass it:
 
@@ -216,18 +216,3 @@ And the three downloaded apps — launch from **Applications**:
 - **PhyloCompare**
 
 Close each one after confirming it opens.
-
----
-
-## Quick reference — what each tool does
-
-| Tool | Type | Source |
-|---|---|---|
-| IQ-TREE 3 | CLI | conda (bioconda) |
-| ASTRAL | CLI | conda (bioconda) |
-| BEAST 10.5.0 (BEAUti, TreeAnnotator, TreeStat) | CLI + GUI | conda (bioconda) |
-| Tracer 1.7.2 | GUI | conda (bioconda) |
-| ete3 | Python lib | conda (conda-forge) |
-| SplitsTree6 | GUI | GitHub DMG |
-| PhyloSketch2 | GUI | GitHub DMG (separate Intel / arm64 builds) |
-| PhyloCompare | GUI | GitHub DMG (separate Intel / arm64 builds) |

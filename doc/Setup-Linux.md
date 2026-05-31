@@ -189,8 +189,8 @@ PhyloCompare is distributed as a tarball - no installer required.
 
 ```bash
 cd ~
-wget https://github.com/husonlab/phylocompare/releases/download/v1.0.1/PhyloCompare-1.0.1-linux-x86_64.tar.gz
-tar -xvzf PhyloCompare-1.0.1-linux-x86_64.tar.gz
+wget https://github.com/husonlab/phylocompare/releases/download/v1.0.2/PhyloCompare-1.0.2-linux-x86_64.tar.gz
+tar -xvzf PhyloCompare-1.0.2-linux-x86_64.tar.gz
 ```
 
 Launch:

@@ -207,8 +207,8 @@ Tracer is used to inspect BEAST MCMC log files.
 
 ## Step B5 - Install PhyloCompare
 
-1. Open <https://github.com/husonlab/phylocompare/releases/tag/v1.0.1>.
-2. Under **Assets**, download the Windows `.zip` (file name like `PhyloCompare-1.0.1-windows-x86_64.zip`).
+1. Open <https://github.com/husonlab/phylocompare/releases/tag/v1.0.2>.
+2. Under **Assets**, download the Windows `.zip` (file name like `PhyloCompare-1.0.2-windows-x86_64.zip`).
 3. Right-click the downloaded `.zip` in your `Downloads` folder ‚Üí **Extract All**.
 4. Inside the extracted folder, open `bin\` and double-click `PhyloCompare.exe` to launch.
 
