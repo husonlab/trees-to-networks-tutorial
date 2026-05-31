@@ -165,12 +165,12 @@ Download the x86_64 build from the [PhyloSketch2 v2.2.12 release page](https://g
 ### Apple Silicon (M-series):
 
 ```bash
-curl -LO https://github.com/husonlab/phylocompare/releases/download/v1.0.2/PhyloCompare-1.0.2-macos-aarch64.dmg
+curl -LO https://github.com/husonlab/phylocompare/releases/download/v1.0.3/PhyloCompare-1.0.3-macos-aarch64.dmg
 ```
 
 ### Intel Macs:
 
-curl -LO https://github.com/husonlab/phylocompare/releases/download/v1.0.2/PhyloCompare-1.0.2-macos-x86_64.dmg
+curl -LO https://github.com/husonlab/phylocompare/releases/download/v1.0.3/PhyloCompare-1.0.3-macos-x86_64.dmg
 
 ### Install:
 

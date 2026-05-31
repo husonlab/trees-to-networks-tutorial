@@ -39,7 +39,7 @@ Anaconda now **requires you to register (free) before downloading the installer*
 1. Go to <https://www.anaconda.com/download> in your browser.
 2. Register / sign in with your email (free).
 3. On the download page, find the **Linux 64-Bit (x86) Installer (.sh)**.
-4. **Right-click** the download link ‚Üí **Copy link address**.
+4. **Right-click** the download link  **Copy link address**.
 5. In your terminal, paste the link after `wget`:
 
 ```bash
@@ -189,8 +189,8 @@ PhyloCompare is distributed as a tarball - no installer required.
 
 ```bash
 cd ~
-wget https://github.com/husonlab/phylocompare/releases/download/v1.0.2/PhyloCompare-1.0.2-linux-x86_64.tar.gz
-tar -xvzf PhyloCompare-1.0.2-linux-x86_64.tar.gz
+wget https://github.com/husonlab/phylocompare/releases/download/v1.0.3/PhyloCompare-1.0.3-linux-x86_64.tar.gz
+tar -xvzf PhyloCompare-1.0.3-linux-x86_64.tar.gz
 ```
 
 Launch:

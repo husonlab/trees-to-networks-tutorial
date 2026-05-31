@@ -50,7 +50,7 @@ Anaconda now **requires you to register (free) before downloading the installer*
 1. Go to <https://www.anaconda.com/download> in your browser.
 2. Register / sign in with your email (free).
 3. On the download page, find the **Linux 64-Bit (x86) Installer (.sh)**.
-4. **Right-click** the download link ‚Üí **Copy link address**.
+4. **Right-click** the download link  **Copy link address**.
 5. Back in your WSL Ubuntu terminal, paste the link after `wget`:
 
 ```bash
@@ -140,7 +140,7 @@ This gives you `iqtree3`, `astral`, and Python with `ete3` on the WSL command li
 
 # Part B - Native Windows GUI Apps
 
-These apps come as **`.zip` archives - no installer is run**. You just download, right-click ‚Üí **Extract All**, then double-click the `.exe` inside.
+These apps come as **`.zip` archives - no installer is run**. You just download, right-click  **Extract All**, then double-click the `.exe` inside.
 
 By default, downloads land in your **`Downloads`** folder. You can extract the archives there too, or move them somewhere more permanent like `C:\Tools\` if you prefer.
 
@@ -152,7 +152,7 @@ By default, downloads land in your **`Downloads`** folder. You can extract the a
    [https://github.com/beast-dev/beast-mcmc/releases/latest](https://github.com/beast-dev/beast-mcmc/releases/latest)
    (Look under **Assets** for a file named like `BEAST.X.v10.5.0.zip`. Direct link for v10.5.0: <https://github.com/beast-dev/beast-mcmc/releases/download/v10.5.0/BEAST.X.v10.5.0.zip>)
 2. The file lands in your `Downloads` folder.
-3. Right-click the `.zip` ‚Üí **Extract All** ‚Üí confirm.
+3. Right-click the `.zip`  **Extract All**  confirm.
 4. Open the extracted folder. The executables are **directly inside** (no `bin\` subfolder):
     - `BEAUti.exe`
     - `BEAST.exe`
@@ -161,7 +161,7 @@ By default, downloads land in your **`Downloads`** folder. You can extract the a
     - `LogCombiner.exe`
 5. Double-click any of them to launch.
 
-> *(Optional)* Right-click `BEAUti.exe` and `TreeAnnotator.exe` ‚Üí **Pin to Start** or send a shortcut to the desktop so you don't have to dig into the folder each time.
+> *(Optional)* Right-click `BEAUti.exe` and `TreeAnnotator.exe`  **Pin to Start** or send a shortcut to the desktop so you don't have to dig into the folder each time.
 
 ### BEAGLE library (recommended for BEAST performance)
 
@@ -180,7 +180,7 @@ BEAGLE significantly speeds up BEAST. Unlike the other apps, BEAGLE *does* use a
 1. Open <https://github.com/beast-dev/tracer/releases/tag/v1.7.2>.
 2. Under **Assets**, download the Windows `.zip` (file name like `Tracer.v1.7.2.zip`).
 3. The file lands in your `Downloads` folder.
-4. Right-click the `.zip` ‚Üí **Extract All** ‚Üí confirm.
+4. Right-click the `.zip`  **Extract All**  confirm.
 5. Inside the extracted folder, double-click `Tracer.exe` (directly in the folder - no `bin\`).
 
 Tracer is used to inspect BEAST MCMC log files.
@@ -191,7 +191,7 @@ Tracer is used to inspect BEAST MCMC log files.
 
 1. Open the [SplitsTree6 v6.7.9 release page](https://github.com/husonlab/splitstree6/releases/tag/v6.7.9).
 2. Under **Assets**, download the Windows `.zip`.
-3. Right-click the downloaded `.zip` in your `Downloads` folder ‚Üí **Extract All**.
+3. Right-click the downloaded `.zip` in your `Downloads` folder  **Extract All**.
 4. Inside the extracted folder, double-click `SplitsTree.exe` to launch.
 
 ---
@@ -200,21 +200,21 @@ Tracer is used to inspect BEAST MCMC log files.
 
 1. Open the [PhyloSketch2 v2.2.12 release page](https://github.com/husonlab/phylosketch2/releases/tag/v2.2.12).
 2. Under **Assets**, download the Windows `.zip`.
-3. Right-click the downloaded `.zip` in your `Downloads` folder ‚Üí **Extract All**.
+3. Right-click the downloaded `.zip` in your `Downloads` folder  **Extract All**.
 4. Inside the extracted folder, double-click `PhyloSketch2.exe` to launch.
 
 ---
 
 ## Step B5 - Install PhyloCompare
 
-1. Open <https://github.com/husonlab/phylocompare/releases/tag/v1.0.2>.
-2. Under **Assets**, download the Windows `.zip` (file name like `PhyloCompare-1.0.2-windows-x86_64.zip`).
-3. Right-click the downloaded `.zip` in your `Downloads` folder ‚Üí **Extract All**.
+1. Open <https://github.com/husonlab/phylocompare/releases/tag/v1.0.3>.
+2. Under **Assets**, download the Windows `.zip` (file name like `PhyloCompare-1.0.3-windows-x86_64.zip`).
+3. Right-click the downloaded `.zip` in your `Downloads` folder  **Extract All**.
 4. Inside the extracted folder, open `bin\` and double-click `PhyloCompare.exe` to launch.
 
 ---
 
-> **Tip:** for any of these apps, after the first launch you can right-click the `.exe` ‚Üí **Pin to Start** or **Create shortcut** ‚Üí drag the shortcut to your desktop. This way you don't have to navigate into the extracted folder every time.
+> **Tip:** for any of these apps, after the first launch you can right-click the `.exe`  **Pin to Start** or **Create shortcut**  drag the shortcut to your desktop. This way you don't have to navigate into the extracted folder every time.
 
 ---
 
@@ -277,7 +277,7 @@ Because you cloned the tutorial inside WSL (`~/trees-to-networks-tutorial`), the
    ```
    Replace `<your-wsl-username>` with the WSL username you set when you first launched Ubuntu.
 3. Press Enter. You'll see the tutorial files just like a normal folder.
-4. *(Optional, recommended)* Right-click the folder ‚Üí **Pin to Quick access**, so it shows up in the File Explorer sidebar. From now on you can get there in one click.
+4. *(Optional, recommended)* Right-click the folder  **Pin to Quick access**, so it shows up in the File Explorer sidebar. From now on you can get there in one click.
 
 ## From a Windows GUI app's "Open File" dialog
 
@@ -296,9 +296,9 @@ When BEAUti / Tracer / SplitsTree opens its file picker:
 
 The reverse direction is just as easy. Your Windows drives are mounted under `/mnt/` in WSL:
 
-- `C:\` ‚Üí `/mnt/c/`
-- `D:\` ‚Üí `/mnt/d/`
-- Your Windows `Downloads` folder ‚Üí `/mnt/c/Users/<your-windows-username>/Downloads/`
+- `C:\`  `/mnt/c/`
+- `D:\`  `/mnt/d/`
+- Your Windows `Downloads` folder  `/mnt/c/Users/<your-windows-username>/Downloads/`
 
 So if you ever need to copy a file from `Downloads` into the tutorial folder:
 
