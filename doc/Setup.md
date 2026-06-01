@@ -20,11 +20,13 @@ These instructions are hosted here:
 https://github.com/husonlab/trees-to-networks-tutorial/blob/main/doc/Setup.md
 ```
 
-Additional setup steps for **Windows** are here: 
 
-```html
-https://github.com/husonlab/trees-to-networks-tutorial/blob/main/doc/Setup-Windows.md
-```
+Additional setup steps for **Linux** are here: [Setup-Linux.md](Setup-Linux.md)
+
+Additional setup steps for **MacOS** are here: [Setup-MacOS.md](Setup-MacOS.md)
+
+Additional setup steps for **Windows** are here: [Setup-Windows.md](Setup-Windows.md)
+
 ---
 
 ## Hardware Requirements
