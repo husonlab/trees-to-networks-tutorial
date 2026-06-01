@@ -20,11 +20,10 @@ Data deposit: Dryad doi:10.5061/dryad.f4114
 
 ### Maximum likelihood (IQ-TREE)
 
-T.K.F. Wong, N. Ly-Trong, H. Ren, P. Demotte, H. Banos, A.J. Roger, E. Susko, C. Bielow, N. De Maio, N. Goldman,
-M.W. Hahn, M. dos Reis, L.S. Vinh, G. Huttley, R. Lanfear, B.Q. Minh
-(2026). IQ-TREE 3: Phylogenomic
-Inference Software using Complex Evolutionary Models. *Molecular Biology
-and Evolution*, msaf117. (https://doi.org/10.1093/molbev/msag117)
+Wong, T. K. F., Ly-Trong, N., Ren, H., Demotte, P., Baños, H., Roger, A. J., Susko, E., Bielow, C., De Maio, N., Goldman, N.,
+Hahn, M. W., dos Reis, M., Vinh, L. S., Huttley, G., Lanfear, R., & Minh, B. Q. (2026).
+IQ-TREE 3: phylogenomic inference software using complex evolutionary models. Molecular Biology and Evolution, 43(5).
+https://doi.org/10.1093/molbev/msag117
 
 Nguyen, L.-T., Schmidt, H.A., von Haeseler, A., Minh, B.Q. (2015).
 IQ-TREE: A fast and effective stochastic algorithm for estimating
@@ -60,23 +59,19 @@ Posterior summarization in Bayesian phylogenetics using Tracer 1.7.
 
 ### Coalescent species tree (ASTRAL)
 
-Zhang, Chao, Maryam Rabiee, Erfan Sayyari, and Siavash Mirarab. 2018. “ASTRAL-III: Polynomial Time Species Tree Reconstruction from Partially Resolved Gene Trees.” BMC Bioinformatics 19 (S6): 153.
-https://link.springer.com/article/10.1186/s12859-018-2129-y
+Zhang, C., Rabiee, M., Sayyari, E., & Mirarab, S. (2018). ASTRAL-III: polynomial time species tree reconstruction from partially resolved gene trees. BMC Bioinformatics, 19(6), 153. https://doi.org/10.1186/s12859-018-2129-y
 
-Mirarab, Siavash, Rezwana Reaz, Md. Shamsuzzoha Bayzid, Théo Zimmermann, M. S. Swenson, and Tandy Warnow. 2014. “ASTRAL: Genome-Scale Coalescent-Based Species Tree Estimation.” Bioinformatics 30 (17): i541–48.
-https://doi.org/10.1093/bioinformatics/btu462
+Mirarab, S., Reaz, R., Bayzid, M. S., Zimmermann, T., Swenson, M. S., & Warnow, T. (2014). ASTRAL: genome-scale coalescent-based species tree estimation. Bioinformatics, 30(17), i541-i548. https://doi.org/10.1093/bioinformatics/btu462
 
 ## Phylogenetic Networks
 
 ### SplitsTree
 
-Huson, D.H. and Bryant, D. The SplitsTree App: interactive analysis and visualization using phylogenetic trees and networks. Nat Methods 21, 1773–1774 (2024). https://doi.org/10.1038/s41592-024-02406-3
+Huson, D. H., & Bryant, D. (2024). The SplitsTree App: interactive analysis and visualization using phylogenetic trees and networks.
+Nature Methods, 21(10), 1773-1774. https://doi.org/10.1038/s41592-024-02406-3
 
-Huson, D.H. and Bryant, D. (2006). Application of phylogenetic networks in
-evolutionary studies. *Molecular Biology and Evolution* 23(2): 254-267.
-https://doi.org/10.1093/molbev/msj030
-
-Bryant, D. and Moulton, V., Neighbor-Net: An Agglomerative Method for the Construction of Phylogenetic Networks, Molecular Biology and Evolution, 21(2):255–265 (2004). https://doi.org/10.1093/molbev/msh018
+Bryant, D., & Moulton, V. (2004). Neighbor-Net: An Agglomerative Method for the Construction of Phylogenetic Networks.
+Molecular Biology and Evolution, 21(2), 255-265. https://doi.org/10.1093/molbev/msh018
 
 ### PhyloSketch
 
@@ -87,7 +82,8 @@ Huson D.H. (2025) Sketch, capture and layout phylogenies. PLOS Computational Bio
 D.H. Huson, B. Cetinkaya and L. Zhang,
 PhyloCompare: visualizing agreement and conflict among trees as phylogenetic parallelograms, manuscript in preparation.
 
-Zhang, L., Banu Cetinkaya, B. and Huson, D.H. (2026) PhyloFusion—Fast and Easy Fusion of Rooted Phylogenetic Trees into Rooted Phylogenetic Networks, Systematic Biology,75(1):88-99 https://doi.org/10.1093/sysbio/syaf049
+Zhang, L., Banu Cetinkaya, B. and Huson, D.H. (2026) PhyloFusion—Fast and Easy Fusion of Rooted Phylogenetic Trees into Rooted Phylogenetic Networks,
+Systematic Biology,75(1):88-99 https://doi.org/10.1093/sysbio/syaf049
 
 ### Networks: general references
 

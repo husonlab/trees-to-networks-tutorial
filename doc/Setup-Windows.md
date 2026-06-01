@@ -212,8 +212,6 @@ Tracer is used to inspect BEAST MCMC log files.
 3. Right-click the downloaded `.zip` in your `Downloads` folder  **Extract All**.
 4. Inside the extracted folder, open `bin\` and double-click `PhyloCompare.exe` to launch.
 
----
-
 > **Tip:** for any of these apps, after the first launch you can right-click the `.exe`  **Pin to Start** or **Create shortcut**  drag the shortcut to your desktop. This way you don't have to navigate into the extracted folder every time.
 
 ---
