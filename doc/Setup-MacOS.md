@@ -1,6 +1,6 @@
-# Setup Guide (macOS): Trees-to-Networks Tutorial
+# Setup Guide (MacOS): Trees-to-Networks Tutorial
 
-This guide covers installation on **macOS**, tested on **Apple Silicon (M3)**. Notes for Intel Macs are included throughout — wherever the download file differs, look for the **"Intel Macs"** callout.
+This guide covers installation on **MacOS**, tested on **Apple Silicon (M3)**. Notes for Intel Macs are included throughout — wherever the download file differs, look for the **"Intel Macs"** callout.
 
 The macOS setup follows the same shape as the Linux one:
 
