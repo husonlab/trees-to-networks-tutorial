@@ -12,10 +12,3 @@ corresponding precomputed file and rejoin the group at the next step.
 - `astral/` - wASTRAL coalescent species tree from the gene tree set
 - `networks/` - SplitsTree NeighborNet, consensus network, and
   PhyloCompare outputs
-
-## Use during the tutorial
-
-The exercise files in `../exercises/` reference these precomputed
-outputs when a fallback path is needed. The slides also reference
-these (e.g., the BEAST Tracer screenshot uses
-`beast/X_dist_04.log`).

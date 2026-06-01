@@ -43,21 +43,21 @@ phylogenetic networks is required.
 
 ## Getting Started
 
-1. Read [`SETUP.md`](Setup) for installation instructions and prerequisites
+1. Read [`doc/Setup.md`](doc/Setup.md) for installation instructions and prerequisites
    — **complete this before tutorial day**.
 2. Clone this repository to your laptop:
    ```bash
    git clone https://github.com/husonlab/trees-to-networks-tutorial.git
    ```
-3. On tutorial day, follow the exercises in [`exercises/`](exercises/).
+3. On tutorial day, follow the hands-on guide [`doc/Hands-On-Guide.md`](doc/Hands-On-Guilde.md).
 
 ## Repository Structure
 
 ```
 trees-to-networks-tutorial/
 ├── README.md
-├── doc/                    # documents
-├── slides/                 # tutorial slide decks (PDF)
+├── doc/                    # documents: Setup, Hands-On Guide, Cheat Sheet, References
+├── slides/                 # tutorial slide deck (PDF)
 ├── data/                   # 15 per-locus alignments + metadata
 ├── data-prep/              # scripts used to build data/ from raw MAF
 ├── precomputed/            # expected outputs for every hands-on step
@@ -65,7 +65,7 @@ trees-to-networks-tutorial/
 │   ├── astral/             # wASTRAL species tree
 │   ├── beast/              # BEAST X posterior on locus X_dist_04
 │   └── networks/           # SplitsTree & PhyloFusion network outputs
-└── exercises/              # step-by-step exercise walkthroughs
+└── tools/                  # Additional tools
 ```
 
 A guiding principle: **every output participants might generate during the
