@@ -48,7 +48,7 @@ cd trees-to-networks-tutorial
 ```
 
 The repository is ~100 MB and contains everything you need — alignments,
-precomputed outputs, exercise instructions, and slides. **No additional
+precomputed outputs, hands-on instructions, and slides. **No additional
 downloads are required.** (The source MAF file from Fontaine et al. 2015 is
 ~2 GB and not included; it's only needed if you want to rerun the data
 preparation step yourself, which is optional.)
