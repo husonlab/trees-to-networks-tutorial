@@ -49,7 +49,7 @@ phylogenetic networks is required.
    ```bash
    git clone https://github.com/husonlab/trees-to-networks-tutorial.git
    ```
-3. On tutorial day, follow the hands-on guide [`doc/Hands-On-Guide.md`](doc/Hands-On-Guilde.md).
+3. On tutorial day, follow the hands-on guide [`doc/Hands-On-Guide.md`](doc/Hands-On-Guide.md).
 
 ## Repository Structure
 
