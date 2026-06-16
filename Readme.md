@@ -1,10 +1,7 @@
-> [!WARNING]
-> **This repository is under active development for ISMB 2026.**
 >
 > Tutorial: **From Trees to Networks**, scheduled for July-12, 9am-1pm at ISMB 2026.
 >
-> Materials will be finalized by **June 16, 2026**. Until then, files may
-> change without notice and some sections may be incomplete. If you're a
+> If you're a
 > registered attendee, please follow [`SETUP.md`](SETUP.md) starting one
 > week before the tutorial.
 
