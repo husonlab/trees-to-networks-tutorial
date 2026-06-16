@@ -143,12 +143,12 @@ Install:
 ### Apple Silicon (M-series):
 
 ```bash
-curl -LO https://github.com/husonlab/phylosketch2/releases/download/v2.2.12/PhyloSketch2_macos-arm64_2_2_12.dmg
+curl -LO https://github.com/husonlab/phylosketch2/releases/download/v2.2.13/PhyloSketch2_macos-arm64_2_2_13.dmg
 ```
 
 ### Intel Macs:
 
-Download the x86_64 build from the [PhyloSketch2 v2.2.12 release page](https://github.com/husonlab/phylosketch2/releases/tag/v2.2.12) — look under **Assets** for a file ending in `macos-x86_64`.
+Download the x86_64 build from the [PhyloSketch2 v2.2.13 release page](https://github.com/husonlab/phylosketch2/releases/tag/v2.2.13) — look under **Assets** for a file ending in `macos-x86_64`.
 
 ### Install:
 

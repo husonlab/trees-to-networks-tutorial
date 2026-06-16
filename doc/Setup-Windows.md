@@ -198,7 +198,7 @@ Tracer is used to inspect BEAST MCMC log files.
 
 ## Step B4 - Install PhyloSketch2
 
-1. Open the [PhyloSketch2 v2.2.12 release page](https://github.com/husonlab/phylosketch2/releases/tag/v2.2.12).
+1. Open the [PhyloSketch2 v2.2.13 release page](https://github.com/husonlab/phylosketch2/releases/tag/v2.2.13).
 2. Under **Assets**, download the Windows `.zip`.
 3. Right-click the downloaded `.zip` in your `Downloads` folder  **Extract All**.
 4. Inside the extracted folder, double-click `PhyloSketch2.exe` to launch.

@@ -158,12 +158,12 @@ Then launch with just `SplitsTree`.
 
 ## Step 4 - Install PhyloSketch2
 
-Download and run the installer from the [PhyloSketch2 v2.2.12 GitHub release](https://github.com/husonlab/phylosketch2/releases/tag/v2.2.12):
+Download and run the installer from the [PhyloSketch2 v2.2.13 GitHub release](https://github.com/husonlab/phylosketch2/releases/tag/v2.2.13):
 
 ```bash
-wget https://github.com/husonlab/phylosketch2/releases/download/v2.2.12/PhyloSketch2_unix_2_2_12.sh
-chmod +x PhyloSketch2_unix_2_2_12.sh
-./PhyloSketch2_unix_2_2_12.sh
+wget https://github.com/husonlab/phylosketch2/releases/download/v2.2.13/PhyloSketch2_unix_2_2_13.sh
+chmod +x PhyloSketch2_unix_2_2_13.sh
+./PhyloSketch2_unix_2_2_13.sh
 ```
 
 Follow the interactive installer prompts. **By default it installs to `~/phylosketch2`.**
