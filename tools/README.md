@@ -1,7 +1,7 @@
 # Tree processing scripts
 
 Scripts run by tutorial attendees to post-process IQ-TREE output for
-downstream visualization in SplitsTree and PhyloCompare.
+downstream visualization in SplitsTree and PhyloParallelograms.
 
 ## Tools
 

@@ -124,7 +124,7 @@ Add reticulations for:
 - `merus` <-> `quadriannulatus`  [3La evidence]
 - bidirectional flow involving 2La  [2La evidence]
 
-### 6. PhyloCompare
+### 6. PhyloParallelograms
 
 1. File > Open > `tutorial_loci.nex`
 2. Try subsets:
@@ -144,7 +144,7 @@ Add reticulations for:
 |-------------------------------------------|-----------------|-------------------------------|
 | `data/alignments/*.fasta`                 | repo            | IQ-TREE, BEAST X, Neighbor-Net|
 | `tutorial_loci.treefile`                  | IQ-TREE         | ASTRAL, helper script         |
-| `tutorial_loci.nex`                       | helper script   | SplitsTree, PhyloCompare      |
+| `tutorial_loci.nex`                       | helper script   | SplitsTree, PhyloParallelograms      |
 | `X_dist_04.xml`                           | BEAUti          | BEAST X                       |
 | `X_dist_04.log`, `X_dist_04.trees`        | BEAST X         | Tracer, TreeAnnotator         |
 | `X_dist_04.MCC.tre`                       | TreeAnnotator   | tree viewer                   |
@@ -160,7 +160,7 @@ Add reticulations for:
         |                                       +------------------------+
         |                                       |
         |                                       +--> [SplitsTree: view]
-        |                                       +--> [PhyloCompare]
+        |                                       +--> [PhyloParallelograms]
         |
         +--> [SplitsTree: Neighbor-Net per alignment]
         |

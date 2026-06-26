@@ -5,7 +5,7 @@ This guide covers installation on **MacOS**, tested on **Apple Silicon (M3)**. N
 The macOS setup follows the same shape as the Linux one:
 
 - **Command-line tools** (IQ-TREE, ASTRAL, BEAST, BEAUti, TreeAnnotator, Tracer, ete3) are installed into a single conda environment.
-- **GUI applications** (SplitsTree6, PhyloSketch2, PhyloCompare) are installed from `.dmg` files downloaded from GitHub.
+- **GUI applications** (SplitsTree6, PhyloSketch2, PhyloParallelograms) are installed from `.dmg` files downloaded from GitHub.
 
 > **How to tell which Mac you have:** Apple menu → **About This Mac**. If the chip says "Apple M1 / M2 / M3 / M4", you're on Apple Silicon (arm64). If it says "Intel", you're on x86_64.
 
@@ -160,22 +160,22 @@ Download the x86_64 build from the [PhyloSketch2 v2.2.13 release page](https://g
 
 ---
 
-## Step 5 — Install PhyloCompare
+## Step 5 — Install PhyloParallelograms
 
 ### Apple Silicon (M-series):
 
 ```bash
-curl -LO https://github.com/husonlab/phylocompare/releases/download/v1.0.3/PhyloCompare-1.0.3-macos-aarch64.dmg
+curl -LO https://github.com/husonlab/phyloparallelograms/releases/download/v1.0.3/PhyloParallelograms-1.0.7-macos-aarch64.dmg
 ```
 
 ### Intel Macs:
 
-curl -LO https://github.com/husonlab/phylocompare/releases/download/v1.0.3/PhyloCompare-1.0.3-macos-x86_64.dmg
+curl -LO https://github.com/husonlab/phyloparallelograms/releases/download/v1.0.3/PhyloParallelograms-1.0.7-macos-x86_64.dmg
 
 ### Install:
 
 1. Double-click the `.dmg` in Finder to mount it.
-2. **Drag** the **PhyloCompare** app into the **Applications** folder. *(Unlike the other two, this DMG does not run an interactive installer — it's drag-to-install.)*
+2. **Drag** the **PhyloParallelograms** app into the **Applications** folder. *(Unlike the other two, this DMG does not run an interactive installer — it's drag-to-install.)*
 3. Eject the DMG.
 4. Launch from **Applications** or via Spotlight.
 
@@ -213,6 +213,6 @@ And the three downloaded apps — launch from **Applications**:
 
 - **SplitsTree**
 - **PhyloSketch2**
-- **PhyloCompare**
+- **PhyloParallelograms**
 
 Close each one after confirming it opens.

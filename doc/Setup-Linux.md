@@ -15,7 +15,7 @@ The tutorial software stack:
 | ete3 | Python lib | conda (conda-forge) |
 | SplitsTree6 | GUI | GitHub release |
 | PhyloSketch2 | GUI | GitHub release |
-| PhyloCompare | GUI | GitHub release |
+| PhyloParallelograms | GUI | GitHub release |
 
 ---
 
@@ -183,30 +183,30 @@ source ~/.bashrc
 
 Use `~/.zshrc` for zsh. Then launch with just `PhyloSketch2`.
 
-## Step 5 - Install PhyloCompare
+## Step 5 - Install PhyloParallelograms
 
-PhyloCompare is distributed as a tarball - no installer required.
+PhyloParallelograms is distributed as a tarball - no installer required.
 
 ```bash
 cd ~
-wget https://github.com/husonlab/phylocompare/releases/download/v1.0.3/PhyloCompare-1.0.3-linux-x86_64.tar.gz
-tar -xvzf PhyloCompare-1.0.3-linux-x86_64.tar.gz
+wget https://github.com/husonlab/phyloparallelograms/releases/download/v1.0.7/PhyloParallelograms-1.0.7-linux-x86_64.tar.gz
+tar -xvzf PhyloParallelograms-1.0.7-linux-x86_64.tar.gz
 ```
 
 Launch:
 
 ```bash
-~/PhyloCompare/bin/PhyloCompare
+~/PhyloParallelograms/bin/PhyloParallelograms
 ```
 
-### Adding PhyloCompare to your PATH (optional)
+### Adding PhyloParallelograms to your PATH (optional)
 
 ```bash
-echo 'export PATH="$HOME/PhyloCompare/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="$HOME/PhyloParallelograms/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Use `~/.zshrc` for zsh. Then launch with just `PhyloCompare`.
+Use `~/.zshrc` for zsh. Then launch with just `PhyloParallelograms`.
 
 ---
 
@@ -232,7 +232,7 @@ tracer                # opens GUI
 ```bash
 ~/splitstree6/SplitsTree
 ~/phylosketch2/PhyloSketch2
-~/PhyloCompare/bin/PhyloCompare
+~/PhyloParallelograms/bin/PhyloParallelograms
 ```
 
 Or, if you added them to your PATH:
@@ -240,5 +240,5 @@ Or, if you added them to your PATH:
 ```bash
 SplitsTree
 PhyloSketch2
-PhyloCompare
+PhyloParallelograms
 ```

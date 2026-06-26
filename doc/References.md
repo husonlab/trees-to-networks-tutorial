@@ -77,10 +77,10 @@ Molecular Biology and Evolution, 21(2), 255-265. https://doi.org/10.1093/molbev/
 
 Huson D.H. (2025) Sketch, capture and layout phylogenies. PLOS Computational Biology 21(12): e1013805. https://doi.org/10.1371/journal.pcbi.1013805
 
-### PhyloCompare and PhyloFusion
+### PhyloParallelograms and PhyloFusion
 
 D.H. Huson, B. Cetinkaya and L. Zhang,
-PhyloCompare: visualizing agreement and conflict among trees as phylogenetic parallelograms, manuscript in preparation.
+PhyloParallelograms: visualizing agreement and conflict among trees as phylogenetic parallelograms, manuscript in preparation.
 
 Zhang, L., Banu Cetinkaya, B. and Huson, D.H. (2026) PhyloFusion—Fast and Easy Fusion of Rooted Phylogenetic Trees into Rooted Phylogenetic Networks,
 Systematic Biology,75(1):88-99 https://doi.org/10.1093/sysbio/syaf049

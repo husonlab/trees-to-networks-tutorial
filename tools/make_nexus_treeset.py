@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.11
 """
 make_nexus_treeset.py - Convert IQ-TREE -S multi-locus output into a NEXUS
-file with named, optionally rerooted trees, suitable as input to PhyloCompare,
+file with named, optionally rerooted trees, suitable as input to PhyloParallelograms,
 SplitsTree, Dendroscope, etc.
 
 In -S mode, IQ-TREE writes one tree per line to <prefix>.treefile, in the

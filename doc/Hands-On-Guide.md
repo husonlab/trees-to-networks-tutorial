@@ -27,7 +27,7 @@ All file paths below are relative to that directory.
 | 10:50 - 11:10 | Coffee break                                         |
 | 11:10 - 11:30 | 4. SplitsTree Neighbor-Net hands-on                  |
 | 11:30 - 12:00 | 5. PhyloSketch hands-on                              |
-| 12:00 - 12:35 | 6. PhyloCompare hands-on                             |
+| 12:00 - 12:35 | 6. PhyloParallelograms hands-on                             |
 | 12:35 - 13:00 | Biological interpretation and wrap-up                |
 
 ---
@@ -43,7 +43,7 @@ Before the tutorial starts, run through this checklist. If any item fails, pleas
 - [ ] SplitsTree launches
 - [ ] `tracer` launches
 - [ ] PhyloSketch launches
-- [ ] PhyloCompare launches
+- [ ] PhyloParallelograms launches
 - [ ] PhyloGuide URL bookmarked
 
 The dataset is already in the repository under `data/alignments/`. You do NOT need to rebuild it from the raw MAF file -- the scripts in `data-prep/` are for reproducibility only.
@@ -97,7 +97,7 @@ The main output file is `tutorial_loci.treefile` -- a Newick file with one gene 
 
 #### 1.3 Convert to a labelled, rooted NEXUS tree set
 
-`tutorial_loci.treefile` has unnamed, unrooted trees. For downstream use in SplitsTree and PhyloCompare we want each tree labelled by its locus ID and rooted on the outgroup (An_christyi).
+`tutorial_loci.treefile` has unnamed, unrooted trees. For downstream use in SplitsTree and PhyloParallelograms we want each tree labelled by its locus ID and rooted on the outgroup (An_christyi).
 
 Run our helper script (requires `ete3`; install with `pip install ete3` or `conda install -c etetoolkit ete3`):
 
@@ -325,22 +325,22 @@ Events to consider:
 - A richer network might have 2 or 3.
 - Trade-off: every reticulation must be justified by evidence.
 
-**Save your sketch** -- you will compare it to PhyloCompare's automated inference in the next section.
+**Save your sketch** -- you will compare it to PhyloParallelograms's automated inference in the next section.
 
 ---
 
-### 6. PhyloCompare hands-on
+### 6. PhyloParallelograms hands-on
 
 **Time budget: 25 minutes**
 **Goal: compute an explicit reticulation network from your 15 gene trees and explore how different subsets of trees yield different networks.**
 
-PhyloCompare uses the PhyloFusion algorithm (Zhang, Cetinkaya, Huson 2026) to compute a network that displays all input trees with as few reticulations as possible. Each reticulation in the output is a hypothesized event -- matching a hybridization, introgression, or other gene-flow event.
+PhyloParallelograms uses the PhyloFusion algorithm (Zhang, Cetinkaya, Huson 2026) to compute a network that displays all input trees with as few reticulations as possible. Each reticulation in the output is a hypothesized event -- matching a hybridization, introgression, or other gene-flow event.
 
 #### 6.1 Open the tree set
 
-1. Launch **PhyloCompare**.
+1. Launch **PhyloParallelograms**.
 2. **File > Open** > `tutorial_loci.nex` (the NEXUS tree set we created after IQ-TREE; it contains all 15 gene trees with their locus IDs).
-3. PhyloCompare lists all 15 trees in the tree-set panel. By default the first trees are combined into a network.
+3. PhyloParallelograms lists all 15 trees in the tree-set panel. By default the first trees are combined into a network.
 
 #### 6.2 Explore different subsets of trees
 
@@ -357,7 +357,7 @@ For each, note: how many reticulations? Which lineages are involved? Does the un
 
 #### 6.3 Compare with your PhyloSketch network
 
-Open your saved sketch from PhyloSketch alongside the PhyloCompare network and compare:
+Open your saved sketch from PhyloSketch alongside the PhyloParallelograms network and compare:
 
 - Same number of reticulations?
 - Same reticulation events (same pairs of lineages involved)?
@@ -371,7 +371,7 @@ Open your saved sketch from PhyloSketch alongside the PhyloCompare network and c
 
 1. Gene trees disagree systematically across the genome when introgression is pervasive. This is data, not noise.
 2. Tree-summary methods can be confidently wrong when the underlying biology is reticulate. ASTRAL got the "wrong" species tree from our data -- not because it is broken, but because its model does not represent introgression.
-3. Networks make the conflict visible, in three complementary ways: alignment-level (Neighbor-Net), within-locus uncertainty (consensus from posterior), and across-locus reticulation (PhyloCompare).
+3. Networks make the conflict visible, in three complementary ways: alignment-level (Neighbor-Net), within-locus uncertainty (consensus from posterior), and across-locus reticulation (PhyloParallelograms).
 4. Hypothesis sketching before automated inference clarifies what you are looking for and makes the algorithm's output interpretable.
 5. AI assistance (PhyloGuide) is useful for orientation and recommendations but should not replace expert judgment.
 
@@ -380,7 +380,7 @@ Open your saved sketch from PhyloSketch alongside the PhyloCompare network and c
 - Tutorial repository (everything we did today, re-runnable on your own data): <https://github.com/husonlab/trees-to-networks-tutorial>
 - SplitsTree: <https://github.com/husonlab/splitstree6>
 - PhyloSketch: <https://github.com/husonlab/phylosketch2>
-- PhyloCompare: <https://github.com/husonlab/phylocompare>
+- PhyloParallelograms: <https://github.com/husonlab/phyloparallelograms>
 - IQ-TREE: <http://www.iqtree.org>
 - BEAST X: <https://beast.community>
 - ASTRAL: <https://github.com/smirarab/ASTRAL>

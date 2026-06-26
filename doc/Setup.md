@@ -144,13 +144,13 @@ Download from
 
 Native installers for macOS, Windows, and Linux are available.
 
-### 8. PhyloCompare
+### 8. PhyloParallelograms
 
 For inferring networks from gene tree sets and drawing gene trees inside
 networks.
 
 Download from
-> https://github.com/husonlab/phylocompare
+> https://github.com/husonlab/phyloparallelograms
 
 Native installers for macOS, Windows, and Linux are available.
 ---

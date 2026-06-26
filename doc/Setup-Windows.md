@@ -3,7 +3,7 @@
 On Windows, the tutorial uses a **hybrid setup**:
 
 - **Command-line tools** (IQ-TREE, ASTRAL, ete3, helper Python scripts) run inside **WSL Ubuntu** via a conda environment.
-- **GUI applications** (BEAST, BEAUti, TreeAnnotator, Tracer, SplitsTree6, PhyloSketch2, PhyloCompare) come as **portable Windows `.zip` archives** - just extract and run the `.exe` inside. No installer is needed (with one small exception, BEAGLE).
+- **GUI applications** (BEAST, BEAUti, TreeAnnotator, Tracer, SplitsTree6, PhyloSketch2, PhyloParallelograms) come as **portable Windows `.zip` archives** - just extract and run the `.exe` inside. No installer is needed (with one small exception, BEAGLE).
 
 This split avoids the headaches of running Java GUIs through WSL while keeping the Unix-style CLI workflow intact.
 
@@ -144,7 +144,7 @@ These apps come as **`.zip` archives - no installer is run**. You just download,
 
 By default, downloads land in your **`Downloads`** folder. You can extract the archives there too, or move them somewhere more permanent like `C:\Tools\` if you prefer.
 
-> **Important - Java is required.** BEAST needs a Java Runtime (JRE) installed on Windows. The other apps (SplitsTree6, PhyloSketch2, PhyloCompare, Tracer) bundle their own. Install the 64-bit Java JRE from <https://www.oracle.com/java/technologies/downloads/> before launching BEAST. (Do **not** install the browser Java from java.com - it won't run BEAST.)
+> **Important - Java is required.** BEAST needs a Java Runtime (JRE) installed on Windows. The other apps (SplitsTree6, PhyloSketch2, PhyloParallelograms, Tracer) bundle their own. Install the 64-bit Java JRE from <https://www.oracle.com/java/technologies/downloads/> before launching BEAST. (Do **not** install the browser Java from java.com - it won't run BEAST.)
 
 ## Step B1 - Install BEAST (BEAUti + BEAST + TreeAnnotator + TreeStat + LogCombiner)
 
@@ -205,12 +205,12 @@ Tracer is used to inspect BEAST MCMC log files.
 
 ---
 
-## Step B5 - Install PhyloCompare
+## Step B5 - Install PhyloParallelograms
 
-1. Open <https://github.com/husonlab/phylocompare/releases/tag/v1.0.3>.
-2. Under **Assets**, download the Windows `.zip` (file name like `PhyloCompare-1.0.3-windows-x86_64.zip`).
+1. Open <https://github.com/husonlab/phyloparallelograms/releases/tag/v1.0.7>.
+2. Under **Assets**, download the Windows `.zip` (file name like `PhyloParallelograms-1.0.7-windows-x86_64.zip`).
 3. Right-click the downloaded `.zip` in your `Downloads` folder  **Extract All**.
-4. Inside the extracted folder, open `bin\` and double-click `PhyloCompare.exe` to launch.
+4. Inside the extracted folder, open `bin\` and double-click `PhyloParallelograms.exe` to launch.
 
 > **Tip:** for any of these apps, after the first launch you can right-click the `.exe`  **Pin to Start** or **Create shortcut**  drag the shortcut to your desktop. This way you don't have to navigate into the extracted folder every time.
 
@@ -238,7 +238,7 @@ Open each `.exe` from inside its extracted folder (or via a shortcut you made) a
 - `Tracer.exe` (in extracted Tracer folder, root)
 - `SplitsTree.exe` (in extracted SplitsTree folder)
 - `PhyloSketch2.exe` (in extracted PhyloSketch2 folder)
-- `PhyloCompare.exe` (in extracted PhyloCompare folder, in `bin\`)
+- `PhyloParallelograms.exe` (in extracted PhyloParallelograms folder, in `bin\`)
 
 Close each one after confirming.
 
@@ -258,7 +258,7 @@ Close each one after confirming.
 | Tracer | Native Windows | `Tracer.exe` in extracted Tracer folder |
 | SplitsTree6 | Native Windows | `SplitsTree.exe` in extracted SplitsTree folder |
 | PhyloSketch2 | Native Windows | `PhyloSketch2.exe` in extracted PhyloSketch2 folder |
-| PhyloCompare | Native Windows | `bin\PhyloCompare.exe` in extracted PhyloCompare folder |
+| PhyloParallelograms | Native Windows | `bin\PhyloParallelograms.exe` in extracted PhyloParallelograms folder |
 
 ---
 
