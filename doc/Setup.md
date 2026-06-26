@@ -12,6 +12,8 @@ If you hit setup problems, please reach out **before** the tutorial —
 diagnosing installs in person on the day takes time away from the actual
 tutorial. Contact details at the bottom of this page.
 
+(Note: on 26-June-2026, the program PhyloCompare was renamed to PhyloParallelograms - both releases are fine for the tutorial.)
+
 ---
 
 These instructions are hosted here:
